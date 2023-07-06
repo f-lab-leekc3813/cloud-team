@@ -29,7 +29,7 @@ function Header () {
                 <div className = {classes.header_content}>
                     <form className={classes.header_form}>
                          <input className={classes.search_input} type="text" placeholder="물품이나 동네를 검색해보세요" />
-                         <button className={classes.chat_button} type= "submit">채팅하기</button>
+                         <button className={classes.chat_button} type= "submit">로그인</button>
                     </form>
                 </div>
             </div>

@@ -3,7 +3,8 @@
     padding: 0;
     border: 0;
     font: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .content5_title {
@@ -19,12 +20,21 @@
     margin-inline-end: 0px;
 }
 
+.content5_wraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .content5_wrap {
+    width: 1024px;
     margin: 0;
     padding: 0;
     border: 0;
     font: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .content5_itemRow {

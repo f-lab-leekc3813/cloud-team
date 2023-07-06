@@ -74,43 +74,45 @@ function Content5 () {
     return(
         <div className={classes.content5_container}>
             <h1 className={classes.content5_title}>중고거래 인기매물</h1>
-            <div className={classes.content5_wrap}>
-                <div className={classes.content5_itemRow}>
-                        {DUMMY_DATA1.map((item) => {
-                            return(
-                                <div className={classes.item}>
-                                    <img className={classes.item_img} src={`${item.img}`} />
-                                    <h2 className={classes.item_name}>{item.title}</h2>
-                                    <h2 className={classes.item_cost}>{item.price}</h2>
-                                    <h1 className={classes.item_place}>{item.place}</h1>
-                                    <div className={classes.item_chating}>
-                                        <span className={classes.item_like}>{`관심 ${item.like}`}</span>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                </div>
-                <div className={classes.content5_itemRow}>
-                        {DUMMY_DATA2.map((item) => {
-                            return(
-                                <div className={classes.item}>
-                                    <img className={classes.item_img} src={`${item.img}`} />
-                                    <h2 className={classes.item_name}>{item.title}</h2>
-                                    <h2 className={classes.item_cost}>{item.price}</h2>
-                                    <h1 className={classes.item_place}>{item.place}</h1>
-                                    <div className={classes.item_chating}>
-                                        <span className={classes.item_like}>{`관심 ${item.like}`}</span>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                </div>
-                <div className={classes.moreItem_wrap}>
-                    <div className={classes.moreItem_btn}>
-                        인기매물 더보기
+                <div className={classes.content5_wraper}>
+                    <div className={classes.content5_wrap}>
+                        <div className={classes.content5_itemRow}>
+                                {DUMMY_DATA1.map((item) => {
+                                    return(
+                                        <div className={classes.item}>
+                                            <img className={classes.item_img} src={`${item.img}`} alt = 'content5' />
+                                            <h2 className={classes.item_name}>{item.title}</h2>
+                                            <h2 className={classes.item_cost}>{item.price}</h2>
+                                            <h1 className={classes.item_place}>{item.place}</h1>
+                                            <div className={classes.item_chating}>
+                                                <span className={classes.item_like}>{`관심 ${item.like}`}</span>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                        </div>
+                        <div className={classes.content5_itemRow}>
+                                {DUMMY_DATA2.map((item) => {
+                                    return(
+                                        <div className={classes.item}>
+                                            <img className={classes.item_img} src={`${item.img}`} alt = 'content5' />
+                                            <h2 className={classes.item_name}>{item.title}</h2>
+                                            <h2 className={classes.item_cost}>{item.price}</h2>
+                                            <h1 className={classes.item_place}>{item.place}</h1>
+                                            <div className={classes.item_chating}>
+                                                <span className={classes.item_like}>{`관심 ${item.like}`}</span>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                        </div>
+                        <div className={classes.moreItem_wrap}>
+                            <div className={classes.moreItem_btn}>
+                                인기매물 더보기
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div>        
         </div>
     )
 };

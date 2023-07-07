@@ -1,0 +1,45 @@
+{
+    "data": [
+        {
+            "id" : "1",
+            "avartar": "images/neighborhood/detail2/avartar_none.png",
+            "name" : "마들렌",
+            "type" : "단골",
+            "region" : "갈마동 인증 28회",
+            "review" : "사장님도 너무 친절하시고 과일이랑 계란 모두 신선해요 가격도 저렴하구요 오정동 농수산 가는 것보다 가깝고 좋네요",
+            "image" : "images/neighborhood/detail2/image1.jpeg",
+            "info1" : "# 한입에 반한 과일",
+            "indo2" : "후기 54, 단골 467, 과일판매"
+        },{
+            "id" : "2",
+            "avartar" : "images/neighborhood/detail2/avartar1.png",
+            "name" : "마일드",
+            "type" : "단골",
+            "region" : "장성동 인증 24회",
+            "review" : "바지락 듬뿍 들어있고 면발은 부드러워요~ 새우폭탄부침개 정말 바삭하고 맛있어요 만두는 그냥 그랬어요 머리 묶을수 있는 끈이 테이블마다 있어서 먹을때 이용할수 있어요 겉절이 맛 끝내줍니다^^",
+            "image" : "images/neighborhood/detail2/image2.jpeg",
+            "info1" : "세방칼국수1204",
+            "info2" : "후기 6, 단골 646, 국수/만두/칼국수"
+        },{
+            "id" : "3",
+            "avartar" : "images/neighborhood/detail2/avartar2.jpg",
+            "name" : "좋은선택",
+            "type" : "단골",
+            "region" : "상월곡동 인증 4회",
+            "review" : "길치라 잘 못찾아서 메세지 보내니 너무 이쁜 원장님이 마중나와주셔서 첫인상부터 맘에 쏙 들...",
+            "image" : "images/neighborhood/detail2/image3.jpeg",
+            "info1" : "뷰티샵라니제이",
+            "info2" : "후기 76, 단골 168, 속눈썹펌/연장"
+        },{
+            "id" : "4",
+            "avartar" : "images/neighborhood/detail2/avartar_none.png",
+            "name" : "역주행거북이",
+            "type" : "단골",
+            "region" : "재송동 인증 24회",
+            "review" : "가격대비 퀄리티가 높습니다. 신선한 야채가 사장님의 부지런함을 대변하는듯합니다. ",
+            "image" : "images/neighborhood/detail2/image4.jpeg",
+            "info1" : "샐리샐리 샐러드&햄버거",
+            "info2" : "후기 22, 단골 1414, 수제버거"
+        }
+    ]
+}

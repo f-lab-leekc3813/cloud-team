@@ -1,0 +1,57 @@
+.containers {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-items: stretch;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.review_item {
+    text-decoration: none;
+    text-align: start;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: -webkit-link;
+    cursor: pointer;
+}
+
+.review_article {
+    text-decoration: none;
+    text-align: start;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: -webkit-link;
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference){
+    .reviewItem_article {
+    transition: background-color .15s;
+}
+}
+.reviewItem_article {
+    box-sizing: border-box;
+    border: 0.0625rem solid var(--seed-semantic-color-divider-2);
+    background-color: var(--seed-semantic-color-paper-sheet);
+    border-radius: 0.375rem;
+    overflow: hidden;
+    padding: 1.25rem 1rem;
+    display: block;
+}
+
+.profile_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    align-items: center;
+}
+
+.profile_image {
+    width: 25px;
+    height: 25px;
+    border-radius: 2.25rem;
+}

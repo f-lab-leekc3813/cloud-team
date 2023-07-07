@@ -1,0 +1,15 @@
+@media screen and (min-width: 768px){
+    .containers {
+        padding: 4rem 0 4.5rem;
+    }
+}
+
+.containers {
+    color: var(--seed-scale-color-gray-900);
+    padding: 3.5rem 0 2.5rem;
+}
+
+.container {
+    display: block;
+    overflow: hidden;
+}

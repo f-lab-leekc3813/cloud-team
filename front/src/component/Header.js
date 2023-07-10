@@ -9,22 +9,21 @@ function Header () {
                 <div className = {classes.header_content}>
                     <img src='images/logo.png' alt='로고' />
                 </div>
-
                     <Link to = '/' className = {classes.header_content}>
-                        <span className={classes.header_menu_selected} >중고거래</span>
+                        <button className={classes.header_menu_selected} >중고거래</button>
                     </Link>
 
                     <Link to = '/neighborhood' className = {classes.header_content}>
-                        <span className={classes.header_menu} >동네 가게</span>
+                        <button className={classes.header_menu} >동네 가게</button>
                     </Link>
                     <Link to = 'parttime' className = {classes.header_content}>
-                        <span className={classes.header_menu} >알바</span>
+                        <button className={classes.header_menu} >알바</button>
                     </Link>
                     <Link to = 'estate' className = {classes.header_content}>
-                        <span className={classes.header_menu} >부동산 직거래</span>
+                        <button className={classes.header_menu} >부동산 직거래</button>
                     </Link>
                     <Link to='car' className = {classes.header_content}>
-                        <span className={classes.header_menu} >중고차 직거래</span>
+                        <button className={classes.header_menu} >중고차 직거래</button>
                     </Link>
                 <div className = {classes.header_content}>
                     <form className={classes.header_form}>

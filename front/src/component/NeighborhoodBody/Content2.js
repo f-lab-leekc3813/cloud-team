@@ -1,5 +1,6 @@
 import react, {useState} from 'react';
 
+
 import classes from './Content2.module.css';
 import Detail1 from './NeighborhoodDetail/Detail1'
 import Detail2 from './NeighborhoodDetail/Detail2';

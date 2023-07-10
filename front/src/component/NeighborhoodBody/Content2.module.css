@@ -154,3 +154,11 @@
 .main2_titleline {
     display: none;
 }
+
+@media screen and (min-width: 768px){
+    .content2_footer {
+        padding: 1.5rem 1.375rem 1.5rem 2rem;
+        align-items: center;
+        flex-direction: row;
+    }
+}

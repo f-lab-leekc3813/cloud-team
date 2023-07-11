@@ -9,6 +9,10 @@ function SignupButton() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const signup = (event) => {
+    console.log(event.target.value);
+  }
+
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -23,7 +27,7 @@ function SignupButton() {
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>
-              <Form.Control
+              <Form.Control onChange={signup}
                 type="email"
                 placeholder="name@example.com"
                 autoFocus

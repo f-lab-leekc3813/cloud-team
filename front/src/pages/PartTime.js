@@ -1,6 +1,6 @@
 function PartTimePage() {
     return(
-        <>PartTime 입니다</>
+        <>PartTime 입</>
         )
 }
 

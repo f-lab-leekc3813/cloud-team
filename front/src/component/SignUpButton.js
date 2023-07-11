@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
-function Example() {
+function SignupButton() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,8 +11,8 @@ function Example() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} style={{'marginRight' : '12px'}}>
-        로그인
+      <Button variant="primary" onClick={handleShow}>
+        회원가입
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -37,6 +37,14 @@ function Example() {
                 autoFocus
               />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="이름을 작성 해 주세요."
+                autoFocus
+              />
+            </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
@@ -52,4 +60,4 @@ function Example() {
   );
 }
 
-export default Example;
+export default SignupButton;

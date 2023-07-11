@@ -79,7 +79,7 @@ function Content5 () {
                         <div className={classes.content5_itemRow}>
                                 {DUMMY_DATA1.map((item) => {
                                     return(
-                                        <div className={classes.item}>
+                                        <div key={item.id} className={classes.item}>
                                             <img className={classes.item_img} src={`${item.img}`} alt = 'content5' />
                                             <h2 className={classes.item_name}>{item.title}</h2>
                                             <h2 className={classes.item_cost}>{item.price}</h2>
@@ -94,7 +94,7 @@ function Content5 () {
                         <div className={classes.content5_itemRow}>
                                 {DUMMY_DATA2.map((item) => {
                                     return(
-                                        <div className={classes.item}>
+                                        <div key={item.id} className={classes.item}>
                                             <img className={classes.item_img} src={`${item.img}`} alt = 'content5' />
                                             <h2 className={classes.item_name}>{item.title}</h2>
                                             <h2 className={classes.item_cost}>{item.price}</h2>

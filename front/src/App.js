@@ -1,13 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from 'recoil';
+import { RecoilRoot } from 'recoil';
 
 import Header from './component/Header';
 import HomePage from './pages/Home';
@@ -16,7 +10,9 @@ import PartTimePage from './pages/PartTime';
 import EstatePage from './pages/Estate';
 import Mypage from './pages/Mypage';
 
+
 function App() {
+
   return (
     <RecoilRoot>
       <React.Fragment >

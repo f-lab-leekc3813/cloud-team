@@ -28,6 +28,7 @@ const content2_list = [{
 
 function Content2 () {
     const [content,setContent] = useState('');
+    const a = 1;
 
     const hadleClinkButton = (e) => {
         setContent(e.target.value);

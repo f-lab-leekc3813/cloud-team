@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 import classes from './Header.module.css';
 import LoginButton from './LoginButton';
+import SignupButton from './SignUpButton';
 
 function Header () {
 
@@ -30,6 +31,7 @@ function Header () {
                     <form className={classes.header_form}>
                          <input className={classes.search_input} type="text" placeholder="물품이나 동네를 검색해보세요" />
                          <LoginButton />
+                         <SignupButton />
                     </form>
                 </div>
             </div>

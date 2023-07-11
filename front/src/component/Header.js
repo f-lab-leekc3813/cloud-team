@@ -1,8 +1,12 @@
+import {useState} from 'react';
 import {Link} from 'react-router-dom';
 
 import classes from './Header.module.css';
+import LoginButton from './LoginButton';
 
 function Header () {
+
+
     return (
         <div className = {classes.header}>
             <div className = {classes.header_wrap}>
@@ -25,7 +29,7 @@ function Header () {
                 <div className = {classes.header_content}>
                     <form className={classes.header_form}>
                          <input className={classes.search_input} type="text" placeholder="물품이나 동네를 검색해보세요" />
-                         <button className={classes.chat_button} type= "submit">로그인</button>
+                         <LoginButton />
                     </form>
                 </div>
             </div>

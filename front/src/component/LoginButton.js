@@ -1,12 +1,19 @@
-import { useState } from 'react';
+import { useState} from 'react';
+import { useRecoilState } from 'recoil';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
+import { LoginState } from '../store/LoginState';
+
 function Example() {
   const [show, setShow] = useState(false);
+  const [isLoggedIn,setIsLoggedIn] = useRecoilState(LoginState); // [상태, 상태를 바꿀 함수
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setIsLoggedIn(true);
+    setShow(false)
+  };
   const handleShow = () => setShow(true);
 
   return (

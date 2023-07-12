@@ -4,7 +4,6 @@ import { useRecoilState } from 'recoil';
 
 import classes from './Header.module.css';
 import LoginButton from './LoginButton';
-import SignupButton from './SignUpButton';
 import Button from 'react-bootstrap/Button';
 import { LoginState } from '../store/LoginState';
 
@@ -40,13 +39,9 @@ function Header () {
                 <div className = {classes.header_content}>
                     <form className={classes.header_form}>
                          <input className={classes.search_input} type="text" placeholder="물품이나 동네를 검색해보세요" />
-                            {isLoggedIn ?
-                                    <Button onClick={loginHandler} variant="secondary">내정보</Button> 
-                                : 
-                                <LoginButton 
-                            />}
-                            {isLoggedIn  ? '' : <SignupButton onClick={loginHandler} />}
+                         <Button onClick={loginHandler} variant="warning" style={{marginRight : '10px'}}>내정보</Button> 
                     </form>
+                    <LoginButton  />
                 </div>
             </div>
         </div>

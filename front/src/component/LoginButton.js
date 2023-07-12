@@ -1,62 +1,25 @@
-import { useState} from 'react';
-import { useRecoilState } from 'recoil';
+import React, { useState } from "react";
+
+import SignIn from "./SignIn";
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
 
-import { LoginState } from '../store/LoginState';
+const LoginButton = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
 
-function Example() {
-  const [show, setShow] = useState(false);
-  const [isLoggedIn,setIsLoggedIn] = useRecoilState(LoginState); // [상태, 상태를 바꿀 함수
-
-  const handleClose = () => {
-    setIsLoggedIn(true);
-    setShow(false)
+  const openModal = () => {
+    setModalOpen(true);
   };
-  const handleShow = () => setShow(true);
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} style={{'marginRight' : '12px'}}>
-        로그인
-      </Button>
-
-      <Modal show={show} onHide={handleClose} style={{border: '1px solid black'}}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="8글자이상 작성 해 주세요."
-                autoFocus
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <Button variant="danger" onClick={openModal}>로그인</Button>
+      <SignIn isOpen={isModalOpen} close={closeModal} />
     </>
   );
-}
+};
 
-export default Example;
+export default LoginButton;

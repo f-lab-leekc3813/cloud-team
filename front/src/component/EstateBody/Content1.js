@@ -7,9 +7,9 @@ function Content1(){
             <div className={classes.content1_container}>
                 <div className={classes.content1_container1}>
                     <h1 className={classes.content1_container2}>
-                        복비없이 투명한
+                        <strong>복비없이 투명한</strong>
                         <br/>
-                        부동산 직거래
+                        <strong>부동산 직거래</strong>
                     </h1>
                     <p1 className={classes.content1_container3}>
                         이웃이 살던 집, 당근마켓에서

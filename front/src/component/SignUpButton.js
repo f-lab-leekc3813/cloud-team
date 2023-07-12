@@ -16,7 +16,7 @@ function SignupButton() {
   const handleSignup = () => {
     // Send signup data to localhost:8080
     axios
-      .post('http://localhost:8080/signup', {
+      .post('http://localhost:8080/account/signup', {
         email,
         password,
         name,

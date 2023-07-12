@@ -2,6 +2,8 @@ const express = require('express')
 
 const router = express.Router()
 
+let signupData = {};
+
 router.post('/signup', (request, response, next)=>{
     try {
         const { email, password, name } = req.body;
@@ -19,7 +21,6 @@ router.post('/signup', (request, response, next)=>{
             message : error
         })
     }
-
 });
 
 

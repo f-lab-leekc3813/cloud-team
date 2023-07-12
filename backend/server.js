@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const accountRouter = require('./controller/account.js');
 const cors = require('cors');
 const app = express();
+
 const port = 8080;
 
 let signupData = {};

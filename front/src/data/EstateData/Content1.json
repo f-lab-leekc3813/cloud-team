@@ -1,0 +1,65 @@
+{
+    "data": [
+        {
+            "id" : "1",
+            "name" : "투룸이상 300만원/1만원 - 인천광역시 남동구",
+            "region" : "만수동",
+            "image" : "images/estate/1.jpeg",
+            "info1" : "단기 300 /1"
+        },{
+            "id" : "2",
+            "name" : "아파트 1억 9,100만원 - 전라남도 목포시",
+            "region" : "석현동",
+            "image" : "images/estate/2.jpeg",
+            "info1" : "매매 1억 9,100"
+        },{
+            "id" : "3",
+            "name" : "상가 500만원/60만원 - 해바라기 옷가게",
+            "region" : "부평동",
+            "image" : "images/estate/3.jpeg",
+            "info1" : "월세 500 / 60"
+        },{
+            "id" : "4",
+            "name" : "아파트 6억 - 경기도 용인시 수지구",
+            "region" : "성복동",
+            "image" : "images/estate/4.jpeg",
+            "info1" : "전세 6억"
+        },{
+            "id" : "5",
+            "name" : "분리형 원룸 100만원/35만원 - 제주특별자치도 서귀포시",
+            "region" : "성산읍",
+            "image" : "images/estate/5.jpeg",
+            "info1" : "월세 100 / 35"
+        },{
+            "id" : "6",
+            "name" : "오픈형 원룸 200만원/33만원 - 은하수빌 307호",
+            "region" : "대잠동",
+            "image" : "images/estate/6.jpeg",
+            "info1" : "월세 200 / 33"
+        },{
+            "id" : "7",
+            "name" : "아파트 1,000만원/2,000만원 - 제주특별자치도 제주시",
+            "region" : "연동",
+            "image" : "images/estate/7.jpeg",
+            "info1" : "연세 1,000 / 2,000"
+        },{
+            "id" : "8",
+            "name" : "아파트 3억 7,500만원 - 3단지",
+            "region" : "진접읍",
+            "image" : "images/estate/8.jpeg",
+            "info1" : "매매 3억 7,500"
+        },{
+            "id" : "9",
+            "name" : "아파트 500만원/0만원 - 제주특별자치도 제주시",
+            "region" : "노형동",
+            "image" : "images/estate/9.jpeg",
+            "info1" : "연세 500/0"
+        },{
+            "id" : "10",
+            "name" : "아파트 2억 4,000만원 - 부산광역시 사하구",
+            "region" : "하단동",
+            "image" : "images/estate/10.jpeg",
+            "info1" : "매매 2억 4,000"
+        }
+    ]
+}

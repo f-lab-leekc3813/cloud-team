@@ -1,5 +1,6 @@
 const express = require('express') //express를 설치했기 때문에 가져올 수 있다.
 const bodyParser = require('body-parser');
+const accountRouter = require('./controller/account.js');
 const cors = require('cors');
 const app = express();
 const port = 8080;
@@ -8,7 +9,7 @@ let signupData = {};
 
 // Use CORS middleware
 app.use(cors());
-
+app.use('/account', accountRouter);
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -19,18 +20,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-// Handle signup POST request
-app.post('/signup', (req, res) => {
-  const { email, password, name } = req.body;
-  // Process the signup data as needed
-  // Example: Store the data in a database
-  signupData = { email, password, name };
 
-  // Send a response back to the client
-  res.send('Signup successful!');
-});
-
-app.get('/signup', (req, res) => {
+app.get('/account', (req, res) => {
   // Send the signup data back to the client
   res.send(signupData);
 });

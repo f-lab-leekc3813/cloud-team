@@ -1,39 +1,39 @@
 const express = require('express') //express를 설치했기 때문에 가져올 수 있다.
-// const mongodb = require('mongodb');
-const app = express()
-
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const app = express();
 const port = 8080;
-// const mongoClient = mongodb.MongoClient;
-// const mongoUrl = 'mongodb://localhost:27017/test';
 
+let signupData = {};
+
+// Use CORS middleware
+app.use(cors());
+
+// Parse URL-encoded bodies (as sent by HTML forms)
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Parse JSON bodies (as sent by API clients)
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-// app.get('/users', (req, res) => {
-//   mongoClient.connect(mongoUrl, (err, client) => {
-//     if (err) {
-//       console.error('Failed to connect to MongoDB:', err);
-//       res.status(500).send('Failed to connect to MongoDB');
-//       return;
-//     }
+// Handle signup POST request
+app.post('/signup', (req, res) => {
+  const { email, password, name } = req.body;
+  // Process the signup data as needed
+  // Example: Store the data in a database
+  signupData = { email, password, name };
 
-//     const db = client.db();
-//     const collection = db.collection('users');
+  // Send a response back to the client
+  res.send('Signup successful!');
+});
 
-//     collection.find().toArray((err, users) => {
-//       if (err) {
-//         console.error('Failed to retrieve users from MongoDB:', err);
-//         res.status(500).send('Failed to retrieve users from MongoDB');
-//         return;
-//       }
-
-//       res.json(users);
-//       client.close();
-//     });
-//   });
-// });
+app.get('/signup', (req, res) => {
+  // Send the signup data back to the client
+  res.send(signupData);
+});
 
 
 app.listen(port, () => {

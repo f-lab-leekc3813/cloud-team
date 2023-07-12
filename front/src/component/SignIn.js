@@ -5,6 +5,7 @@ import classes from "./SignIn.module.css";
 const SignIn = ({ isOpen, close }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isSignUp, setIsSignUp] = useState(false);
 
   const loginHandler = (e) => {
     const { name, value } = e.target;
@@ -14,6 +15,12 @@ const SignIn = ({ isOpen, close }) => {
       setPassword(value);
     }
   };
+
+  // setIsSignUp이 true면 회원가입창으로 바뀜
+  // setisSignUpdl true면 회원가입 Fost, flase면 로그인 get
+  const signUpHandler = () => {
+    setIsSignUp(!isSignUp);
+  }
 
   // const loginClickHandler = () => {
   //   fetch("", {
@@ -56,13 +63,17 @@ const SignIn = ({ isOpen, close }) => {
               />
               <div className={classes.loginMid}>
                 <label className={classes.autoLogin} htmlFor="hint">
-                  <input type="checkbox" id="hint" /> 로그인 유지하기
-                </label>
+                </label> 
                 <div className={classes.autoLogin}>아이디/비밀번호 찾기</div>
               </div>
-              <button className={classes.loginBtn} >
-                로그인
-              </button>
+              {isSignUp ?
+                <button onClick={signUpHandler} className={classes.loginBtn} >
+                  회원가입
+                </button> :
+                <button onClick={signUpHandler} className={classes.loginBtn} >
+                  로그인
+                </button>
+                }
               <div className={classes.socialBox}>
                 <div className={classes.kakao}>
                   <img className={classes.kakaoLogo} src="images/signUp/kakao.jpg" alt="Kakao Logo" />
@@ -77,6 +88,10 @@ const SignIn = ({ isOpen, close }) => {
                 <div className={classes.loginLine}>
                   회원이 아니신가요? 
                 </div>
+                {isSignUp ? '' :
+                <button onClick={signUpHandler}  className={classes.signUpLink}>
+                  회원가입
+                </button>}
                 <div className={classes.noUser}>비회원 주문 조회</div>
               </div>
             </div>

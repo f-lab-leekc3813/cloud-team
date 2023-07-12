@@ -172,6 +172,12 @@ a {
     cursor: pointer;
 }
 
+.signUpLink {
+    color: #bcbcbc;
+    font-size: 11px;
+    cursor: pointer;
+}
+
 .noUser {
     cursor: pointer;
     text-decoration: underline;

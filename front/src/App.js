@@ -9,6 +9,7 @@ import NeighborhoodPage from './pages/Neighborhood';
 import PartTimePage from './pages/PartTime';
 import EstatePage from './pages/Estate';
 import Mypage from './pages/Mypage';
+import SignUp from './component/SignUp';
 
 
 function App() {

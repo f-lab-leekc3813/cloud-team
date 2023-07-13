@@ -65,7 +65,7 @@ const SignIn = ({ isOpen, close }) => {
     }else{
       if (emailCheck && passwordCheck) {
         api
-          .post("/user/signin", {
+          .post("/user/login", {
             email: email,
             password: password,
           })

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import api from "../api/api";
+import axios from "axios";
 
 import classes from "./SignIn.module.css";
 
@@ -42,8 +42,8 @@ const SignIn = ({ isOpen, close }) => {
 
     if (isSignUp) {
       if (emailCheck && passwordCheck && nicknameCheck) {
-        api
-          .post("/user/signup", {
+        axios
+          .post("http://localhost:8080/user/signup", {
             email: email,
             password: password,
             nickname: nickname,
@@ -64,8 +64,8 @@ const SignIn = ({ isOpen, close }) => {
       }
     }else{
       if (emailCheck && passwordCheck) {
-        api
-          .post("/user/login", {
+        axios
+          .post("http://localhost:8080/user/signup", {
             email: email,
             password: password,
           })

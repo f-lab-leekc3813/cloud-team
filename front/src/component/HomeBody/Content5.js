@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import classes from './Content5.module.css';
 
 const DUMMY_DATA1 = [{
@@ -107,9 +109,9 @@ function Content5 () {
                                 })}
                         </div>
                         <div className={classes.moreItem_wrap}>
-                            <div className={classes.moreItem_btn}>
+                            <Link to={'/bestpage'} className={classes.moreItem_btn}>
                                 인기매물 더보기
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>        

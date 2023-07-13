@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import api from "../api/api";
+import axios from "axios";
 
 import classes from "./SignIn.module.css";
 
@@ -42,46 +42,46 @@ const SignIn = ({ isOpen, close }) => {
 
     if (isSignUp) {
       if (emailCheck && passwordCheck && nicknameCheck) {
-        api
-          .post("/user/signup", {
+        axios
+          .post("http://localhost:8080/user/signup", {
             email: email,
             password: password,
             nickname: nickname,
           })
           .then((res) => {
             if (res.status === 200) {
-              alert("회원가입이 완료되었습니다.");
+              alert("회원가입이 완료되었습니다(회원가입).");
               close();
             } else {
-              alert("회원가입에 실패하였습니다.");
+              alert("회원가입에 실패하였습니다(회원가입,연결실패).");
             }
           })
           .catch((err) => {
-            alert("회원가입에 실패하였습니다.");
+            alert("회원가입에 실패하였습니다(회원가입,연결실패2).");
           });
       } else {
-        alert("입력한 정보를 다시 확인해주세요.");
+        alert("입력한 정보를 다시 확인해주세요(회원가입).");
       }
     }else{
       if (emailCheck && passwordCheck) {
-        api
-          .post("/user/login", {
+        axios
+          .post("http://localhost:8080/user/signup", {
             email: email,
             password: password,
           })
           .then((res) => {
             if (res.status === 200) {
-              alert("로그인이 완료되었습니다.");
+              alert("로그인이 완료되었습니다(로그인).");
               close();
             } else {
-              alert("로그인에 실패하였습니다.");
+              alert("로그인에 실패하였습니다(로그인,연결실패).");
             }
           })
           .catch((err) => {
-            alert("로그인에 실패하였습니다.");
+            alert("로그인에 실패하였습니다(로그인,연결실패2).");
           });
       } else {
-        alert("입력한 정보를 다시 확인해주세요.");
+        alert("입력한 정보를 다시 확인해주세요(로그인).");
       }
     }
   }

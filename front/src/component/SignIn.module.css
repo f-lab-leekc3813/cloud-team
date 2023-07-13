@@ -5,17 +5,19 @@
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.6);
+    
 }
 
 .loginModal {
     width: 480px;
-    height: 621px;
+    height: 630px;
     background-color: white;
     position: relative;
     box-sizing: border-box;
     margin: 50px auto;
     padding: 20px;
     background: #fff;
+    border-radius: 10px;
 }
 
 .close {

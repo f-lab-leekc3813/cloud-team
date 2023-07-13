@@ -44,8 +44,8 @@ function Content2 () {
                     <div className={classes.content2_middlebannertxt}>
                          당근알바 이용방법이 궁금하다면
                          <br/>지금 바로 알아보세요!
-                         <button className={classes.content2_middlebutton}>이용방법 알아보기</button>
                     </div>
+                    <button className={classes.content2_middlebutton}>이용방법 알아보기</button>
                 </div>
             </div>
             <div className={classes.content2_containers2}>

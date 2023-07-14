@@ -10,7 +10,7 @@ router.post('/signup', function (req, res, next) {
     const { email, password, nickname } = req.body;
     emailCheck(email)
       .then((result) => {
-        if (result[0].length > 0) {
+        if (result.length > 0) {
           return res.status(201).json({
             message: "이미 있는 이메일"
           })

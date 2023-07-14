@@ -8,7 +8,7 @@ async function emailCheck (email){
         const query = `SELECT email FROM project.project WHERE email=?`;
         const values = [email];
 
-        const result = await co.execute(query,values);
+        const [result] = await co.execute(query,values);
         co.release();
         return result;
     } catch (error) {

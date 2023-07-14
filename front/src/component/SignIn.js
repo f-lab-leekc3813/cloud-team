@@ -50,8 +50,17 @@ const SignIn = ({ isOpen, close }) => {
           })
           .then((res) => {
             if (res.status === 200) {
+              // 회원가입이 완료되면 토큰을 받아온다.
+              const token = res.data.token;
+              
+              // 토큰을 로컬스토리지에 저장한다.
+              localStorage.setItem('token', token);
+
               alert("회원가입이 완료되었습니다(회원가입).");
               close();
+              setEmail("");
+              setPassword("");
+              setNickname("");
             } else {
               alert("회원가입에 실패하였습니다(회원가입,연결실패).");
             }
@@ -71,8 +80,15 @@ const SignIn = ({ isOpen, close }) => {
           })
           .then((res) => {
             if (res.status === 200) {
+              const token = res.data.token;
+
+              // Store the token securely
+              localStorage.setItem('token', token);
+
               alert("로그인이 완료되었습니다(로그인).");
               close();
+              setEmail("");
+              setPassword("");
             } else {
               alert("로그인에 실패하였습니다(로그인,연결실패).");
             }

@@ -53,7 +53,11 @@ const SignIn = ({ isOpen, close }) => {
               alert("회원가입이 완료되었습니다(회원가입).");
               close();
             } else {
-              alert("회원가입에 실패하였습니다(회원가입,연결실패).");
+              if (res.status === 201) {
+                alert("이미 있는 이메일입니다.")
+              } else {
+                alert("회원가입에 실패하였습니다(회원가입,연결실패).");
+              }
             }
           })
           .catch((err) => {

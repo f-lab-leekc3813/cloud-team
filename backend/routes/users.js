@@ -18,14 +18,6 @@ var router = express.Router();
  * asynchronus 형태로 동작
  */
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'User' });
-});
-
-router.get('/signup', function(req, res, next) {
-  res.render('index', { title: 'User signup' });
-});
-
 router.post('/signup',  function(req, res, next) {
   try {
     // 경찬씨가 보내주는 키 값이 존재.

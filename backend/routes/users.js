@@ -1,33 +1,54 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-/**
- * 200 status OK
- * 201 status OK (post)
- * 
- * 304 status no update
- * 
- * 400 status bad request
- * 401 status unauthorized
- * 403 status forbidden
- * 404 status not found
- * 
- * 500 status internal server error
- * 
- * asynchronus 형태로 동작
- */
+const mysql = require('mysql2');
+
+
+// MySQL 연결 설정
+const connection = mysql.createConnection({
+  host: 'localhost',     // MySQL 호스트 주소
+  user: 'root',  // MySQL 사용자 이름
+  password: 'mysql',  // MySQL 비밀번호
+  database: 'project'  // 사용할 데이터베이스 이름
+});
+
 
 router.post('/signup',  function(req, res, next) {
   try {
-    // 경찬씨가 보내주는 키 값이 존재.
-    // 키 값에 맞춰서 보내주면 됨
-    // 예를 들어 id, password를 post 방식으로 보냈다고 하면
-    // const {id, password} = req.body
     const {email,password,nickname}  = req.body;
-    console.log(email,password,nickname)
+    
+    // MySQL 연결
+    connection.connect((err) => {
+      if (err) {
+        console.error('MySQL 연결 실패:', err);
+        return;
+      }
+      console.log('MySQL에 성공적으로 연결되었습니다.');
+
+      // 여기에서 MySQL 쿼리를 실행하거나 다른 작업을 수행할 수 있습니다.
+      const query = 'INSERT INTO project.project (email, password, nickname) VALUES (?, ?, ?)';
+      const values = [email,password,nickname];
+      connection.query(query, values, (err, results) => {
+        if (err) {
+          console.error('데이터 조회 실패:', err);
+          return;
+        }
+        // console.log('조회된 데이터:', results);
+        
+        
+
+        // MySQL 연결 종료
+        connection.end((err) => {
+            if (err) {
+            console.error('MySQL 연결 종료 실패:', err);
+            return;
+            }
+            console.log('MySQL 연결을 성공적으로 종료했습니다.');
+        });
+      });
+    });
+
     return res.status(200).json({
-      // data : '전달할 데이터',
       message : "완료"
     });  
   } catch (error) {
@@ -35,6 +56,7 @@ router.post('/signup',  function(req, res, next) {
       message : 'internal server error'
     })
   }
+  
 });
 
 router.post('/login',  function(req, res, next) {
@@ -50,5 +72,7 @@ router.post('/login',  function(req, res, next) {
     })
   }
 });
+
+
 
 module.exports = router;

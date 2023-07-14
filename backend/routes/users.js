@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const { swaggerUi, specs } = require('../swagger/swagger');
 
 /* GET home page. */
 /**
@@ -16,6 +17,39 @@ var router = express.Router();
  * 500 status internal server error
  * 
  * asynchronus 형태로 동작
+ */
+
+/**
+ * @swagger
+ * tags:
+ *   name: User
+ *   description: User management APIs
+ */
+
+/**
+ * @swagger
+ * /signup:
+ *   post:
+ *     summary: Register a new user
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *               nickname:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Successful registration
+ *       500:
+ *         description: Internal server error
  */
 
 router.post('/signup',  function(req, res, next) {
@@ -37,6 +71,31 @@ router.post('/signup',  function(req, res, next) {
   }
 });
 
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Authenticate user and generate a token
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Successful login
+ *       500:
+ *         description: Internal server error
+ */
+
+
 router.post('/login',  function(req, res, next) {
   try {
     let {email, password} = req.body;
@@ -50,5 +109,8 @@ router.post('/login',  function(req, res, next) {
     })
   }
 });
+
+router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs', swaggerUi.setup(specs));
 
 module.exports = router;

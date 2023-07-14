@@ -74,7 +74,7 @@ const SignIn = ({ isOpen, close }) => {
     }else{
       if (emailCheck && passwordCheck) {
         axios
-          .post("http://localhost:8080/user/signup", {
+          .post("http://localhost:8080/user/login", {
             email: email,
             password: password,
           })

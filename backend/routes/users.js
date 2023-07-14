@@ -24,8 +24,8 @@ router.post('/signup',  function(req, res, next) {
     // 키 값에 맞춰서 보내주면 됨
     // 예를 들어 id, password를 post 방식으로 보냈다고 하면
     // const {id, password} = req.body
-    const { email, password,nickname } = req.body;
-    console.log(nickname,email,password)
+    const {email,password,nickname}  = req.body;
+    console.log(email,password,nickname)
     return res.status(200).json({
       // data : '전달할 데이터',
       message : "완료"
@@ -35,8 +35,20 @@ router.post('/signup',  function(req, res, next) {
       message : 'internal server error'
     })
   }
-
 });
 
+router.post('/login',  function(req, res, next) {
+  try {
+    let {email, password} = req.body;
+    console.log(email,password)
+    return res.status(200).json({
+      message : "완료"
+    });  
+  } catch (error) {
+    return res.status(500).json({
+      message : 'internal server error'
+    })
+  }
+});
 
 module.exports = router;

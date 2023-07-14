@@ -26,7 +26,7 @@ router.get('/signup', function(req, res, next) {
   res.render('index', { title: 'User signup' });
 });
 
-router.post('/signup', function(req, res, next) {
+router.post('/signup',  function(req, res, next) {
   try {
     // 경찬씨가 보내주는 키 값이 존재.
     // 키 값에 맞춰서 보내주면 됨

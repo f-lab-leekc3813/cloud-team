@@ -1,12 +1,12 @@
 const database= require('./database.config');
 
-async function emailCheck (email){
+async function nicknameCheck (nickname){
     let co;
 
     try {
         co = await database.getConnection();
-        const query = `SELECT email FROM project.project WHERE email=?`;
-        const values = [email];
+        const query = `SELECT nickname FROM project.project WHERE nickname=?`;
+        const values = [nickname];
 
         const [result] = await co.execute(query,values);
         co.release();
@@ -21,4 +21,4 @@ async function emailCheck (email){
 }
 
 
-module.exports = emailCheck;
+module.exports = nicknameCheck;

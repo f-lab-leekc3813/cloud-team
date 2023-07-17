@@ -1,5 +1,4 @@
-import React from 'react';
-import { RecoilRoot, atom, useRecoilState } from 'recoil';
+import { atom} from 'recoil';
 
 export const LoginState = atom({
     key: 'LoginState',

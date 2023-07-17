@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 import dummy1 from '../../data/partTimeData/content1.json'
 import dummy2 from '../../data/partTimeData/content2.json'
 import classes from './Content2.module.css'
@@ -11,26 +13,28 @@ function Content2 () {
             <div className={classes.content2_containers1}>
                 {dummy1.data.map((data) => {
                     return(
-                        <div key={data.id} className={classes.content2_box}>
-                           <article className={classes.content2_box1}>
-                                <div className={classes.content2_boximage}>
-                                    <span className={classes.content2_boxspan} >
-                                        <img className={classes.content2_img1}src={data.image} alt='사진' />
-                                    </span>
-                                </div>
-                                <div className={classes.content2_boxcontent}>
-                                    <div className={classes.content2_boxtitle}>
-                                        {data.title}
-                                    </div>
-                                    <div className={classes.content2_boxregion}>
-                                        {data.region}
-                                    </div>
-                                    <div className={classes.content2_boxpay}>
-                                        {data.pay}
-                                    </div>
-                                </div>
-                           </article>
-                        </div>
+                        <div  key={data.id} className={classes.content2_box}>
+                            <Link to={`/parttime/${data.title}`}>
+                                <article className={classes.content2_box1}>
+                                     <div className={classes.content2_boximage}>
+                                         <span className={classes.content2_boxspan} >
+                                             <img className={classes.content2_img1}src={data.image} alt='사진' />
+                                         </span>
+                                     </div>
+                                     <div className={classes.content2_boxcontent}>
+                                         <div className={classes.content2_boxtitle}>
+                                             {data.title}
+                                         </div>
+                                         <div className={classes.content2_boxregion}>
+                                             {data.region}
+                                         </div>
+                                         <div className={classes.content2_boxpay}>
+                                             {data.pay}
+                                         </div>
+                                     </div>
+                                </article>
+                           </Link>
+                        </div> 
                     )
                 })}
             </div>
@@ -52,24 +56,26 @@ function Content2 () {
                 {dummy2.data.map((data) => {
                         return(
                             <div key={data.id} className={classes.content2_box}>
-                            <article className={classes.content2_box1}>
-                                    <div className={classes.content2_boximage}>
-                                        <span className={classes.content2_boxspan} >
-                                            <img className={classes.content2_img1}src={data.image} alt='사진' />
-                                        </span>
-                                    </div>
-                                    <div className={classes.content2_boxcontent}>
-                                        <div className={classes.content2_boxtitle}>
-                                            {data.title}
-                                        </div>
-                                        <div className={classes.content2_boxregion}>
-                                            {data.region}
-                                        </div>
-                                        <div className={classes.content2_boxpay}>
-                                            {data.pay}
-                                        </div>
-                                    </div>
-                            </article>
+                                <Link to={`/parttime/${data.title}`}>
+                                    <article className={classes.content2_box1}>
+                                            <div className={classes.content2_boximage}>
+                                                <span className={classes.content2_boxspan} >
+                                                    <img className={classes.content2_img1}src={data.image} alt='사진' />
+                                                </span>
+                                            </div>
+                                            <div className={classes.content2_boxcontent}>
+                                                <div className={classes.content2_boxtitle}>
+                                                    {data.title}
+                                                </div>
+                                                <div className={classes.content2_boxregion}>
+                                                    {data.region}
+                                                </div>
+                                                <div className={classes.content2_boxpay}>
+                                                    {data.pay}
+                                                </div>
+                                            </div>
+                                    </article>
+                                </Link>
                             </div>
                         )
                     })}
@@ -77,7 +83,7 @@ function Content2 () {
             <div className={classes.content2_appbanner}>
                 <div className={classes.content2_appbanner1}>
                     <div className={classes.content2_appbanner2}>
-                        <span classNAme={classes.content2_appspan}>
+                        <span className={classes.content2_appspan}>
                             <img className={classes.content2_appimg} src='/images/parttime/image10.png' alt='마커' />
                         </span>
                     </div>

@@ -1,75 +1,43 @@
 var express = require('express');
 var router = express.Router();
+const isCheck = require('../config/isCheck');
+const connect = require('../config/connection');
+const login = require('../config/login');
+
+
+
 const { swaggerUi, specs } = require('../swagger/swagger');
 
-/* GET home page. */
-/**
- * 200 status OK
- * 201 status OK (post)
- * 
- * 304 status no update
- * 
- * 400 status bad request
- * 401 status unauthorized
- * 403 status forbidden
- * 404 status not found
- * 
- * 500 status internal server error
- * 
- * asynchronus 형태로 동작
- */
 
-/**
- * @swagger
- * tags:
- *   name: User
- *   description: User management APIs
- */
-
-/**
- * @swagger
- * /signup:
- *   post:
- *     summary: Register a new user
- *     tags: [User]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               email:
- *                 type: string
- *               password:
- *                 type: string
- *               nickname:
- *                 type: string
- *     responses:
- *       200:
- *         description: Successful registration
- *       500:
- *         description: Internal server error
- */
-
-router.post('/signup',  function(req, res, next) {
+router.post('/signup', function (req, res, next) {
   try {
-    // 경찬씨가 보내주는 키 값이 존재.
-    // 키 값에 맞춰서 보내주면 됨
-    // 예를 들어 id, password를 post 방식으로 보냈다고 하면
-    // const {id, password} = req.body
-    const {email,password,nickname}  = req.body;
-    console.log(email,password,nickname)
-    return res.status(200).json({
-      // data : '전달할 데이터',
-      message : "완료"
-    });  
+    const { email, password, nickname } = req.body;
+
+    isCheck(email, password, nickname)
+      .then(({ emcheck, nicheck }) => {
+        if (emcheck) {
+          return res.status(201).json({
+            message: "중복되는 정보가 존재합니다."
+          })
+        } else if (nicheck) {
+          return res.status(202).json({
+            message: "이미 있는 닉네임"
+          })
+        } else {
+          connect(email, password, nickname)
+          return res.status(200).json({
+            message: "완료"
+          })
+        }
+      })
   } catch (error) {
     return res.status(500).json({
-      message : 'internal server error'
+      message: 'internal server error'
     })
   }
 });
+
+
 
 /**
  * @swagger
@@ -96,19 +64,28 @@ router.post('/signup',  function(req, res, next) {
  */
 
 
-router.post('/login',  function(req, res, next) {
+router.post('/login', function (req, res, next) {
   try {
-    let {email, password} = req.body;
-    console.log(email,password)
-    return res.status(200).json({
-      message : "완료"
-    });  
+    let { email, password } = req.body;
+    login(email, password)
+      .then((result) => {
+        if (result) {
+          return res.status(200).json({
+            message: "완료"
+          });
+        } else {
+          return res.status(205).json({
+            message: "잘못된 이메일 또는 비밀번호"
+          })
+        }
+      })
   } catch (error) {
-    return res.status(500).json({
-      message : 'internal server error'
-    })
-  }
+  return res.status(500).json({
+    message: 'internal server error'
+  })
+}
 });
+
 
 router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(specs));

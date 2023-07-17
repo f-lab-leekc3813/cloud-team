@@ -11,6 +11,7 @@ import EstatePage from './pages/Estate';
 import Mypage from './pages/Mypage';
 import BestPage from './pages/BestPage';
 import PartTimeDetail from './component/PartTimeBody/PartTimeDetail/PartTimeDetail';
+import EstateDetail from './component/EstateBody/EstateDetail/EstateDetail';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path = "/" element ={<HomePage />} />
             <Route path = "/estate" element ={<EstatePage />} />
+            <Route path = "/estate/:title" element = {<EstateDetail />} />
             <Route path = "/neighborhood" element ={<NeighborhoodPage />} />
             <Route path = "/parttime" element ={<PartTimePage />} />
             <Route path = "/parttime/:title" element = {<PartTimeDetail />} />

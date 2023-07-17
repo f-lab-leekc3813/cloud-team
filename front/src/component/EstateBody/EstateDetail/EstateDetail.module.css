@@ -1,0 +1,27 @@
+.containers {
+    width: 100vw;
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+    padding: 5.5rem 1rem 5rem;
+    }
+}
+
+.main {
+    color: var(--seed-scale-color-gray-900);
+    margin: 0 auto;
+    max-width: 48rem;
+    padding-top: 3.5rem;
+    display: block;
+}
+
+.grayline {
+    background-color: #DCDEE3;
+    box-sizing: border-box;
+    height: 1px;
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+    display: block;
+}

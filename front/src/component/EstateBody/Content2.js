@@ -1,3 +1,6 @@
+import {Link} from 'react-router-dom';
+
+
 import dummy1 from '../../data/EstateData/Content1.json'
 import dummy2 from '../../data/EstateData/Content2.json'
 
@@ -14,24 +17,26 @@ function Content2 () {
                 {dummy1.data.map((data) => {
                     return(
                         <div key={data.id} className={classes.content2_box}>
-                           <article className={classes.content2_box1}>
-                                <div className={classes.content2_boximage}>
-                                    <span className={classes.content2_boxspan} >
-                                        <img className={classes.content2_img1}src={data.image} alt='사진' />
-                                    </span>
-                                </div>
-                                <div className={classes.content2_boxcontent}>
-                                    <div className={classes.content2_boxname}>
-                                        {data.name}
-                                    </div>
-                                    <div className={classes.content2_boxregion}>
-                                        {data.region}
-                                    </div>
-                                    <div className={classes.content2_boxinfo1}>
-                                        {data.info1}
-                                    </div>
-                                </div>
-                           </article>
+                            <Link to={`/estate/${data.name}`}>
+                                <article className={classes.content2_box1}>
+                                     <div className={classes.content2_boximage}>
+                                         <span className={classes.content2_boxspan} >
+                                             <img className={classes.content2_img1}src={data.image} alt='사진' />
+                                         </span>
+                                     </div>
+                                     <div className={classes.content2_boxcontent}>
+                                         <div className={classes.content2_boxname}>
+                                             {data.name}
+                                         </div>
+                                         <div className={classes.content2_boxregion}>
+                                             {data.region}
+                                         </div>
+                                         <div className={classes.content2_boxinfo1}>
+                                             {data.info1}
+                                         </div>
+                                     </div>
+                                </article>
+                            </Link>
                         </div>
                     )
                 })}

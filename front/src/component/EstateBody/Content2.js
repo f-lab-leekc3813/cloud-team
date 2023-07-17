@@ -47,7 +47,7 @@ function Content2 () {
                         복비 없이 투명한 부동산 직거래 당근마켓 내 근처 탭에서 바로 찾아보세요!
                     </h1>
                 </div>
-                <span className={classes.content2_button} button id="realty_app_download" type="button">
+                <span className={classes.content2_button}  type="button">
                     앱 다운로드 하기
                 </span>
             </div>

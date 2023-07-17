@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import {Link , useNavigate} from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
@@ -39,8 +38,8 @@ function Header () {
                 <div className = {classes.header_content}>
                     <form className={classes.header_form}>
                          <input className={classes.search_input} type="text" placeholder="물품이나 동네를 검색해보세요" />
-                         <Button onClick={loginHandler} variant="warning" style={{marginRight : '10px'}}>내정보</Button> 
                     </form>
+                    <Button onClick={loginHandler} variant="warning" style={{marginRight : '10px'}}>내정보</Button> 
                     <LoginButton  />
                 </div>
             </div>

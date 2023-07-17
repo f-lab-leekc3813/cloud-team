@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {useRecoilState} from "recoil";
+import {LoginState} from "../store/LoginState";
 
 import classes from "./SignIn.module.css";
 
@@ -11,6 +13,7 @@ const SignIn = ({ isOpen, close }) => {
   const [nickname, setNickname] = useState("");
   const [nicknameCheck, setNicknameCheck] = useState(false);
 
+  const [login, setLogin] = useRecoilState(LoginState);
   const [isSignUp, setIsSignUp] = useState(false);
 
   const eamilHandler = (e) => {
@@ -84,6 +87,7 @@ const SignIn = ({ isOpen, close }) => {
               localStorage.setItem('token', token);
 
               alert("로그인이 완료되었습니다(로그인).");
+              setLogin(true);
               close();
               setEmail("");
               setPassword("");

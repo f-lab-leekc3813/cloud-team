@@ -40,12 +40,6 @@
     margin-inline-end: 0px;
 }
 
-.content6_map {
-    background-color: #FF6F0424;
-    font-size: 50px;
-    width: 100%;
-    height: 200px;
-}
 
 @media screen and (min-width: 768px) {
     .content6_address {

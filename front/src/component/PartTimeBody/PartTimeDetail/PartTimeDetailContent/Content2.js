@@ -11,6 +11,7 @@ function Content2 () {
                 우리집청과 ・ 
                 <span className={classes.content2_where}>작성</span>
             </pre>
+            
         </section>
     )
 }

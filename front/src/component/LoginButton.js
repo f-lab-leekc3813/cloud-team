@@ -16,7 +16,7 @@ const LoginButton = () => {
 
   return (
     <>
-      <Button variant="danger" onClick={openModal}>로그인</Button>
+      <Button variant="secondary"  onClick={openModal}>로그인</Button>
       <SignIn isOpen={isModalOpen} close={closeModal} />
     </>
   );

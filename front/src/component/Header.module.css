@@ -24,8 +24,12 @@
     text-decoration: none;
 }
 
+.header_image{
+    width:140px;
+    height:130px;
+}
 .header_menu_selected {
-    color: #ff6f0f;
+    color: #050505;
 	font-style: normal;
 	font-weight: 700;
 	font-size:large;
@@ -79,3 +83,22 @@
     cursor: pointer;
     margin-left: 50px;
 }
+
+
+.my_page{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #6c757d;
+    --bs-btn-border-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #5c636a;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 217,164,6;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #5c636a;
+    --bs-btn-active-border-color: #5c636a;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #5c636a;
+    --bs-btn-disabled-border-color: #5c636a;
+}
+

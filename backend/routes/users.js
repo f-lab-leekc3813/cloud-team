@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const isCheck = require('./isCheck');
+const isCheck = require('../config/isCheck');
 const connect = require('../config/connection');
 
 
@@ -10,14 +10,14 @@ const { swaggerUi, specs } = require('../swagger/swagger');
 router.post('/signup', function (req, res, next) {
   try {
     const { email, password, nickname } = req.body;
-
+    
     isCheck(email, password, nickname)
-      .then((result) => {
-        if (result.emcheck) {
+      .then(({emcheck,nicheck}) => {
+        if (emcheck) {
           return res.status(201).json({
             message: "중복되는 정보가 존재합니다."
           })
-        } else if (result.nicheck) {
+        } else if (nicheck) {
           return res.status(202).json({
             message: "이미 있는 닉네임"
           })

@@ -52,6 +52,9 @@ const SignIn = ({ isOpen, close }) => {
             if (res.status === 200) {
               alert("회원가입이 완료되었습니다(회원가입).");
               close();
+              setEmail("");
+              setPassword("");
+              setNickname("");
             } else if (res.status === 201) {
               alert("이미 있는 이메일입니다.")
             } else if (res.status === 202) {
@@ -85,7 +88,7 @@ const SignIn = ({ isOpen, close }) => {
               setEmail("");
               setPassword("");
             } else {
-              alert("로그인에 실패하였습니다(로그인,연결실패).");
+              alert("잘못된 이메일 또는 비밀번호");
             }
           })
           .catch((err) => {

@@ -5,7 +5,7 @@ async function login (email,password){
 
     try {
         co = await database.getConnection();
-        const query = `SELECT email,password FROM project.project WHERE email=? and password=?`;
+        const query = `SELECT email,password FROM project.user WHERE email=? and password=?`;
         const values = [email,password];
 
         const [result] = await co.execute(query,values);

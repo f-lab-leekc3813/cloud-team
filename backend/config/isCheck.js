@@ -6,7 +6,7 @@ async function emailCheck (email){
 
     try {
         co = await database.getConnection();
-        const query = `SELECT email FROM project.project WHERE email=?`;
+        const query = `SELECT email FROM project.user WHERE email=?`;
         const values = [email];
 
         const [result] = await co.execute(query,values);
@@ -26,7 +26,7 @@ async function nicknameCheck (nickname){
 
     try {
         co = await database.getConnection();
-        const query = `SELECT nickname FROM project.project WHERE nickname=?`;
+        const query = `SELECT nickname FROM project.user WHERE nickname=?`;
         const values = [nickname];
 
         const [result] = await co.execute(query,values);

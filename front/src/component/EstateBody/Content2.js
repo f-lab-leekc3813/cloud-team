@@ -60,6 +60,7 @@ function Content2 () {
                 {dummy2.data.map((data) => {
                     return(
                         <div key={data.id} className={classes.content2_box}>
+                            <Link to={`/estate/${data.name}`}>
                            <article className={classes.content2_box1}>
                                 <div className={classes.content2_boximage}>
                                     <span className={classes.content2_boxspan} >
@@ -78,6 +79,7 @@ function Content2 () {
                                     </div>
                                 </div>
                            </article>
+                           </Link>
                         </div>
                     )
                 })}

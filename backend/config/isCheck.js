@@ -41,5 +41,10 @@ async function nicknameCheck (nickname){
     }
 }
 
-
-module.exports = {emailCheck,nicknameCheck};
+async function isCheck(email, password, nickname) {
+    const emcheck = await emailCheck(email);
+    const nicheck = await nicknameCheck(nickname);
+    return {emcheck, nicheck};
+  }
+  
+  module.exports = isCheck;

@@ -21,7 +21,7 @@ function Header () {
         <div className = {classes.header}>
             <div className = {classes.header_wrap}>
                 <div className = {classes.header_content}>
-                    <img src='images/logo.png' alt='로고' />
+                    <img src='/images/logo.png' alt='로고' />
                 </div>
                     <Link to = '/' className = {classes.header_content}>
                         <button className={classes.header_menu_selected} >중고거래</button>

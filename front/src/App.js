@@ -25,7 +25,7 @@ function App() {
             <Route path = "/estate" element ={<EstatePage />} />
             <Route path = "/neighborhood" element ={<NeighborhoodPage />} />
             <Route path = "/parttime" element ={<PartTimePage />} />
-            <Route path = "parttime/:title" element = {<PartTimeDetail />} />
+            <Route path = "/parttime/:title" element = {<PartTimeDetail />} />
             <Route path = "/mypage" element ={<Mypage />} />
             <Route path = "/bestpage" element ={<BestPage />} />
           </Routes>

@@ -112,7 +112,7 @@ const SignIn = ({ isOpen, close }) => {
               ×
             </span>
             <div className={classes.modalContents} onClick={(e) => e.stopPropagation()}>
-              <img className={classes.signinIcon} src="images/logo.png" alt="애플마켓 로그인" />
+              <img className={classes.signinIcon} src="/images/logo.png" alt="애플마켓 로그인" />
               {isSignUp ?
                 <input
                   name="nickname"
@@ -152,11 +152,11 @@ const SignIn = ({ isOpen, close }) => {
               }
               <div className={classes.socialBox}>
                 <div className={classes.kakao}>
-                  <img className={classes.kakaoLogo} src="images/signUp/kakao.jpg" alt="Kakao Logo" />
+                  <img className={classes.kakaoLogo} src="/images/signUp/kakao.jpg" alt="Kakao Logo" />
                   <div className={classes.kakaoText}>카카오톡 계정으로 신규가입</div>
                 </div>
                 <div className={classes.google}>
-                  <img className={classes.googleLogo} src="images/signUp/google.png" alt="Facebook Logo" />
+                  <img className={classes.googleLogo} src="/images/signUp/google.png" alt="Facebook Logo" />
                   <div className={classes.googleText}>구글 계정으로 신규가입</div>
                 </div>
               </div>

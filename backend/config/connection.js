@@ -5,7 +5,7 @@ async function connection (email,password,nickname){
 
     try {
         co = await database.getConnection();
-        const query = `INSERT INTO project.project (email, password, nickname) VALUES (?, ?, ?)`;
+        const query = `INSERT INTO project.user (email, password, nickname) VALUES (?, ?, ?)`;
         const values = [email,password,nickname];
 
         const [result] = await co.execute(query,values);

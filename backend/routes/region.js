@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const regionCheck = require('../config/regionCheck')
+const regionCheck = require('../config/regionCheck');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

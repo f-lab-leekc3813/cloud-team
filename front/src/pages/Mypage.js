@@ -1,5 +1,5 @@
 import classes from './Mypage.module.css';
-import Content1 from '../component/MyPage/Content1.js';
+import Content1 from '../component/MyPage/Content1';
 
 
 

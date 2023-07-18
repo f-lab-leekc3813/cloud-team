@@ -1,43 +1,27 @@
 @media screen and (min-width: 768px){
-    .content1_containers {
-        height: 19.6875rem;
-        position: relative;
+    .content1_container1 {
+        height: 50.6875rem;
+        position: absolute;
         width: 100%;
-        background: #D2EDFA;
+        background: #c37041;
         overflow: hidden;
         display: block;
+        left:0;
     }
 }
 
-.content1_container{
-    padding: 3rem 1rem 0;
-    color: var(--seed-scale-color-gray-900);
-    margin: 0 auto;
-    max-width: 48rem;
-    overflow: hidden;
-    display: block;
-}
-
-.content1_container1{
-    display: block;
-}
-
-
 .content1_container2{
-    line-height: 1.5;
-    font-size: 2rem;
-    color: var(--seed-static-color-static-gray-900);
-    margin: 0;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    display: block;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+        height: 50.6875rem;
+        position: absolute;
+        width: 40%;
+        background: #ffffff;
+        overflow: hidden;
+        display: block;
+        left:0;
 }
+
 
 .content1_container3{
-    line-height: 1.32;
-    font-size: 1.125rem;
     display: block;
     margin: 1rem 0 0;
     color: var(--seed-static-color-static-gray-900);
@@ -48,43 +32,137 @@
 }
 
 .content1_container4{
-    left: 50%;
-    right: 0;
-    width: 30.3125rem;
-    height: 16.875rem;
-    transform: translateX(0);
+    height: 50.6875rem;
     position: absolute;
-    bottom: 0;
+    width: 60%;
+    background: #7414a0;
+    overflow: hidden;
     display: block;
+    right:0;
 }
 
 .content1_container5{
-    box-sizing: border-box;
-    display: block;
-    overflow: hidden;
-    width: initial;
-    height: initial;
-    background: none;
-    opacity: 1;
-    border: 0;
-    margin: 0;
-    padding: 0;
+    height: 20.6875rem;
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    width: 100%;
+    background: #ffffff;
+    overflow: hidden;
+    display: block;
+    left:0;
 }
 
 .content1_container6{
-    width:485px;
-    height:270px;
-    vertical-align: middle;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    box-sizing: border-box;
-    overflow-clip-margin: content-box;
-    overflow: clip;
+    width: 130px;
+    height: 130px; 
+    border-radius: 70%;
+    overflow: hidden;
+    left:38%;
+    position:relative;
+    top: 20px;
 }
+
+.content1_container7{
+    left:41%;
+    height: 5rem;
+    width:10%;
+    position: relative;
+    top: 170px;
+
+}
+
+.content1_container9{
+    display:block;
+    height:2.5rem;
+    width:100%;
+    top:0px;
+    background: #ebda25;
+    position:absolute;
+    background: #ffffff;
+}
+
+.content1_container10{
+    font-size: 1.5rem;
+    font-weight: 800;
+    position:absolute;
+    height:2.5rem;
+    width:200%;
+    top:10px;
+    left:9%;
+    background: #ffffff;
+}
+
+.header_image1{
+    width:55px;
+    height:55px;
+    position:absolute;
+    top:0px;
+}
+
+.header_image2{
+    width:55px;
+    height: 55px;
+    position:absolute;
+    top:0px;
+    left:28%;
+}
+
+.content1_container11{
+    left:36.5%;
+    height: 5rem;
+    width:10%;
+    position: relative;
+    top: 175px;
+    font-size: 0.85rem;
+    font-weight: 550;
+}
+
+.content1_container12{
+    left:13%;
+    height: 5rem;
+    width:80%;
+    position: relative;
+    top: 200px;
+    font-size: 1rem;
+    font-weight: 550;
+    background: #ffffff;
+    padding: 0 17px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 10px 0 rgba(72,75,108,.08);
+    border: solid 1px #35a6f1;
+    background-color: #fff;
+    box-sizing: border-box;
+    outline-width:5px;
+}
+
+.content1_container13{
+    left:1%;
+    height: 5rem;
+    position: relative;
+    font-size: 0.85rem;
+    font-weight: 550;
+    top:8px;
+}
+
+.content1_image3{
+    width:60px;
+    height: 60px;
+    position:relative;
+    top:8px;
+    left:1%;
+}
+
+.content1_container20{
+    line-height: 1.4;
+    font-size: .875rem;
+    font-weight: 700;
+    display: inline-block;
+    color: #fff;
+    padding: 0.5rem 0.625rem;
+    border-radius: 0.25rem;
+    background-color: #a7a7a7;
+    border: 0;
+    right:5%;
+    position:absolute;
+    top: 19px;
+}
+

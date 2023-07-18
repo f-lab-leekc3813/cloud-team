@@ -1,0 +1,786 @@
+[
+ {
+  "item": "나이키 운동화",
+  "price": "10,000원",
+  "region": "세종시  다정동",
+  "like": 9,
+  "chat": 48,
+  "image": "images\/sj\/sjimg0.jpg"
+ },
+ {
+  "item": "이케아 트롤리 철제카트",
+  "price": "10,000원",
+  "region": "세종시  고운동",
+  "like": 5,
+  "chat": 15,
+  "image": "images\/sj\/sjimg1.jpg"
+ },
+ {
+  "item": "명품패딩 싸게 처분합니다",
+  "price": "300,000원",
+  "region": "세종시  도담동",
+  "like": 5,
+  "chat": 19,
+  "image": "images\/sj\/sjimg2.jpg"
+ },
+ {
+  "item": "위닉스 제습기",
+  "price": "80,000원",
+  "region": "세종시  종촌동",
+  "like": 3,
+  "chat": 6,
+  "image": "images\/sj\/sjimg3.jpg"
+ },
+ {
+  "item": "금팔찌",
+  "price": "320,000원",
+  "region": "세종시  연동면",
+  "like": 2,
+  "chat": 6,
+  "image": "images\/sj\/sjimg4.jpg"
+ },
+ {
+  "item": "바네스데코 콘솔 서랍장ㅡ가져다드려요",
+  "price": "100,000원",
+  "region": "세종시  아름동",
+  "like": 10,
+  "chat": 2,
+  "image": "images\/sj\/sjimg5.jpg"
+ },
+ {
+  "item": "루이비통 남성 모노그램 체인 팔찌 써지컬",
+  "price": "95,000원",
+  "region": "세종시  조치원읍",
+  "like": 14,
+  "chat": 19,
+  "image": "images\/sj\/sjimg6.jpg"
+ },
+ {
+  "item": "비데",
+  "price": "20,000원",
+  "region": "세종시  나성동",
+  "like": 3,
+  "chat": 4,
+  "image": "images\/sj\/sjimg7.jpg"
+ },
+ {
+  "item": "LG TV 50LB6780",
+  "price": "10,000원",
+  "region": "세종시  나성동",
+  "like": 1,
+  "chat": 7,
+  "image": "images\/sj\/sjimg8.jpg"
+ },
+ {
+  "item": "새것 ~~~만원",
+  "price": "10,000원",
+  "region": "세종시  고운동",
+  "like": 3,
+  "chat": 7,
+  "image": "images\/sj\/sjimg9.jpg"
+ },
+ {
+  "item": "각종 보드게임 팝니다",
+  "price": "5,000원",
+  "region": "세종시  도담동",
+  "like": 8,
+  "chat": 20,
+  "image": "images\/sj\/sjimg10.jpg"
+ },
+ {
+  "item": "식탁의자",
+  "price": "5,000원",
+  "region": "세종시  소담동",
+  "like": 5,
+  "chat": 7,
+  "image": "images\/sj\/sjimg11.jpg"
+ },
+ {
+  "item": "골프채 가방포함 팔아요",
+  "price": "180,000원",
+  "region": "세종시  고운동",
+  "like": 5,
+  "chat": 8,
+  "image": "images\/sj\/sjimg12.jpg"
+ },
+ {
+  "item": "벤츠 붕붕카 푸쉬카",
+  "price": "15,000원",
+  "region": "세종시  반곡동",
+  "like": 7,
+  "chat": 5,
+  "image": "images\/sj\/sjimg13.jpg"
+ },
+ {
+  "item": "사이드 원목테이블",
+  "price": "12,000원",
+  "region": "세종시  고운동",
+  "like": 5,
+  "chat": 6,
+  "image": "images\/sj\/sjimg14.jpg"
+ },
+ {
+  "item": "마이크로킥보드 맥시",
+  "price": "50,000원",
+  "region": "세종시  고운동",
+  "like": 4,
+  "chat": 7,
+  "image": "images\/sj\/sjimg15.jpg"
+ },
+ {
+  "item": "비비안웨스트우드 화이트 셔츠 남방 미듐",
+  "price": "20,000원",
+  "region": "세종시  고운동",
+  "like": 10,
+  "chat": 5,
+  "image": "images\/sj\/sjimg16.jpg"
+ },
+ {
+  "item": "샤넬 향수",
+  "price": "30,000원",
+  "region": "세종시  집현동",
+  "like": 8,
+  "chat": 5,
+  "image": "images\/sj\/sjimg17.jpg"
+ },
+ {
+  "item": "갤럭시 노트10플러스 공기계 판매",
+  "price": "150,000원",
+  "region": "세종시  보람동",
+  "like": 6,
+  "chat": 5,
+  "image": "images\/sj\/sjimg18.jpg"
+ },
+ {
+  "item": "냉장고 팔아요",
+  "price": "70,000원",
+  "region": "세종시  대평동",
+  "like": 4,
+  "chat": 8,
+  "image": "images\/sj\/sjimg19.jpg"
+ },
+ {
+  "item": "세이펜 SBS-1000 32기가",
+  "price": "60,000원",
+  "region": "세종시  나성동",
+  "like": 6,
+  "chat": 5,
+  "image": "images\/sj\/sjimg20.jpg"
+ },
+ {
+  "item": "이케아 철제 선반 판매",
+  "price": "5,000원",
+  "region": "세종시  해밀동",
+  "like": 7,
+  "chat": 3,
+  "image": "images\/sj\/sjimg21.jpg"
+ },
+ {
+  "item": "나이키 반팔티 새상품 10000",
+  "price": "10,000원",
+  "region": "세종시  소담동",
+  "like": 5,
+  "chat": 5,
+  "image": "images\/sj\/sjimg22.jpg"
+ },
+ {
+  "item": "메리다 900kr",
+  "price": "150,000원",
+  "region": "세종시  종촌동",
+  "like": 3,
+  "chat": 4,
+  "image": "images\/sj\/sjimg23.jpg"
+ },
+ {
+  "item": "타보 휴대용유모차",
+  "price": "10,000원",
+  "region": "세종시  종촌동",
+  "like": 3,
+  "chat": 6,
+  "image": "images\/sj\/sjimg24.jpg"
+ },
+ {
+  "item": "베이비젠 요요 휴대용 유모차",
+  "price": "100,000원",
+  "region": "세종시  한솔동",
+  "like": 5,
+  "chat": 10,
+  "image": "images\/sj\/sjimg25.jpg"
+ },
+ {
+  "item": "60인치 LED TV + 이동식거치대",
+  "price": "500,000원",
+  "region": "세종시  다정동",
+  "like": 9,
+  "chat": 9,
+  "image": "images\/sj\/sjimg26.jpg"
+ },
+ {
+  "item": "크록스 팝니다 250mm",
+  "price": "12,000원",
+  "region": "세종시  반곡동",
+  "like": 1,
+  "chat": 5,
+  "image": "images\/sj\/sjimg27.jpg"
+ },
+ {
+  "item": "스카티 카메론 퍼터34인치 뉴포트2 팝니다",
+  "price": "250,000원",
+  "region": "세종시  어진동",
+  "like": 10,
+  "chat": 6,
+  "image": "images\/sj\/sjimg28.jpg"
+ },
+ {
+  "item": "레스포 20인치 자전거",
+  "price": "50,000원",
+  "region": "세종시  새롬동",
+  "like": 3,
+  "chat": 2,
+  "image": "images\/sj\/sjimg29.jpg"
+ },
+ {
+  "item": "업소용 선반 팝니다",
+  "price": "30,000원",
+  "region": "세종시  보람동",
+  "like": 1,
+  "chat": 5,
+  "image": "images\/sj\/sjimg30.jpg"
+ },
+ {
+  "item": "내일 가져가시면 5만원",
+  "price": "60,000원",
+  "region": "세종시  어진동",
+  "like": 2,
+  "chat": 3,
+  "image": "images\/sj\/sjimg31.jpg"
+ },
+ {
+  "item": "김치냉장고",
+  "price": "15,000원",
+  "region": "세종시  나성동",
+  "like": 3,
+  "chat": 3,
+  "image": "images\/sj\/sjimg32.jpg"
+ },
+ {
+  "item": "캐리비안베이 이용권",
+  "price": "36,000원",
+  "region": "세종시  나성동",
+  "like": 2,
+  "chat": 5,
+  "image": "images\/sj\/sjimg33.jpg"
+ },
+ {
+  "item": "캐리어",
+  "price": "2,000원",
+  "region": "세종시  조치원읍",
+  "like": 6,
+  "chat": 5,
+  "image": "images\/sj\/sjimg34.jpg"
+ },
+ {
+  "item": "1단 철제선반",
+  "price": "10,000원",
+  "region": "세종시  집현동",
+  "like": 13,
+  "chat": 3,
+  "image": "images\/sj\/sjimg35.jpg"
+ },
+ {
+  "item": "계획표 갖고가실분",
+  "price": "나눔🧡",
+  "region": "세종시  아름동",
+  "like": 2,
+  "chat": 3,
+  "image": "images\/sj\/sjimg36.jpg"
+ },
+ {
+  "item": "주유카드",
+  "price": "250,000원",
+  "region": "세종시  조치원읍",
+  "like": 3,
+  "chat": 10,
+  "image": "images\/sj\/sjimg37.jpg"
+ },
+ {
+  "item": "[하기스 기저귀] 하기스 맥스드라이 밴드형 3단계",
+  "price": "3,000원",
+  "region": "세종시  고운동",
+  "like": 1,
+  "chat": 3,
+  "image": "images\/sj\/sjimg38.jpg"
+ },
+ {
+  "item": "윌슨블레이드 라켓팝니다",
+  "price": "70,000원",
+  "region": "세종시  대평동",
+  "like": 4,
+  "chat": 2,
+  "image": "images\/sj\/sjimg39.jpg"
+ },
+ {
+  "item": "sk 전자렌지",
+  "price": "25,000원",
+  "region": "세종시  조치원읍",
+  "like": 1,
+  "chat": 5,
+  "image": "images\/sj\/sjimg40.jpg"
+ },
+ {
+  "item": "쿠쿠밥솥(10인용)",
+  "price": "60,000원",
+  "region": "세종시  소담동",
+  "like": 11,
+  "chat": 8,
+  "image": "images\/sj\/sjimg41.jpg"
+ },
+ {
+  "item": "TV",
+  "price": "200,000원",
+  "region": "세종시  어진동",
+  "like": 8,
+  "chat": 7,
+  "image": "images\/sj\/sjimg42.jpg"
+ },
+ {
+  "item": "영아다중 에듀",
+  "price": "30,000원",
+  "region": "세종시  도담동",
+  "like": 0,
+  "chat": 3,
+  "image": "images\/sj\/sjimg43.jpg"
+ },
+ {
+  "item": "유니맥스 발가락 선풍기",
+  "price": "10,000원",
+  "region": "세종시  다정동",
+  "like": 3,
+  "chat": 4,
+  "image": "images\/sj\/sjimg44.jpg"
+ },
+ {
+  "item": "이케아 철제서랍장",
+  "price": "10,000원",
+  "region": "세종시  한솔동",
+  "like": 3,
+  "chat": 2,
+  "image": "images\/sj\/sjimg45.jpg"
+ },
+ {
+  "item": "Lg드럼세탁기",
+  "price": "150,000원",
+  "region": "세종시  도담동",
+  "like": 19,
+  "chat": 6,
+  "image": "images\/sj\/sjimg46.jpg"
+ },
+ {
+  "item": "발렌시아가 뮬 판매합니다",
+  "price": "180,000원",
+  "region": "세종시  금남면",
+  "like": 24,
+  "chat": 5,
+  "image": "images\/sj\/sjimg47.jpg"
+ },
+ {
+  "item": "암막 커튼 화이트",
+  "price": "15,000원",
+  "region": "세종시  나성동",
+  "like": 5,
+  "chat": 4,
+  "image": "images\/sj\/sjimg48.jpg"
+ },
+ {
+  "item": "벤츠 붕붕카 푸쉬카",
+  "price": "10,000원",
+  "region": "세종시  대평동",
+  "like": 8,
+  "chat": 4,
+  "image": "images\/sj\/sjimg49.jpg"
+ },
+ {
+  "item": "아이맥스 전동 킥보드",
+  "price": "30,000원",
+  "region": "세종시  도담동",
+  "like": 2,
+  "chat": 3,
+  "image": "images\/sj\/sjimg50.jpg"
+ },
+ {
+  "item": "미니 범퍼침대",
+  "price": "15,000원",
+  "region": "세종시  해밀동",
+  "like": 4,
+  "chat": 4,
+  "image": "images\/sj\/sjimg51.jpg"
+ },
+ {
+  "item": "가정용 진공포장기",
+  "price": "5,000원",
+  "region": "세종시  어진동",
+  "like": 1,
+  "chat": 2,
+  "image": "images\/sj\/sjimg52.jpg"
+ },
+ {
+  "item": "스마트카라",
+  "price": "20,000원",
+  "region": "세종시  아름동",
+  "like": 2,
+  "chat": 2,
+  "image": "images\/sj\/sjimg53.jpg"
+ },
+ {
+  "item": "카페 야외 테이블 의자세트",
+  "price": "1원",
+  "region": "세종시  고운동",
+  "like": 13,
+  "chat": 3,
+  "image": "images\/sj\/sjimg54.jpg"
+ },
+ {
+  "item": "기내용 캐리어",
+  "price": "10,000원",
+  "region": "세종시  도담동",
+  "like": 5,
+  "chat": 3,
+  "image": "images\/sj\/sjimg55.jpg"
+ },
+ {
+  "item": "데스커 책상 1200",
+  "price": "70,000원",
+  "region": "세종시  도담동",
+  "like": 5,
+  "chat": 6,
+  "image": "images\/sj\/sjimg56.jpg"
+ },
+ {
+  "item": "메리다 빅세븐 20D mtb (휠 27.5인치)",
+  "price": "200,000원",
+  "region": "세종시  반곡동",
+  "like": 17,
+  "chat": 5,
+  "image": "images\/sj\/sjimg57.jpg"
+ },
+ {
+  "item": "버팔로 코펠 3인용",
+  "price": "10,000원",
+  "region": "세종시  다정동",
+  "like": 0,
+  "chat": 4,
+  "image": "images\/sj\/sjimg58.jpg"
+ },
+ {
+  "item": "연두 부클 나시 가디건",
+  "price": "3,000원",
+  "region": "세종시  대평동",
+  "like": 3,
+  "chat": 3,
+  "image": "images\/sj\/sjimg59.jpg"
+ },
+ {
+  "item": "중고) 샤오미 선풍기 판매",
+  "price": "15,000원",
+  "region": "세종시  보람동",
+  "like": 2,
+  "chat": 4,
+  "image": "images\/sj\/sjimg60.jpg"
+ },
+ {
+  "item": "아이폰12프로",
+  "price": "400,000원",
+  "region": "세종시  집현동",
+  "like": 6,
+  "chat": 7,
+  "image": "images\/sj\/sjimg61.jpg"
+ },
+ {
+  "item": "위닉스 제습기 16L팝니다.",
+  "price": "130,000원",
+  "region": "세종시  아름동",
+  "like": 4,
+  "chat": 7,
+  "image": "images\/sj\/sjimg62.jpg"
+ },
+ {
+  "item": "스톤아일랜드 패딩 100-105",
+  "price": "100,000원",
+  "region": "세종시  종촌동",
+  "like": 6,
+  "chat": 20,
+  "image": "images\/sj\/sjimg63.jpg"
+ },
+ {
+  "item": "닥터마틴 서류가방",
+  "price": "30,000원",
+  "region": "세종시  도담동",
+  "like": 3,
+  "chat": 1,
+  "image": "images\/sj\/sjimg64.jpg"
+ },
+ {
+  "item": "싸이클 팝니다",
+  "price": "50,000원",
+  "region": "세종시  한솔동",
+  "like": 10,
+  "chat": 4,
+  "image": "images\/sj\/sjimg65.jpg"
+ },
+ {
+  "item": "이동식 행거",
+  "price": "15,000원",
+  "region": "세종시  어진동",
+  "like": 18,
+  "chat": 6,
+  "image": "images\/sj\/sjimg66.jpg"
+ },
+ {
+  "item": "도노도노 범퍼침대",
+  "price": "45,000원",
+  "region": "세종시  고운동",
+  "like": 3,
+  "chat": 4,
+  "image": "images\/sj\/sjimg67.jpg"
+ },
+ {
+  "item": "팸퍼스 베이비드라이 5단계 2팩",
+  "price": "18,000원",
+  "region": "세종시  고운동",
+  "like": 0,
+  "chat": 4,
+  "image": "images\/sj\/sjimg68.jpg"
+ },
+ {
+  "item": "던롭 24인치 캐리어",
+  "price": "20,000원",
+  "region": "세종시  새롬동",
+  "like": 3,
+  "chat": 4,
+  "image": "images\/sj\/sjimg69.jpg"
+ },
+ {
+  "item": "아령 20kg",
+  "price": "10,000원",
+  "region": "세종시  보람동",
+  "like": 2,
+  "chat": 2,
+  "image": "images\/sj\/sjimg70.jpg"
+ },
+ {
+  "item": "모니터 39인치 급처분",
+  "price": "35,000원",
+  "region": "세종시  보람동",
+  "like": 4,
+  "chat": 3,
+  "image": "images\/sj\/sjimg71.jpg"
+ },
+ {
+  "item": "애플 정품 Beats Studio3 Wireless ANC 비츠 스튜디오3 무선 헤드폰 판매",
+  "price": "60,000원",
+  "region": "세종시  고운동",
+  "like": 7,
+  "chat": 9,
+  "image": "images\/sj\/sjimg72.jpg"
+ },
+ {
+  "item": "일리 네스프레소 캡슐 팝니다",
+  "price": "45,000원",
+  "region": "세종시  아름동",
+  "like": 1,
+  "chat": 4,
+  "image": "images\/sj\/sjimg73.jpg"
+ },
+ {
+  "item": "셀린느 선글라스",
+  "price": "39,900원",
+  "region": "세종시  새롬동",
+  "like": 10,
+  "chat": 1,
+  "image": "images\/sj\/sjimg74.jpg"
+ },
+ {
+  "item": "LG세탁기21kg+건조기16kg",
+  "price": "120만원",
+  "region": "세종시  보람동",
+  "like": 7,
+  "chat": 2,
+  "image": "images\/sj\/sjimg75.jpg"
+ },
+ {
+  "item": "여성 플리츠상의 66",
+  "price": "10,000원",
+  "region": "세종시  보람동",
+  "like": 3,
+  "chat": 4,
+  "image": "images\/sj\/sjimg76.jpg"
+ },
+ {
+  "item": "휴비딕 아기체중계",
+  "price": "15,000원",
+  "region": "세종시  새롬동",
+  "like": 0,
+  "chat": 3,
+  "image": "images\/sj\/sjimg77.jpg"
+ },
+ {
+  "item": "위니아 냉장고 506L",
+  "price": "100,000원",
+  "region": "세종시  소담동",
+  "like": 1,
+  "chat": 5,
+  "image": "images\/sj\/sjimg78.jpg"
+ },
+ {
+  "item": "작업대 및 바트",
+  "price": "100,000원",
+  "region": "세종시  장군면",
+  "like": 4,
+  "chat": 6,
+  "image": "images\/sj\/sjimg79.jpg"
+ },
+ {
+  "item": "갤럭시워치5 44mm 블루투스 그라파이트",
+  "price": "200,000원",
+  "region": "세종시  도담동",
+  "like": 13,
+  "chat": 3,
+  "image": "images\/sj\/sjimg80.jpg"
+ },
+ {
+  "item": "아이브 유진이 원영이 포카 팔아요!",
+  "price": "2000만 3000원",
+  "region": "세종시  다정동",
+  "like": 2,
+  "chat": 3,
+  "image": "images\/sj\/sjimg81.jpg"
+ },
+ {
+  "item": "💚그릇 처분🩵",
+  "price": "2,000원",
+  "region": "세종시  반곡동",
+  "like": 7,
+  "chat": 10,
+  "image": "images\/sj\/sjimg82.jpg"
+ },
+ {
+  "item": "소파, 스툴",
+  "price": "50,000원",
+  "region": "세종시  도담동",
+  "like": 12,
+  "chat": 4,
+  "image": "images\/sj\/sjimg83.jpg"
+ },
+ {
+  "item": "삼성에어컨",
+  "price": "30,000원",
+  "region": "세종시  반곡동",
+  "like": 3,
+  "chat": 3,
+  "image": "images\/sj\/sjimg84.jpg"
+ },
+ {
+  "item": "💕먹태깡💕",
+  "price": "4,900원",
+  "region": "세종시  보람동",
+  "like": 1,
+  "chat": 5,
+  "image": "images\/sj\/sjimg85.jpg"
+ },
+ {
+  "item": "다원몬테소리 태양계3단카드",
+  "price": "20,000원",
+  "region": "세종시  새롬동",
+  "like": 14,
+  "chat": 4,
+  "image": "images\/sj\/sjimg86.jpg"
+ },
+ {
+  "item": "흔한남매 전권 1권~13권",
+  "price": "78,000원",
+  "region": "세종시  반곡동",
+  "like": 7,
+  "chat": 8,
+  "image": "images\/sj\/sjimg87.jpg"
+ },
+ {
+  "item": "아이폰14시리즈 데모 판매합니다",
+  "price": "600,900원",
+  "region": "세종시  새롬동",
+  "like": 7,
+  "chat": 9,
+  "image": "images\/sj\/sjimg88.jpg"
+ },
+ {
+  "item": "마샬 엑톤2 +스텐드",
+  "price": "300,000원",
+  "region": "세종시  집현동",
+  "like": 45,
+  "chat": 7,
+  "image": "images\/sj\/sjimg89.jpg"
+ },
+ {
+  "item": "(새상품)나이키 버킷햇",
+  "price": "20,000원",
+  "region": "세종시  한솔동",
+  "like": 13,
+  "chat": 3,
+  "image": "images\/sj\/sjimg90.jpg"
+ },
+ {
+  "item": "구찌ㅡ마지막내링",
+  "price": "450,000원",
+  "region": "세종시  고운동",
+  "like": 65,
+  "chat": 1,
+  "image": "images\/sj\/sjimg91.jpg"
+ },
+ {
+  "item": "쇼파예요",
+  "price": "200,000원",
+  "region": "세종시  다정동",
+  "like": 24,
+  "chat": 4,
+  "image": "images\/sj\/sjimg92.jpg"
+ },
+ {
+  "item": "사이즈 남은 새 제품들 올려요",
+  "price": "10,000원",
+  "region": "세종시  보람동",
+  "like": 18,
+  "chat": 11,
+  "image": "images\/sj\/sjimg93.jpg"
+ },
+ {
+  "item": "트레이닝 바지 팝니다",
+  "price": "10,000원",
+  "region": "세종시  새롬동",
+  "like": 4,
+  "chat": 6,
+  "image": "images\/sj\/sjimg94.jpg"
+ },
+ {
+  "item": "s22울트라 커플폰( 그린 , 화이트) 판매합니다",
+  "price": "700,000원",
+  "region": "세종시  나성동",
+  "like": 13,
+  "chat": 12,
+  "image": "images\/sj\/sjimg95.jpg"
+ },
+ {
+  "item": "일룸 책상-7월 20일까지",
+  "price": "90,000원",
+  "region": "세종시  고운동",
+  "like": 26,
+  "chat": 4,
+  "image": "images\/sj\/sjimg96.jpg"
+ },
+ {
+  "item": "양념통",
+  "price": "5,000원",
+  "region": "세종시  아름동",
+  "like": 2,
+  "chat": 4,
+  "image": "images\/sj\/sjimg97.jpg"
+ }
+]

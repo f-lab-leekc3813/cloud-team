@@ -1,6 +1,6 @@
 import classes from './Content1.module.css'
 
-function Content1 () {
+function Content1 (props) {
     return (
         <section className={classes.title_section}>
                     <div className={classes.member_wrap}>
@@ -8,15 +8,15 @@ function Content1 () {
                             <img className={classes.avartar} src='/images/avartar.png' alt='사진' />
                         </div>
                         <div className={classes.name_wrap}>
-                            <div className={classes.name}>이름</div>
-                            <div className={classes.region}>동네이름</div>
+                            <div className={classes.name}>{props.name}</div>
+                            <div className={classes.region}>{props.region}</div>
                         </div>
                     </div>
                     <div className={classes.status_wrap}>
                         <div className={classes.status_top}>
                             <div className={classes.heat_wrap}>
                                 <div className={classes.heat}>
-                                    45.2
+                                    {props.temp}
                                     <span>°C</span>
                                 </div>
                             </div>

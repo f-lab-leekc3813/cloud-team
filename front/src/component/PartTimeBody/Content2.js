@@ -39,7 +39,7 @@ function Content2 () {
                 {data1.map((data) => {
                     return(
                         <div key={data.index} className={classes.content2_box}>
-                            <Link to={`/parttime/${data.title}`}>
+                            <Link to =  {`/parttime/${data.index}`} title={data.title}>
                                 <article className={classes.content2_box1}>
                                      <div className={classes.content2_boximage}>
                                          <span className={classes.content2_boxspan} >
@@ -80,8 +80,8 @@ function Content2 () {
             <div className={classes.content2_containers2}>
                 {data2.map((data) => {
                         return(
-                            <div key={data.title} className={classes.content2_box}>
-                                <Link to={`/parttime/${data.title}`}>
+                            <div key={data.index} className={classes.content2_box}>
+                                <Link to={  `/parttime/${data.index}`}>
                                     <article className={classes.content2_box1}>
                                             <div className={classes.content2_boximage}>
                                                 <span className={classes.content2_boxspan} >

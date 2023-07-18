@@ -1,19 +1,44 @@
-import {Link} from 'react-router-dom'
+import {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
-import dummy1 from '../../data/partTimeData/content1.json'
-import dummy2 from '../../data/partTimeData/content2.json'
-import classes from './Content2.module.css'
+import classes from './Content2.module.css';
 
 function Content2 () {
+    const [data1, setData1] = useState([]);
+    const [data2, setData2] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+      }, []);
+
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('http://localhost:8080/croll/part_page');
+          const responseData = response.data;
+
+          const halfwayIndex = Math.ceil(responseData.length / 2);
+          const slicedData1 = responseData.slice(0, halfwayIndex);
+          const slicedData2 = responseData.slice(halfwayIndex);
+
+          setData1(slicedData1);
+          setData2(slicedData2);
+
+          console.log(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+
     return (
         <section className={classes.content2_containers}>
             <h2 className={classes.content2_title}>
                 인기 당근알바
             </h2>
             <div className={classes.content2_containers1}>
-                {dummy1.data.map((data) => {
+                {data1.map((data) => {
                     return(
-                        <div  key={data.id} className={classes.content2_box}>
+                        <div key={data.index} className={classes.content2_box}>
                             <Link to={`/parttime/${data.title}`}>
                                 <article className={classes.content2_box1}>
                                      <div className={classes.content2_boximage}>
@@ -53,9 +78,9 @@ function Content2 () {
                 </div>
             </div>
             <div className={classes.content2_containers2}>
-                {dummy2.data.map((data) => {
+                {data2.map((data) => {
                         return(
-                            <div key={data.id} className={classes.content2_box}>
+                            <div key={data.title} className={classes.content2_box}>
                                 <Link to={`/parttime/${data.title}`}>
                                     <article className={classes.content2_box1}>
                                             <div className={classes.content2_boximage}>

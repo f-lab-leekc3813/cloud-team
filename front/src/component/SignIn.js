@@ -4,6 +4,7 @@ import {useRecoilState} from "recoil";
 import {LoginState} from "../store/LoginState";
 
 import classes from "./SignIn.module.css";
+import GoogleLoginButton from "./UI/GoogleLoginButton";
 
 const SignIn = ({ isOpen, close }) => {
   const [email, setEmail] = useState("");
@@ -15,6 +16,12 @@ const SignIn = ({ isOpen, close }) => {
 
   const [login, setLogin] = useRecoilState(LoginState);
   const [isSignUp, setIsSignUp] = useState(false);
+
+
+  const loginHandler = () => {
+    setLogin(true);
+    console.log(login)
+  }
 
   const eamilHandler = (e) => {
     setEmail(e.target.value);
@@ -157,11 +164,10 @@ const SignIn = ({ isOpen, close }) => {
               <div className={classes.socialBox}>
                 <div className={classes.kakao}>
                   <img className={classes.kakaoLogo} src="/images/signUp/kakao.jpg" alt="Kakao Logo" />
-                  <div className={classes.kakaoText}>카카오톡 계정으로 신규가입</div>
+                  <div className={classes.kakaoText}>카카오톡 계정으로 로그인</div>
                 </div>
                 <div className={classes.google}>
-                  <img className={classes.googleLogo} src="/images/signUp/google.png" alt="Facebook Logo" />
-                  <div className={classes.googleText}>구글 계정으로 신규가입</div>
+                  <GoogleLoginButton onClick ={loginHandler}>구글 계정으로 로그인</GoogleLoginButton>
                 </div>
               </div>
               <div className={classes.loginEnd}>

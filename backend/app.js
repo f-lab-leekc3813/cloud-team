@@ -8,6 +8,7 @@ const {swaggerUi, specs} = require('./swagger/swagger')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var partRouter = require('./routes/part');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
+app.use('/part', partRouter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs))
 

@@ -25,8 +25,8 @@ function PartTimeDetail () {
           const responseData = response.data;
 
           setData(responseData);
+          console.log(response.data)
 
-          console.log(responseData);
         } catch (error) {
           console.error('Error fetching data:', error);
         }

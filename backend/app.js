@@ -8,7 +8,9 @@ const {swaggerUi, specs} = require('./swagger/swagger')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var partRouter = require('./routes/part');
+var regionRouter = require('./routes/region');
+var crollRouter = require('./croll/croll');
+
 
 var app = express();
 
@@ -32,7 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
-app.use('/part', partRouter);
+app.use('/region', regionRouter);
+app.use('/croll', crollRouter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs))
 

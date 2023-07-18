@@ -44,7 +44,7 @@ function Content2 () {
                 </div>
                 <div className={classes.content2_insidecontainer4}>
                     <h1 className={classes.content2_insidetext}>
-                        복비 없이 투명한 부동산 직거래 당근마켓 내 근처 탭에서 바로 찾아보세요!
+                        복비 없이 투명한 부동산 직거래 구름마켓 내 근처 탭에서 바로 찾아보세요!
                     </h1>
                 </div>
                 <span className={classes.content2_button} button id="realty_app_download" type="button">

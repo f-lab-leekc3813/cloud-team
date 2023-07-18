@@ -14,7 +14,7 @@ function Content4 () {
                     <p className={classes.small}>
                         우리 동네 가게를 찾고 있나요? <br/>동네 주민이 남긴 진짜 후기를 함께 확인해보세요!
                     </p>
-                    <button className={classes.gray_button}>당근마켓 동네가게 찾기</button>
+                    <button className={classes.gray_button}>구름마켓 동네가게 찾기</button>
                 </div>
             </div>
         </div>

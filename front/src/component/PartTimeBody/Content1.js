@@ -7,7 +7,7 @@ function Content1 () {
                 <div className={classes.content1_titleContainer}>
                     <h1 className={classes.content1_title1}>
                         우리 동네에서 찾는
-                        <br/>당근알바
+                        <br/>구름알바
                     </h1>
                     <p className={classes.Content1_title2}>
                         걸어서 10분 거리의

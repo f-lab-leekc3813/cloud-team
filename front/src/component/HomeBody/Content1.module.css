@@ -1,7 +1,7 @@
 .content1 {
     height: 700px;
     width: 100%;
-    background-color: #fbf7f2;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     
@@ -16,7 +16,7 @@
 .content1_wrap {
     padding: 20px;
     width: 100%;
-    background-color: #47a1dd;
+    background-color: #D2EDFA;
 }
 
 .big {

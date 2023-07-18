@@ -1,7 +1,7 @@
 .content2 {
     height: 700px;
     width: 100%;
-    background-color: #EA8FEA;
+    background-color: white;
     display: flex;
     justify-content: center;
 }
@@ -15,7 +15,7 @@
 .content2_wrap {
     padding: 20px;
     width: 100%;
-    background-color: #BCCEF8;
+    background-color: #ffffff;
 }
 
 .mountain_img{

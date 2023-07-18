@@ -1,10 +1,38 @@
-import {Link} from 'react-router-dom'
+import {useState} from 'react';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
-import dummy1 from '../../data/partTimeData/content1.json'
-import dummy2 from '../../data/partTimeData/content2.json'
-import classes from './Content2.module.css'
+import dummy1 from '../../data/partTimeData/content1.json';
+import dummy2 from '../../data/partTimeData/content2.json';
+import classes from './Content2.module.css';
+import { useEffect } from 'react';
 
 function Content2 () {
+    const [data1, setData1] = useState(null);
+    const [data2, setData2] = useState(null);
+
+    useEffect(() => {
+        fetchData();
+      }, []);
+
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('https://localhost8080/parttime');
+          const responseData = response.data;
+
+          const halfwayIndex = Math.ceil(responseData.length / 2);
+          const slicedData1 = responseData.slice(0, halfwayIndex);
+          const slicedData2 = responseData.slice(halfwayIndex);
+
+          setData1(slicedData1);
+          setData2(slicedData2);
+
+          console.log(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+
     return (
         <section className={classes.content2_containers}>
             <h2 className={classes.content2_title}>

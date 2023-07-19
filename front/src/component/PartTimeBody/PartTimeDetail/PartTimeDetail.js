@@ -21,7 +21,7 @@ function PartTimeDetail () {
       }, []);
       const fetchData = async () => {
         try {
-          const response = await axios.get('http://localhost:8080/croll/partdata');
+          const response = await axios.get('http://localhost:8080/croll/part_data');
           const responseData = response.data;
 
           setData(responseData);

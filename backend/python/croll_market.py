@@ -66,6 +66,9 @@ for i in range(len(img_list)):
 
 df['image'] = ['images/market/market_'+str(i)+'.jpeg' for i in range(len(img_list))]
 
+df = df.reset_index()
+
+
 ### mysql
 
 from sqlalchemy import create_engine

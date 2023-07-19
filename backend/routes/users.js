@@ -38,12 +38,11 @@ router.post('/signup', function (req, res, next) {
 });
 
 
-
 /**
  * @swagger
- * /login:
+ * /signup:
  *   post:
- *     summary: Authenticate user and generate a token
+ *     summary: 사용자 회원 가입
  *     tags: [User]
  *     requestBody:
  *       required: true
@@ -56,11 +55,49 @@ router.post('/signup', function (req, res, next) {
  *                 type: string
  *               password:
  *                 type: string
+ *               nickname:
+ *                 type: string
  *     responses:
  *       200:
- *         description: Successful login
+ *         description: 회원 가입 성공
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: 성공 메시지
+ *       201:
+ *         description: 중복되는 정보가 존재하는 경우
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: 에러 메시지
+ *       202:
+ *         description: 이미 존재하는 닉네임인 경우
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: 에러 메시지
  *       500:
- *         description: Internal server error
+ *         description: 서버 내부 오류
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: 에러 메시지
  */
 
 
@@ -91,3 +128,53 @@ router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(specs));
 
 module.exports = router;
+
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: 사용자 로그인
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: 로그인 성공
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: 성공 메시지
+ *       205:
+ *         description: 잘못된 이메일 또는 비밀번호 입력
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: 에러 메시지
+ *       500:
+ *         description: 서버 내부 오류
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: 에러 메시지
+ */

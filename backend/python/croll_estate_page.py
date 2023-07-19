@@ -23,11 +23,11 @@ text_li,img_li = func(a)
 
 df = pd.DataFrame(text_li,columns = ('name','region','info'))
 df['image'] = img_li
-
+df = df.reset_index()
 
 
 # MySQL 연결 문자열 생성
-connection_string = 'mysql+mysqlconnector://root:mysql@localhost/project'
+connection_string = 'mysql+mysqlconnector://root:1023ldde@localhost/project'
 
 # MySQL 엔진 생성
 engine = create_engine(connection_string)

@@ -1,4 +1,4 @@
-import classes from './Content1.module.css'
+import classes from './Content1.module.css';
 
 function Content1 (props) {
     return (

@@ -45,6 +45,8 @@ def sql(data):
     # 쿼리 실행
     query = f"SELECT * FROM project.{data}"
     df = pd.read_sql(query, connection)
+    
+    df = df.reset_index()
 
     # 연결 닫기
     connection.close()
@@ -62,7 +64,7 @@ def to_sql(data):
     df.to_sql(name=data, con=engine, if_exists='replace', index=False)
 
 
-df = sql('partdata')
+df = sql('part_data')
 
 address = df['address']
 
@@ -71,8 +73,8 @@ for data in address:
     if data[-1].isdigit():
         address_list.append(add(data))
     else :
-        address_list.append(add(data+' 12'))
+        address_list.append(add(data+' 13'))
 
 df['location'] = address_list
 
-to_sql('partdata')
+to_sql('part_data')

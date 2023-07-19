@@ -1,5 +1,6 @@
 import classes from './Content1.module.css'
-import React, { useState } from 'react';
+import dummy3 from '../../data/MyPageData/Content1.json'
+import dummy4 from '../../data/MyPageData/Content2.json'
 
 function Content1(){
     return(
@@ -105,36 +106,67 @@ function Content1(){
                     </div>
                 </div>
             </div>
+            <div className={classes.content1_container26}>
+                <p1 className={classes.content1_text6}>
+                    최근 본 상품
+                </p1>
+            </div>
+            <div className={classes.content1_container27}>
+                <p1 className={classes.content1_text6}>
+                    찜한 상품
+                </p1>
+            </div>
             <div className={classes.content1_container25}>
-            const Menu {const [selectedMenu, setSelectedMenu] = useState(null);
-
-  const handleMenuClick = (menu) => {
-    setSelectedMenu(menu);
-  };
-
-  return (
-    <div>
-      <ul>
-        <li onClick={() => handleMenuClick('Home')}>Home</li>
-        <li onClick={() => handleMenuClick('About')}>About</li>
-        <li onClick={() => handleMenuClick('Contact')}>Contact</li>
-      </ul>
-      <div>
-        {selectedMenu && (
-          <div>
-            <h2>{selectedMenu}</h2>
-            {selectedMenu === 'Home' && <p>Home menu content goes here</p>}
-            {selectedMenu === 'About' && <p>About menu content goes here</p>}
-            {selectedMenu === 'Contact' && <p>Contact menu content goes here</p>}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default Menu;
-
+            {dummy3.data.map((data) => {
+                    return(
+                        <div key={data.id} className={classes.content2_box}>
+                           <article className={classes.content2_box1}>
+                                <div className={classes.content2_boximage}>
+                                    <span className={classes.content2_boxspan} >
+                                        <img className={classes.content2_img1}src={data.image} alt='사진' />
+                                    </span>
+                                </div>
+                                <div className={classes.content2_boxcontent}>
+                                    <div className={classes.content2_boxname}>
+                                        {data.name}
+                                    </div>
+                                    <div className={classes.content2_boxregion}>
+                                        {data.region}
+                                    </div>
+                                    <div className={classes.content2_boxinfo1}>
+                                        {data.info1}
+                                    </div>
+                                </div>
+                           </article>
+                        </div>
+                    )
+                })}
+            </div>
+            <div className={classes.content1_container28}>
+            {dummy4.data.map((data) => {
+                    return(
+                        <div key={data.id} className={classes.content2_box}>
+                           <article className={classes.content2_box1}>
+                                <div className={classes.content2_boximage}>
+                                    <span className={classes.content2_boxspan} >
+                                        <img className={classes.content2_img1}src={data.image} alt='사진' />
+                                    </span>
+                                </div>
+                                <div className={classes.content2_boxcontent}>
+                                    <div className={classes.content2_boxname}>
+                                        {data.name}
+                                    </div>
+                                    <div className={classes.content2_boxregion}>
+                                        {data.region}
+                                    </div>
+                                    <div className={classes.content2_boxinfo1}>
+                                        {data.info1}
+                                    </div>
+                                </div>
+                           </article>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     </section>

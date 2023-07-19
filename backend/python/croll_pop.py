@@ -2,9 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-# !pip install pymongo
-from pymongo import MongoClient
-
 # !pip install sqlalchemy
 from sqlalchemy import create_engine
 
@@ -73,17 +70,13 @@ for i in range(len(img_list)):
 
 df['image'] = ['images/pop/pop_'+str(i)+'.jpeg' for i in range(len(img_list))]
 
-# 몽고디비
-client = MongoClient()
-
-db = client['crolling']
 
 collection = db['pop']
 collection.insert_many(df.to_dict('records'))
 
 # mysql
 # MySQL 연결 문자열 생성
-connection_string = 'mysql+mysqlconnector://root:mysql@localhost/crolling'
+connection_string = 'mysql+mysqlconnector://root:1234@localhost/crolling'
 
 # MySQL 엔진 생성
 engine = create_engine(connection_string)

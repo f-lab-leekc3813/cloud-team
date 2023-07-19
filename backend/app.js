@@ -8,7 +8,7 @@ const {swaggerUi, specs} = require('./swagger/swagger')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var regionRouter = require('./routes/region');
+var regionRouter = require('./region/region');
 var crollRouter = require('./croll/croll');
 
 

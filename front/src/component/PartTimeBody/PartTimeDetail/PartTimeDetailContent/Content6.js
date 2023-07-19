@@ -2,6 +2,8 @@ import MapComponent from '../../../Map/MapComponent';
 import classes from './Content6.module.css';
 import location from './location.json';
 
+
+
 function Content6 (props) {
     return (
         <section className={classes.content6_section}>

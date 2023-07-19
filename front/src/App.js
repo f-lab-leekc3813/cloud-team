@@ -12,7 +12,7 @@ import Mypage from './pages/Mypage';
 import BestPage from './pages/BestPage';
 import PartTimeDetail from './component/PartTimeBody/PartTimeDetail/PartTimeDetail';
 import EstateDetail from './component/EstateBody/EstateDetail/EstateDetail';
-
+import BestRegion from './component/BestBody/BestDetail/BestRegion';
 
 function App() {
 
@@ -30,6 +30,7 @@ function App() {
             <Route path = "/parttime/:title" element = {<PartTimeDetail />} />
             <Route path = "/mypage" element ={<Mypage />} />
             <Route path = "/bestpage" element ={<BestPage />} />
+            <Route path = "/bestpage/:region" element = {<BestRegion />} />
           </Routes>
         </BrowserRouter>
       </React.Fragment>

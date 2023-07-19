@@ -1,0 +1,82 @@
+.cards_wrap {
+    width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+      gap: 10px; /* 각 항목 사이의 간격 설정, 필요에 따라 조정 가능 */
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.card_top {
+    width: 201px;
+    height: 308px;
+    margin-right: 44px;
+    margin-bottom: 56px;
+    display: block;
+}
+
+.card_link {
+    text-decoration: none;
+    color: #212529;
+}
+
+.card_photo {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #F8F9FA;
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.card_img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1px solid transparent;
+}
+
+.card_desc {
+    margin-top: 12px;
+}
+
+.card_title {
+    font-size: 16px;
+    letter-spacing: -0.02px;
+    color: #212529;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+    line-height: 1.5;
+    font-weight: normal;
+}
+
+.card_price {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.card_regionname {
+    font-size: 13px;
+    color: #212529;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+.card_counts {
+    color: #868e96;
+    font-size: 13px;
+}
+

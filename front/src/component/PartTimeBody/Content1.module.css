@@ -75,7 +75,7 @@
     .content1_titleContainer2 {
         left: 50%;
         right: 0;
-        width: 37.6875rem;
+        width: 40rem;
         height: 16.25rem;
         transform: translateX(0);
     }
@@ -87,14 +87,14 @@
     left: 50%;
     width: 29.3125rem;
     height: 12.625rem;
-    transform: translateX(-40%);
+    transform: translateX(-10%);
     display: block;
 }
 
 .content1_titleimageSpan{
     box-sizing: border-box;
     display: block;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: initial;
     height: initial;
     background: none;
@@ -104,9 +104,9 @@
     padding: 0;
     position: absolute;
     top: 0;
-    left: 50px;
+    left: 0;
     bottom: 0;
-    right: 0px;
+    right: 0;
 }
 
 .content1_titleimage {
@@ -120,13 +120,13 @@
     border: none;
     margin: auto;
     display: block;
-    width: 0;
-    height: 0;
-    min-width: 100%;
+    width: 603px;
+    height: 230px;
+    /* min-width: 100%;
     max-width: 100%;
     min-height: 100%;
-    max-height: 100%;
-    object-fit: cover;
+    max-height: 100%; */
+    object-fit: contain;
     opacity: 1;
     transition: .2s;
     overflow-clip-margin: content-box;

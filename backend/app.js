@@ -1,15 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const {swaggerUi, specs} = require('./swagger/swagger')
 
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const regionRouter = require('./region/region');
+const crollRouter = require('./croll/croll');
 
-var app = express();
+
+const app = express();
 
 
 const cors = require('cors');
@@ -31,6 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
+app.use('/region', regionRouter);
+app.use('/croll', crollRouter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs))
 

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {useRecoilState} from "recoil";
+import {LoginState} from "../store/LoginState";
 
 import classes from "./SignIn.module.css";
 
@@ -11,7 +13,14 @@ const SignIn = ({ isOpen, close }) => {
   const [nickname, setNickname] = useState("");
   const [nicknameCheck, setNicknameCheck] = useState(false);
 
+  const [login, setLogin] = useRecoilState(LoginState);
   const [isSignUp, setIsSignUp] = useState(false);
+
+
+  const loginHandler = () => {
+    setLogin(true);
+    console.log(login)
+  }
 
   const eamilHandler = (e) => {
     setEmail(e.target.value);
@@ -50,17 +59,15 @@ const SignIn = ({ isOpen, close }) => {
           })
           .then((res) => {
             if (res.status === 200) {
-              // 회원가입이 완료되면 토큰을 받아온다.
-              const token = res.data.token;
-              
-              // 토큰을 로컬스토리지에 저장한다.
-              localStorage.setItem('token', token);
-
               alert("회원가입이 완료되었습니다(회원가입).");
               close();
               setEmail("");
               setPassword("");
               setNickname("");
+            } else if (res.status === 201) {
+              alert("이미 있는 이메일입니다.")
+            } else if (res.status === 202) {
+              alert("이미 있는 닉네임입니다.")
             } else {
               alert("회원가입에 실패하였습니다(회원가입,연결실패).");
             }
@@ -86,11 +93,12 @@ const SignIn = ({ isOpen, close }) => {
               localStorage.setItem('token', token);
 
               alert("로그인이 완료되었습니다(로그인).");
+              setLogin(true);
               close();
               setEmail("");
               setPassword("");
             } else {
-              alert("로그인에 실패하였습니다(로그인,연결실패).");
+              alert("잘못된 이메일 또는 비밀번호");
             }
           })
           .catch((err) => {
@@ -105,6 +113,7 @@ const SignIn = ({ isOpen, close }) => {
   const signUpMove = () => {
     setIsSignUp(!isSignUp);
   }
+
   return (
     <>
       {isOpen ? (
@@ -114,17 +123,17 @@ const SignIn = ({ isOpen, close }) => {
               ×
             </span>
             <div className={classes.modalContents} onClick={(e) => e.stopPropagation()}>
-              <img className={classes.signinIcon} src="/images/cloudlogo.jpg" alt="구름마켓 로그인" />
-              {isSignUp ? 
-              <input
-                name="nickname"
-                className={classes.loginId}
-                type="text"
-                placeholder="닉네임을 3글자 이상 입력해주세요."
-                onChange={nicknameHandler}
-               />
-              :
-              ''}
+              <img className={classes.signinIcon} src="/images/logo.png" alt="애플마켓 로그인" />
+              {isSignUp ?
+                <input
+                  name="nickname"
+                  className={classes.loginId}
+                  type="text"
+                  placeholder="닉네임을 3글자 이상 입력해주세요."
+                  onChange={nicknameHandler}
+                />
+                :
+                ''}
               <input
                 name="email"
                 className={classes.loginId}
@@ -141,7 +150,7 @@ const SignIn = ({ isOpen, close }) => {
               />
               <div className={classes.loginMid}>
                 <label className={classes.autoLogin} htmlFor="hint">
-                </label> 
+                </label>
                 <div className={classes.autoLogin}>아이디/비밀번호 찾기</div>
               </div>
               {isSignUp ?
@@ -151,31 +160,27 @@ const SignIn = ({ isOpen, close }) => {
                 <button onClick={SubmitHandler} className={classes.loginBtn} >
                   로그인
                 </button>
-                }
+              }
               <div className={classes.socialBox}>
                 <div className={classes.kakao}>
-                  <img className={classes.kakaoLogo} src="images/signUp/kakao.jpg" alt="Kakao Logo" />
-                  <div className={classes.kakaoText}>카카오톡 계정으로 신규가입</div>
-                </div>
-                <div className={classes.google}>
-                  <img className={classes.googleLogo} src="images/signUp/google.png" alt="Facebook Logo" />
-                  <div className={classes.googleText}>구글 계정으로 신규가입</div>
+                  <img className={classes.kakaoLogo} src="/images/signUp/kakao.jpg" alt="Kakao Logo" />
+                  <div className={classes.kakaoText}>카카오톡 계정으로 로그인</div>
                 </div>
               </div>
               <div className={classes.loginEnd}>
-                {isSignUp ? '' : 
+                {isSignUp ? '' :
                   <div className={classes.loginLine}>
-                    회원이 아니신가요? 
-                  </div> 
-                  }
-                {isSignUp ? 
-                <button onClick={signUpMove}  className={classes.signUpLink}>
-                  로그인
-                </button>
-                 :
-                <button onClick={signUpMove}  className={classes.signUpLink}>
-                  회원가입
-                </button>}
+                    회원이 아니신가요?
+                  </div>
+                }
+                {isSignUp ?
+                  <button onClick={signUpMove} className={classes.signUpLink}>
+                    로그인
+                  </button>
+                  :
+                  <button onClick={signUpMove} className={classes.signUpLink}>
+                    회원가입
+                  </button>}
                 <div className={classes.noUser}>비회원 주문 조회</div>
               </div>
             </div>

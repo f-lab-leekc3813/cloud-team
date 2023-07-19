@@ -1,5 +1,5 @@
 import classes from './Content1.module.css'
-import dummy1 from '../../data/EstateData/Content1.json'
+import React, { useState } from 'react';
 
 function Content1(){
     return(
@@ -60,43 +60,83 @@ function Content1(){
                     </span>
                 </div>
                 <div className={classes.content1_container15}>
-                    <p1 className={classes.content1_container16}>
+                <span className={classes.content1_container16} button id="realty_app_download" type="button">
                         회원탈퇴 {">"}
-                    </p1>
+                    </span>
                 </div>
             </div>
-            <div className={classes.content1_jjim4}>
-            <h2 className={classes.content2_title}>
-                인기 부동산 직거래 게시글
-            </h2>
-            <div className={classes.content2_jjim}>
-                {dummy1.data.map((data) => {
-                    return(
-                        <div key={data.id} className={classes.content2_box}>
-                           <article className={classes.content2_box1}>
-                                <div className={classes.content2_boximage}>
-                                    <span className={classes.content2_boxspan} >
-                                        <img className={classes.content2_img1}src={data.image} alt='사진' />
-                                    </span>
-                                </div>
-                                <div className={classes.content2_boxcontent}>
-                                    <div className={classes.content2_boxname}>
-                                        {data.name}
-                                    </div>
-                                    <div className={classes.content2_boxregion}>
-                                        {data.region}
-                                    </div>
-                                    <div className={classes.content2_boxinfo1}>
-                                        {data.info1}
-                                    </div>
-                                </div>
-                           </article>
-                        </div>
-                    )
-                })}
+        </div>
+        <div className={classes.content1_container17}>
+            <div className={classes.content1_container18}>
+                <div className={classes.content1_container19}>
+                    <div className={classes.content1_container24}>
+                        <img className={classes.content1_image4} src='images/mypage/delivery.png' alt='배송' />
+                        <br/>
+                        <span className={classes.content1_text2} button id="realty_app_download" type="button">
+                        주문ㆍ배송
+                        </span>
+                    </div>
+                </div>
+                <div className={classes.content1_container21}>
+                    <div className={classes.content1_container24}>
+                        <img className={classes.content1_image4} src='images/mypage/couponlogo.png' alt='쿠폰' />
+                        <br/>
+                        <span className={classes.content1_text3} button id="realty_app_download" type="button">
+                        보유 쿠폰
+                        </span>
+                    </div>
+                </div>
+                <div className={classes.content1_container22}>
+                    <div className={classes.content1_container24}>
+                        <img className={classes.content1_image5} src='images/mypage/basket.png' alt='장바구니' />
+                        <br/>
+                        <span className={classes.content1_text4} button id="realty_app_download" type="button">
+                        장바구니
+                        </span>
+                    </div>
+                </div>
+                <div className={classes.content1_container23}>
+                    <div className={classes.content1_container24}>
+                        <img className={classes.content1_image6} src='images/mypage/humann.png' alt='배송' />
+                        <br/>
+                        <span className={classes.content1_text5} button id="realty_app_download" type="button">
+                        구매 내역
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div className={classes.content1_container25}>
+            const Menu {const [selectedMenu, setSelectedMenu] = useState(null);
+
+  const handleMenuClick = (menu) => {
+    setSelectedMenu(menu);
+  };
+
+  return (
+    <div>
+      <ul>
+        <li onClick={() => handleMenuClick('Home')}>Home</li>
+        <li onClick={() => handleMenuClick('About')}>About</li>
+        <li onClick={() => handleMenuClick('Contact')}>Contact</li>
+      </ul>
+      <div>
+        {selectedMenu && (
+          <div>
+            <h2>{selectedMenu}</h2>
+            {selectedMenu === 'Home' && <p>Home menu content goes here</p>}
+            {selectedMenu === 'About' && <p>About menu content goes here</p>}
+            {selectedMenu === 'Contact' && <p>Contact menu content goes here</p>}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Menu;
+
             </div>
         </div>
-    </div>
     </section>
     );
 }

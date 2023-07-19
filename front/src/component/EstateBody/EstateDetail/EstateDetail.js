@@ -34,14 +34,18 @@ function EstateDetail() {
 
     const filteredData = data.filter(item => item.index === Number(index));
     const itemData = filteredData.length > 0 ? filteredData[0] : null;
-
     return (
         <div className={classes.containers}>
             <main className={classes.main}>
-                <Content1 />
-                <Content2 />
+                <Content1 img = {itemData?.img}/>
+                <Content2 
+                    img = {itemData?.img} 
+                    user_name = {itemData?.user_name}
+                    region = {itemData?.region}
+                    temp = {itemData?.temp} 
+                    />
                 <div className={classes.grayline}></div>
-                <Content3 />
+                <Content3 pyung = {itemData?.pyung}/>
                 <Content4 />
                 <Content5 />
                 <Content6 />

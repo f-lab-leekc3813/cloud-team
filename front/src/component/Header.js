@@ -40,10 +40,8 @@ function Header () {
                     <form className={classes.header_form}>
                          <input className={classes.search_input} type="text" placeholder="물품이나 동네를 검색해보세요" />
 
-                         <Button className={classes.my_page} onClick={loginHandler} variant="warning" style={{marginRight : '10px'}}>내정보</Button> 
-
                     </form>
-                    {isLoggedIn ? <Button onClick={loginHandler} variant="warning" style={{marginRight : '10px'}}>내정보</Button> : '' }
+                    {isLoggedIn ? <Button onClick={loginHandler} variant="warning" style={{marginRight : '10px'}}>내정보</Button>  : ''   }
                     <LoginButton  />
                 </div>
             </div>

@@ -54,7 +54,8 @@ def croll(data):
         img_list.append(i['src'])
 
     df['image'] = img_list
-
+    df = df.reset_index()
+    
     # MySQL 연결 문자열 생성
     connection_string = 'mysql+mysqlconnector://root:mysql@localhost/crolling'
 

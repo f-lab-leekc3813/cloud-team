@@ -1,17 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const crollCheck = require('../croll/crollCheck');
-
+const regionCheck = require('../region/regionCheck');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: '데이터를 입력하세요' });
+  res.render('index', { title: '지역을 입력하세요' });
 });
 
 
-router.get('/:croll', function (req, res, next) {
-  const { croll } = req.params
-  crollCheck(croll)
+router.get('/:region', function (req, res, next) {
+  const { region } = req.params
+  regionCheck(region)
     .then((result) => {
       res.send(result);
     })

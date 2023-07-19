@@ -1,11 +1,14 @@
 const database= require('../config/database.config');
+const trans_region = require('./trans_region');
 
-async function crollCheck (data){
+
+async function regionCheck (data){
     let co;
 
     try {
+        const region = trans_region(data)
         co = await database.getConnection();
-        const query = `SELECT * FROM project.${data}`;
+        const query = `SELECT * FROM crolling.cr_${region}`;
 
         const [result] = await co.execute(query);
         co.release();
@@ -15,4 +18,4 @@ async function crollCheck (data){
     }
 }
 
-module.exports = crollCheck;
+module.exports = regionCheck;

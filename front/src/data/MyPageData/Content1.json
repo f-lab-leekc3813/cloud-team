@@ -1,0 +1,23 @@
+{
+    "data": [{
+        "id" : "11",
+        "name" : "아파트 3억 4,000만원 - 울산시청 정문에서 1분",
+        "region" : "신정동",
+        "image" : "images/estate/11.jpeg",
+        "info1" : "매매 3억 4,000"
+    },{
+        "id" : "12",
+        "name" : "아파트 4억 - 2호선 대구은행역 바로코앞 초역세권",
+        "region" : "수성동4가",
+        "image" : "images/estate/12.jpeg",
+        "info1" : "매매 4억원"
+    },{
+        "id" : "13",
+        "name" : "투룸이상 500만원/40만원 - 2층",
+        "region" : "갈마동",
+        "image" : "images/estate/13.jpeg",
+        "info1" : "월세 500 / 40"
+    }
+]
+}
+    

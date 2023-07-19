@@ -11,8 +11,10 @@ function Content1(){
                         <br/>
                         <strong>부동산 직거래</strong>
                     </h1>
+
                     <p className={classes.content1_container3}>
                         이웃이 살던 집, 당근마켓에서
+
                         <br/>
                         편하게 직거래해보세요
                     </p>

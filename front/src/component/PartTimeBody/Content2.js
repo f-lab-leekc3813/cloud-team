@@ -33,7 +33,7 @@ function Content2 () {
     return (
         <section className={classes.content2_containers}>
             <h2 className={classes.content2_title}>
-                인기 당근알바
+                인기 구름알바
             </h2>
             <div className={classes.content2_containers1}>
                 {data1.map((data) => {
@@ -71,7 +71,7 @@ function Content2 () {
                         </span>
                     </div>
                     <div className={classes.content2_middlebannertxt}>
-                         당근알바 이용방법이 궁금하다면
+                         구름알바 이용방법이 궁금하다면
                          <br/>지금 바로 알아보세요!
                     </div>
                     <button className={classes.content2_middlebutton}>이용방법 알아보기</button>
@@ -114,7 +114,7 @@ function Content2 () {
                     </div>
                     <div className={classes.content2_apptxt}>
                         우리동네 알바가 궁금하다면
-                        <br/>당근마켓에서 바로 찾아보세요!
+                        <br/>구름마켓에서 바로 찾아보세요!
                     </div>
                     <button className={classes.content2_appbutton}>앱 다운로드 하기</button>
                 </div>

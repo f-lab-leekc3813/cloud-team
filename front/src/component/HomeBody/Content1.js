@@ -9,7 +9,7 @@ function Content1 () {
                         <h2 className={classes.big}>
                             당신 근처의
                             <br/>
-                            애플 마켓
+                            구름 마켓
                         </h2>
                         <p className={classes.small}>
                             중고 거래부터 동네 정보까지, 이웃과 함께해요.
@@ -21,7 +21,7 @@ function Content1 () {
                         <img 
                             className={classes.image_1} 
                             src = "images/image_1.webp"
-                            alt = "당근마켓"
+                            alt = "구름마켓"
                         />
                     </div>
                 </div>

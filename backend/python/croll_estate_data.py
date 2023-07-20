@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from sqlalchemy import create_engine
 
 
+
 def croll(n):
     link = 'https://www.daangn.com'+estate[n].find('a')['href']
     r = requests.get(link)
@@ -49,6 +50,7 @@ def func(text):
     return di
 
 
+
 url = "https://www.daangn.com/kr/realty/?_fp=37ba405cb5536d9c7a43d92cb223e53a&_fpp=pSf9cqzC1QF7X6viazPf"
 r = requests.get(url)
 soup = BeautifulSoup(r.text, 'html.parser')
@@ -65,12 +67,21 @@ for i in range(len(estate)):
 
 df = pd.DataFrame(li)
 df['img'] = img_li
+
 df = df.reset_index()
+
+
 
 # MySQL 연결 문자열 생성
 connection_string = 'mysql+mysqlconnector://root:1023ldde@localhost/project'
 
 # MySQL 엔진 생성
 engine = create_engine(connection_string)
+
+
+query = f"SELECT * FROM project.estate_page"
+df1 = pd.read_sql(query, engine)
+df['main_img'] = df1['image']
+
 
 df.to_sql(name='estate_data', con=engine, if_exists='replace', index=False)

@@ -1,23 +1,21 @@
-import { useState, useEffect } from 'react';
+import React,{useState, useEffect} from 'react';
+
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import {RecoilState, useRecoilState} from "recoil";
-
 import classes from './Content2.module.css';
-import { RegionState } from '../../store/RegionState';
 
-function Content2() {
+function Content2({ selectedItemId }) {
     const [data, setData] = useState([]);
-
-    const [region, setRegion] = useRecoilState(RegionState)
-
+    let region = selectedItemId;
+    console.log(region)
     useEffect(() => {
         fetchData();
     }, []);
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/region/best');
+            const response = await axios.get(`http://localhost:8080/region/${region}`);
+
             setData(response.data);
             console.log(response.data)
 

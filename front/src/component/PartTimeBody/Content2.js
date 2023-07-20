@@ -24,7 +24,6 @@ function Content2 () {
           setData1(slicedData1);
           setData2(slicedData2);
 
-          console.log(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
         }

@@ -25,7 +25,6 @@ function PartTimeDetail () {
           const responseData = response.data;
 
           setData(responseData);
-          console.log(response.data)
 
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -44,7 +43,7 @@ function PartTimeDetail () {
                 <Content3 d_day = {itemData?.d_day} />
                 <Content4 pay ={itemData?.pay} address = {itemData?.address} day = {itemData?.day} time = {itemData?.time} />
                 <Content5 info = {itemData?.info} />
-                <Content6 address = {itemData?.address} />
+                <Content6 address = {itemData?.address} location = {itemData?.location} />
             </main>
         </div>
     )

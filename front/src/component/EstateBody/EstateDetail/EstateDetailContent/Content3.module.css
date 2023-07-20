@@ -47,3 +47,14 @@
     margin: 0;
     display: block;
 }
+
+.user {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.hometype {
+    font-size: 15px;
+}

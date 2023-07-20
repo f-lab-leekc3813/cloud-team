@@ -37,7 +37,7 @@ function EstateDetail() {
     return (
         <div className={classes.containers}>
             <main className={classes.main}>
-                <Content1 img = {itemData?.img}/>
+                <Content1 img = {itemData?.main_img}/>
                 <Content2 
                     img = {itemData?.img} 
                     user_name = {itemData?.user_name}
@@ -45,9 +45,18 @@ function EstateDetail() {
                     temp = {itemData?.temp} 
                     />
                 <div className={classes.grayline}></div>
-                <Content3 pyung = {itemData?.pyung}/>
-                <Content4 />
-                <Content5 />
+                <Content3 user_type = {itemData?.user_type} hometype = {itemData?.hometype}  d_day = {itemData?.d_day}/>
+                <Content4
+                    pyung = {itemData?.pyung}
+                    bang = {itemData?.bang}
+                    floor = {itemData?.floor}
+                    loan = {itemData?.loan}
+                    day = {itemData?.day}
+                    animal = {itemData?.animal}
+                    park = {itemData?.park}
+                    eli = {itemData?.eli}
+                 />
+                <Content5 info = {itemData?.info} />
                 <Content6 />
             </main>
         </div>

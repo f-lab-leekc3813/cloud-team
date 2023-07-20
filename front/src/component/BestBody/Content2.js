@@ -12,23 +12,21 @@ function Content2({ selectedItemId }) {
 
     let region;
     const fetchData = async () => {
-        if (selectedItemId === "" || selectedItemId ==="지역을 선택하세요") {
+        if (selectedItemId === "") {
             region = "best";
+        } else if (selectedItemId.length === 4) {
+            region = selectedItemId[0] + selectedItemId[2];
         } else {
             region = selectedItemId.slice(0, 2);
         }
-        console.log(region)
         try {
             const response = await axios.get(`http://localhost:8080/region/${region}`);
-            console.log(response)
             setData(response.data);
-            console.log(response.data)
 
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
-    console.log(data)
 
     return (
         <section className={classes.cards_wrap}>

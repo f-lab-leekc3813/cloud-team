@@ -62,15 +62,15 @@
     color: var(--seed-scale-color-gray-900);
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.75rem;
+    
     padding: 0.75rem 0 0.875rem;
 }
 
-.content4_icon {
-    width: 20;
-    height: 20;
+.box_title {
+    width: 113px;
+    height: 24px;
+    color: #868B94;
+    font-size: 18px;
 }
 
 @media screen and (min-width: 768px) {

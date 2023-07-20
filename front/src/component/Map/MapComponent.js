@@ -1,14 +1,22 @@
 import React from 'react';
 import { Map as KakaoMap, MapMarker } from 'react-kakao-maps-sdk';
 
-function MapComponent() {
+function MapComponent(props) {
+  if (!props.location) {
+    return <div>Location 값이 유효하지 않습니다.</div>;
+  }
+
+  const location = props.location.split(',');
+  const lat = parseFloat(location[0]);
+  const lng = parseFloat(location[1]);
+
   return (
     <KakaoMap
-      center={{ lat: 37.58583193159859, lng: 126.70986442961834 }} // coordinates of the center of the map
+      center={{ lat, lng }} // coordinates of the center of the map
       style={{ width: '800px', height: '300px' }} // map size
       level={3} // map zoom level
     >
-      <MapMarker position={{ lat: 37.58583193159859, lng: 126.70986442961834 }}> </MapMarker>
+      <MapMarker position={{ lat, lng }}> </MapMarker>
     </KakaoMap>
   );
 }

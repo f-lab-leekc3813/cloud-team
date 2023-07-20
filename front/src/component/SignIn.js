@@ -34,7 +34,7 @@ const SignIn = ({ isOpen, close }) => {
 
   const SubmitHandler = () => {
 
-    const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
+    const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$}/;
     const passwordRegex = /^[a-zA-Z0-9]{8,}$/;
     const nicknameRegex = /^[a-zA-Z0-9]{3,}$/;
 

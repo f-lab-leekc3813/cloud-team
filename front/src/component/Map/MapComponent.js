@@ -16,7 +16,7 @@ function MapComponent(props) {
       style={{ width: '800px', height: '300px' }} // map size
       level={3} // map zoom level
     >
-      <MapMarker position={{ lat, lng }}> </MapMarker>
+      <MapMarker position={{ lat, lng }} info={null} />
     </KakaoMap>
   );
 }

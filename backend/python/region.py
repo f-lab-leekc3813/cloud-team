@@ -30,7 +30,7 @@ def region(data):
                     'chungnam' : "https://www.daangn.com/region/%EC%B6%A9%EC%B2%AD%EB%82%A8%EB%8F%84",
                     'jeonbuk' : "https://www.daangn.com/region/%EC%B6%A9%EC%B2%AD%EB%82%A8%EB%8F%84",
                     'jeonnam' : "https://www.daangn.com/region/%EC%A0%84%EB%9D%BC%EB%82%A8%EB%8F%84",
-                    'gyeongbuk' : "https://www.daangn.com/region/%EA%B2%BD%EC%83%81%EB%B6%81%EB%8F%84",
+                    'gyeongbuk' : "https://www.daangn.com/region/%EC%A0%84%EB%9D%BC%EB%B6%81%EB%8F%84",
                     'gyeongnam' : "https://www.daangn.com/region/%EA%B2%BD%EC%83%81%EB%82%A8%EB%8F%84",
                     'jeju' : "https://www.daangn.com/region/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84"}
     

@@ -14,7 +14,7 @@ function Content1 () {
                         <p className={classes.small}>
                             중고 거래부터 동네 정보까지, 이웃과 함께해요.
                             <br/>
-                            가깝고 따뜻한 당신의 근처를 만들어요.
+                            가깝고 따뜻한 당신의 구름을 만들어요.
                         </p>
                     </div>
                     <div className={classes.content1_wrap}>

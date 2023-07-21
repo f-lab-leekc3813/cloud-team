@@ -11,7 +11,7 @@ def croll(n):
     link = 'https://www.daangn.com'+estate[n].find('a')['href']
     r = requests.get(link)
     soup = BeautifulSoup(r.text, 'html.parser')
-    a = soup.find_all('section')[:4]
+    a = soup.find_all('section')[:6]
 
     text = ['+'.join([element.text for element in a[i](text=True)])for i in range(len(a))]
 
@@ -36,15 +36,23 @@ def func(text):
     estype = text_li[1][3]
     d_day = text_li[1][4]
     
-    name_dict = {'면적':'pyung','방/욕실 수':'bang','층':'floor','대출가능여부':'loan','입주 가능일':'day',
-                 '반려동물':'animal','주차':'park','엘리베이터':'eli','내부 시설':'inside'}
-    state_dict = {name_dict[i]:j for i,j in zip(text_li[2][1::2],text_li[2][2::2])}
+    info, address = '',''
+    for idx in range(2,6):
+        if text_li[idx][0] == '정보':
+            name_dict = {'면적':'pyung','방/욕실 수':'bang','층':'floor','대출가능여부':'loan','입주 가능일':'day',
+                        '반려동물':'animal','주차':'park','엘리베이터':'eli','내부 시설':'inside'}
+            state_dict = {name_dict[i]:j for i,j in zip(text_li[idx][1::2],text_li[idx][2::2])}
+        
+        elif text_li[idx][0] == '소개':
+            info = text_li[idx][1].replace('\n',' ')
+
+        elif text_li[idx][0] == '위치':
+            address = text_li[idx][1]
+            break
     
 
-    info = text_li[3][1].replace('\n',' ')
-
     di = {'user_name':user_name, 'region':region, 'temp':temp, 'user_type':user_type, 'hometype':hometype,
-          'state':state, 'estype':estype, 'd_day':d_day,'info':info}
+          'state':state, 'estype':estype, 'd_day':d_day,'info':info, 'address':address}
     di.update(state_dict)
     
     return di

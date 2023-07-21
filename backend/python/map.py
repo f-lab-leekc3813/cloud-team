@@ -18,7 +18,7 @@ def add(region):
         search_address.send_keys(region)
         search_address.send_keys(Keys.ENTER)
 
-        wait = WebDriverWait(driver, 5)
+        wait = WebDriverWait(driver, 10)
         result_div = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="insert_data_5"]')))
 
         result_data = result_div.text
@@ -45,10 +45,16 @@ def sql(name):
         if data[-1].isdigit():
             address_list.append(add(data))
         else :
-            address_list.append(add(data+' 13'))
+            for i in range(10,20):
+                try :
+                    address_list.append(add(data+f' {i}'))
+                    break
+                except :
+                    pass
 
     df['location'] = address_list
 
     df.to_sql(name=name, con=engine, if_exists='replace', index=False)
 
 sql("part_data")
+sql("estate_data")

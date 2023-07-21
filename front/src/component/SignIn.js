@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {useRecoilState} from "recoil";
-import {LoginState} from "../store/LoginState";
+import { useRecoilState } from "recoil";
+import { LoginState } from "../store/LoginState";
 
 import classes from "./SignIn.module.css";
 
@@ -34,19 +34,13 @@ const SignIn = ({ isOpen, close }) => {
 
   const SubmitHandler = () => {
 
-    const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$}/;
+    const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
     const passwordRegex = /^[a-zA-Z0-9]{8,}$/;
     const nicknameRegex = /^[a-zA-Z0-9]{3,}$/;
 
-    if (emailRegex.test(email)) {
-      setEmailCheck(true);
-    }
-    if (passwordRegex.test(password)) {
-      setPasswordCheck(true);
-    }
-    if (nicknameRegex.test(nickname)) {
-      setNicknameCheck(true);
-    }
+    setEmailCheck(emailRegex.test(email) && email.length <= 20);
+    setPasswordCheck(passwordRegex.test(password) && password.length <= 20);
+    setNicknameCheck(nicknameRegex.test(nickname) && nickname.length <= 20);
 
 
     if (isSignUp) {
@@ -58,18 +52,23 @@ const SignIn = ({ isOpen, close }) => {
             nickname: nickname,
           })
           .then((res) => {
-            if (res.status === 200) {
-              alert("회원가입이 완료되었습니다(회원가입).");
-              close();
-              setEmail("");
-              setPassword("");
-              setNickname("");
-            } else if (res.status === 201) {
-              alert("이미 있는 이메일입니다.")
-            } else if (res.status === 202) {
-              alert("이미 있는 닉네임입니다.")
-            } else {
-              alert("회원가입에 실패하였습니다(회원가입,연결실패).");
+            switch (res.status) {
+              case 200:
+                alert("회원가입이 완료되었습니다(회원가입).");
+                close();
+                setEmail("");
+                setPassword("");
+                setNickname("");
+                break;
+              case 201:
+                alert("이미 있는 이메일입니다.");
+                break;
+              case 202:
+                alert("이미 있는 닉네임입니다.");
+                break;
+              default:
+                alert("회원가입에 실패하였습니다(회원가입,연결실패).");
+                break;
             }
           })
           .catch((err) => {
@@ -78,7 +77,7 @@ const SignIn = ({ isOpen, close }) => {
       } else {
         alert("입력한 정보를 다시 확인해주세요(회원가입).");
       }
-    }else{
+    } else {
       if (emailCheck && passwordCheck) {
         axios
           .post("http://localhost:8080/user/login", {

@@ -51,9 +51,9 @@ function Search() {
                                     {item.region}
                                 </div>
                                 <div className={classes.card_counts}>
-                                    <span>관심 {item.like}</span>
+                                    <span>관심 {item.like} </span>
                                     ∙
-                                    <span>채팅 {item.chat}</span>
+                                    <span> 채팅 {item.chat}</span>
                                 </div>
                             </div>
                         </Link>

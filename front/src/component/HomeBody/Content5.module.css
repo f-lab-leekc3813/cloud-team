@@ -67,13 +67,14 @@
 
 .item_name {
     margin-top: 10px;
-    font-weight: 400;
+    font-weight: 300;
     font: inherit;
 }
 
 .item_cost {
     margin-top: 10px;
-    font-weight: 700;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .item_place {

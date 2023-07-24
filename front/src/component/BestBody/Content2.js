@@ -30,7 +30,7 @@ function Content2({ selectedItemId }) {
 
     return (
         <section className={classes.cards_wrap}>
-            {data.map((item) => {
+            {Array.isArray(data) && data.map((item) => {
 
                 return (
                     <article key={item.index} className={classes.card_top}>
@@ -49,9 +49,9 @@ function Content2({ selectedItemId }) {
                                     {item.region}
                                 </div>
                                 <div className={classes.card_counts}>
-                                    <span>관심 {item.like}</span>
+                                    <span>관심 {item.like} </span>
                                     ∙
-                                    <span>채팅 {item.chat}</span>
+                                    <span> 채팅 {item.chat}</span>
                                 </div>
                             </div>
                         </Link>

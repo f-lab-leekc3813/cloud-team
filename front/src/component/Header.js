@@ -6,10 +6,6 @@ import Button from 'react-bootstrap/Button';
 import classes from './Header.module.css';
 import LoginButton from './LoginButton';
 import { LoginState } from '../store/LoginState';
-import { LikeState } from '../store/LikeState';
-
-
-    
 
 function Header() {
 

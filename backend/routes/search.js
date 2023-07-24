@@ -14,7 +14,7 @@ router.get('/:search', function (req, res, next) {
         .then((result) => {
             if (result.length > 0) { res.send(result); }
             else {
-                res.send(search)
+                res.send('')
             }
         })
         .catch((error) => {

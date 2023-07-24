@@ -7,11 +7,11 @@ import classes from './Header.module.css';
 import LoginButton from './LoginButton';
 import { LoginState } from '../store/LoginState';
 
-
 function Header() {
 
     const [searchText, setSearchText] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
+
     const navigate = useNavigate();
 
     const SearchHandler = (event) => {
@@ -59,10 +59,7 @@ function Header() {
                     </form>
 
                     {isLoggedIn ? 
-                    <>
                         <Button onClick={loginHandler} variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>내정보</Button>
-                        <Button variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>찜</Button>
-                    </>
                       : ''   }
                     <LoginButton  />
 

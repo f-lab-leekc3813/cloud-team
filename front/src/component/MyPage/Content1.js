@@ -1,3 +1,5 @@
+import Button from 'react-bootstrap/Button';
+
 import classes from './Content1.module.css'
 import dummy3 from '../../data/MyPageData/Content1.json'
 import dummy4 from '../../data/MyPageData/Content2.json'
@@ -167,6 +169,7 @@ function Content1(){
                         </div>
                     )
                 })}
+                <Button variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>찜</Button>
             </div>
         </div>
     </section>

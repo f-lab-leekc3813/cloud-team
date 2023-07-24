@@ -16,9 +16,12 @@ const SignIn = ({ isOpen, close }) => {
   const [login, setLogin] = useRecoilState(LoginState);
   const [isSignUp, setIsSignUp] = useState(false);
 
-  const loginHandler = (e) => {
+
+  const loginHandler = () => {
     setLogin(true);
   }
+
+
   const eamilHandler = (e) => {
     setEmail(e.target.value);
   }

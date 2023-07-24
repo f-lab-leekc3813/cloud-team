@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const crollCheck = require('../croll/crollCheck');
+const crollCheck = require('./crollCheck');
 
 const { swaggerUi, specs } = require('../swagger/swagger');
 

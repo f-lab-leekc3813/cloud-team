@@ -1,6 +1,5 @@
 import classes from './Content1.module.css'
 
-
 function Content1(){
     return(
         <section className={classes.content1_containers}>
@@ -26,8 +25,6 @@ function Content1(){
                 </div>
             </div>
         </section>
-
-    
     )
 }
 

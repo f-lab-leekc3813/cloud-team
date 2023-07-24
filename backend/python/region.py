@@ -4,6 +4,8 @@ import pandas as pd
 
 from sqlalchemy import create_engine
 
+idx = 0
+
 def func(item):
     item_name = item.select('a > div.card-desc > h2')[0].text.strip()
     price = item.select('a > div.card-desc > div.card-price')[0].text.strip()
@@ -15,7 +17,8 @@ def func(item):
     return di
 
 def region(data):
-    region_dict = {'best' : "https://www.daangn.com/hot_articles",
+    region_dict = {
+                    # 'best' : "https://www.daangn.com/hot_articles",
                     'seoul' : "https://www.daangn.com/region/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C",
                     'busan' : "https://www.daangn.com/region/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C",
                     'daegu' : "https://www.daangn.com/region/%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C",
@@ -38,6 +41,7 @@ def region(data):
 
 
 def croll(data):
+    global idx
     wp = requests.get(region(data))
     soup = BeautifulSoup(wp.content, "html.parser")
     getItemse = soup.select("#content > section.cards-wrap > article")
@@ -46,7 +50,9 @@ def croll(data):
     for item in getItemse:
         si.append(func(item))
 
-    df = pd.DataFrame(si)
+
+    df = pd.DataFrame(si, index=range(idx,idx+len(si)))
+    idx += len(si)
 
 
     img_list = []
@@ -54,20 +60,22 @@ def croll(data):
         img_list.append(i['src'])
 
     df['image'] = img_list
-    df = df.reset_index()
     
     # MySQL 연결 문자열 생성
 
-    connection_string = 'mysql+mysqlconnector://root:1023ldde@localhost/crolling'
+    connection_string = 'mysql+mysqlconnector://root:mysql@localhost/crolling'
 
     # MySQL 엔진 생성
     engine = create_engine(connection_string)
 
-    df.to_sql(name='cr_'+data, con=engine, if_exists='replace', index=False)
+    df.to_sql(name='croll', con=engine, if_exists='append', index=True)
 
 
-data_list = ['best','seoul','busan','daegu','incheon','gwangju','daejeon','ulsan','sejong','gyeonggi','gangwon',
+
+
+data_list = ['seoul','busan','daegu','incheon','gwangju','daejeon','ulsan','sejong','gyeonggi','gangwon',
              'chungbuk','chungnam', 'jeonbuk','jeonnam','gyeongbuk','gyeongnam','jeju']
+
 
 for data in data_list:
     croll(data)

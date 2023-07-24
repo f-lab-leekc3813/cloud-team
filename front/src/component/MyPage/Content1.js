@@ -12,25 +12,25 @@ function Content1(){
                 <h1 className={classes.content1_container3}>
                     <div className={classes.content1_container9}>
                         <img className={classes.header_image1} src='/images/cloudlogo.jpg' alt='로고' />
-                        <p1 className={classes.content1_container10}>
+                        <p className={classes.content1_container10}>
                             구름마켓
-                        </p1>
+                        </p>
                         <img className={classes.header_image2} src='/images/cloudlogo.jpg' alt='로고' />
                     </div>
                 <span className={classes.content1_container5}>
                     <img className={classes.content1_container6} src = 'images/mypage/human.png' alt = '사진' />                
                 </span>
-                <p1 className={classes.content1_container7}>
+                <p className={classes.content1_container7}>
                     경빈
-                </p1>
+                </p>
                 <div className={classes.content1_container11}>
                     <p>iamdoxoak@naver.com</p>
                 </div>
                 </h1>
                 <div className={classes.content1_container14}>
-                    <p1 className={classes.content1_text1}>
+                    <p className={classes.content1_text1}>
                     기본정보
-                    </p1>
+                    </p>
 
                 </div>
                 <div className={classes.content1_container12}>
@@ -109,14 +109,14 @@ function Content1(){
                 </div>
             </div>
             <div className={classes.content1_container26}>
-                <p1 className={classes.content1_text6}>
+                <p className={classes.content1_text6}>
                     최근 본 상품
-                </p1>
+                </p>
             </div>
             <div className={classes.content1_container27}>
-                <p1 className={classes.content1_text6}>
+                <p className={classes.content1_text6}>
                     찜한 상품
-                </p1>
+                </p>
             </div>
             <div className={classes.content1_container25}>
             {dummy3.data.map((data) => {

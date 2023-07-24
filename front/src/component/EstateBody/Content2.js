@@ -1,12 +1,16 @@
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import { useRecoilState } from 'recoil';
 
+import { LikeState } from '../../store/LikeState';
 import classes from './Content2.module.css';
 
 function Content2 () {
     const [data1, setData1] = useState([]);
     const [data2, setData2] = useState([]);
+
+    const [Like, setLike] = useRecoilState(LikeState);
 
     useEffect(() => {
         fetchData();
@@ -29,6 +33,15 @@ function Content2 () {
           console.error('Error fetching data:', error);
         }
       };
+    const onClickLikeButton = (event) => {
+        const [index, image, name, region] = event.target.value.split(',');
+        setLike([...Like, {index, image, name, region}]);
+        alert('찜목록에 추가 하였습니다.');
+    };
+
+    useEffect(() => {
+        console.log(Like);
+      }, [Like]);
 
     return (
         <section className={classes.content2_containers}>
@@ -59,6 +72,7 @@ function Content2 () {
                                      </div>
                                 </article>
                             </Link>
+                            <button onClick={onClickLikeButton} value={`${data.index},${data.image},${data.name},${data.region}`} className={classes.like_button}>찜하기</button>
                         </div>
                     )
                 })}
@@ -102,6 +116,7 @@ function Content2 () {
                                 </div>
                            </article>
                            </Link>
+                           <button onClick={onClickLikeButton} className={classes.like_button}>찜하기</button>
                         </div>
                     )
                 })}

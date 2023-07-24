@@ -16,7 +16,7 @@ const options = {
       },
     ],
   },
-  apis: ['./routes/*.js'], //Swagger 파일 연동
+  apis: ['./routes/*.js','./region/*.js','./croll/*.js'], //Swagger 파일 연동
 }
 
 const specs = swaggereJsdoc(options);

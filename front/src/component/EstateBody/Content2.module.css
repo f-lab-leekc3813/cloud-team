@@ -57,6 +57,7 @@
     padding: 1.25rem 0;
     flex-basis: 48%;
     display: block;
+    margin-bottom: 0;
 }
 
 
@@ -351,4 +352,9 @@
 .content2_downcontainer1{
     padding: 3rem 0;
     display: block;
+}
+
+.like_button {
+    border-radius: 5px;
+    margin-top: 8px;
 }

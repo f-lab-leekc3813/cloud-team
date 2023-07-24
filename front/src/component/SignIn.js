@@ -92,7 +92,7 @@ const SignIn = ({ isOpen, close }) => {
               localStorage.setItem('token', token);
 
               alert("로그인이 완료되었습니다(로그인).");
-              setLogin(true);
+              loginHandler();
               close();
               setEmail("");
               setPassword("");
@@ -146,6 +146,11 @@ const SignIn = ({ isOpen, close }) => {
                 type="password"
                 placeholder="비밀번호를 8자리 이상 입력해주세요."
                 onChange={passwordHandler}
+                onKeyUp={(event) => {
+                  if (event.key === 'Enter') {
+                    SubmitHandler();
+                  }
+                }}
               />
               <div className={classes.loginMid}>
                 <label className={classes.autoLogin} htmlFor="hint">

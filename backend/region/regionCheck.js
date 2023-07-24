@@ -1,14 +1,18 @@
-const database= require('../config/database.config');
+const database = require('../config/database.config');
 const trans_region = require('./trans_region');
 
 
-async function regionCheck (data){
+async function regionCheck(data) {
     let co;
 
     try {
-        const region = trans_region(data)
         co = await database.getConnection();
-        const query = `SELECT * FROM crolling.cr_${region}`;
+        let query;
+        if (data === 'best') {
+            query = `SELECT * FROM crolling.best`;
+        } else {
+            query = `SELECT * FROM crolling.croll WHERE region like '${data}%'`;
+        }
 
         const [result] = await co.execute(query);
         co.release();

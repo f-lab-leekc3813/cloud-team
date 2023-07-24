@@ -5,10 +5,12 @@ import classes from './Header.module.css';
 import LoginButton from './LoginButton';
 import Button from 'react-bootstrap/Button';
 import { LoginState } from '../store/LoginState';
+import { LikeState } from '../store/LikeState';
 
 function Header () {
 
     const [isLoggedIn,setIsLoggedIn] = useRecoilState(LoginState);
+    const [Like, setLike] = useRecoilState(LikeState);
     const navigate = useNavigate();
 
     const loginHandler = () => {
@@ -42,10 +44,7 @@ function Header () {
 
                     </form>
                     {isLoggedIn ? 
-                    <>
                         <Button onClick={loginHandler} variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>내정보</Button>
-                        <Button variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>찜</Button>
-                    </>
                       : ''   }
                     <LoginButton  />
                 </div>

@@ -67,7 +67,7 @@ def croll(data):
 
     # MySQL 연결 문자열 생성
 
-    connection_string = 'mysql+mysqlconnector://root:mysql@localhost/crolling'
+    connection_string = 'mysql+mysqlconnector://root:1023ldde@localhost/crolling'
 
     # MySQL 엔진 생성
     engine = create_engine(connection_string)

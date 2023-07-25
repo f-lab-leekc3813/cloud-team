@@ -80,3 +80,11 @@
     font-size: 13px;
 }
 
+.error_img {
+    margin-top: 60px;
+}
+
+.error_message {
+    margin-top: 280px;
+    font-size: 26px;
+}

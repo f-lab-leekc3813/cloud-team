@@ -4,7 +4,6 @@ import pandas as pd
 
 from sqlalchemy import create_engine
 
-import mysql.connector
 
 idx = 0
 
@@ -25,7 +24,7 @@ def func(item):
 
 def region(data):
     region_dict = {
-        'best' : "https://www.daangn.com/hot_articles",
+        'best': "https://www.daangn.com/hot_articles",
         'seoul': "https://www.daangn.com/region/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C",
         'busan': "https://www.daangn.com/region/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C",
         'daegu': "https://www.daangn.com/region/%EB%8C%80%EA%B5%AC%EA%B4%91%EC%97%AD%EC%8B%9C",
@@ -35,14 +34,14 @@ def region(data):
         'ulsan': "https://www.daangn.com/region/%EC%9A%B8%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C",
         'sejong': "https://www.daangn.com/region/%EC%84%B8%EC%A2%85%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EC%8B%9C",
         'gyeonggi': "https://www.daangn.com/region/%EA%B2%BD%EA%B8%B0%EB%8F%84",
-                    'gangwon': "https://www.daangn.com/region/%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84",
-                    'chungbuk': "https://www.daangn.com/region/%EC%B6%A9%EC%B2%AD%EB%B6%81%EB%8F%84",
-                    'chungnam': "https://www.daangn.com/region/%EC%B6%A9%EC%B2%AD%EB%82%A8%EB%8F%84",
-                    'jeonbuk': "https://www.daangn.com/region/%EC%A0%84%EB%9D%BC%EB%B6%81%EB%8F%84",
-                    'jeonnam': "https://www.daangn.com/region/%EC%A0%84%EB%9D%BC%EB%82%A8%EB%8F%84",
-                    'gyeongbuk': "https://www.daangn.com/region/%EA%B2%BD%EC%83%81%EB%B6%81%EB%8F%84",
-                    'gyeongnam': "https://www.daangn.com/region/%EA%B2%BD%EC%83%81%EB%82%A8%EB%8F%84",
-                    'jeju': "https://www.daangn.com/region/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84"}
+        'gangwon': "https://www.daangn.com/region/%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84",
+        'chungbuk': "https://www.daangn.com/region/%EC%B6%A9%EC%B2%AD%EB%B6%81%EB%8F%84",
+        'chungnam': "https://www.daangn.com/region/%EC%B6%A9%EC%B2%AD%EB%82%A8%EB%8F%84",
+        'jeonbuk': "https://www.daangn.com/region/%EC%A0%84%EB%9D%BC%EB%B6%81%EB%8F%84",
+        'jeonnam': "https://www.daangn.com/region/%EC%A0%84%EB%9D%BC%EB%82%A8%EB%8F%84",
+        'gyeongbuk': "https://www.daangn.com/region/%EA%B2%BD%EC%83%81%EB%B6%81%EB%8F%84",
+        'gyeongnam': "https://www.daangn.com/region/%EA%B2%BD%EC%83%81%EB%82%A8%EB%8F%84",
+        'jeju': "https://www.daangn.com/region/%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84"}
 
     return region_dict[data]
 
@@ -86,6 +85,7 @@ def drop_sql(name):
             conn.execute(f'DROP TABLE {name};')
     except Exception as e:
         print(f'error: {e}')
+
 
 drop_sql('croll')
 

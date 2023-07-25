@@ -24,7 +24,6 @@ function Search() {
         try {
             const response = await axios.get(`http://localhost:8080/search/${searchText}`);
             setData(response.data);
-            console.log(data)
 
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -38,11 +37,11 @@ function Search() {
                     <article key={item.index} className={classes.card_top}>
                         <Link to={`/search/${searchText}`} className={classes.card_link}>
                             <div className={classes.card_photo}>
-                                <img className={classes.card_img} src={item.image} alt='사진' />
+                                <img className={classes.card_img} src={item.img} alt='사진' />
                             </div>
                             <div className={classes.card_desc}>
                                 <h2 className={classes.card_title} >
-                                    {item.item}
+                                    {item.title}
                                 </h2>
                                 <div className={classes.card_price}>
                                     {item.price}

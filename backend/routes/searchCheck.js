@@ -6,7 +6,7 @@ async function searchCheck(data) {
 
     try {
         co = await database.getConnection();
-        const query = `SELECT * FROM crolling.croll WHERE item like '%${data}%'`;
+        const query = `SELECT * FROM crolling.product WHERE title like '%${data}%'`;
 
         const [result] = await co.execute(query);
         co.release();

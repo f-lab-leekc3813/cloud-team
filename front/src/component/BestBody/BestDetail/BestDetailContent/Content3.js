@@ -7,7 +7,7 @@ function Content3(props) {
                 {props.title}
             </h1>
             <pre className={classes.content3_titlebottom}>
-                {props.d_day} 전 작성
+                {props.category} {props.d_day} 전 작성
             </pre>
         </section>
     )

@@ -42,6 +42,7 @@ function BestDetail() {
                 <div className={classes.grayline}></div>
                 <Content3
                     title={itemData?.title}
+                    category={itemData?.category}
                     d_day={itemData?.d_day}
                 />
                 <Content4

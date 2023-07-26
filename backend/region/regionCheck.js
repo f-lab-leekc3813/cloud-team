@@ -1,6 +1,4 @@
 const database = require('../config/database.config');
-const trans_region = require('./trans_region');
-
 
 async function regionCheck(data) {
     let co;
@@ -9,9 +7,9 @@ async function regionCheck(data) {
         co = await database.getConnection();
         let query;
         if (data === 'best') {
-            query = `SELECT * FROM crolling.best`;
+            query = `SELECT * FROM crolling.product ORDER BY view DESC LIMIT 100`;
         } else {
-            query = `SELECT * FROM crolling.croll WHERE region like '${data}%'`;
+            query = `SELECT * FROM crolling.product WHERE region like '%${data}%'`;
         }
 
         const [result] = await co.execute(query);

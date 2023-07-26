@@ -13,7 +13,6 @@ function BestDetail() {
     const location = useLocation();
 
     const index = location.pathname.replace('/bestpage/','');
-    console.log(index);
 
     useEffect(() => {
         fetchData();
@@ -22,7 +21,6 @@ function BestDetail() {
         try {
             const response = await axios.get(`http://localhost:8080/region/best/${index}`);
             setData(response.data);
-            console.log(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -30,7 +28,6 @@ function BestDetail() {
 
     const filteredData = data.filter(item => item.index === Number(index));
     const itemData = filteredData.length > 0 ? filteredData[0] : null;
-    console.log(itemData);
 
     return (
         <div className={classes.containers}>

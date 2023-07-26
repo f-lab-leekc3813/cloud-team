@@ -1,0 +1,25 @@
+.content1_containers {
+    width: 100%;
+    touch-action: pan-y;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+}
+
+.content1_wrap {
+    width: 800px;
+    backface-visibility: hidden;
+    display: block;
+    overflow: hidden;
+}
+
+.content1_img {
+    border-radius: 5px;
+    width: 800px;
+    height: 468px;
+}

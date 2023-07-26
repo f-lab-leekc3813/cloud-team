@@ -38,8 +38,8 @@ function Content5() {
                         {data1.map((item) => {
                             return (
                                 <div key={item.index} className={classes.item}>
-                                    <img className={classes.item_img} src={`${item.image}`} alt='content5' />
-                                    <h2 className={classes.item_name}>{item.item}</h2>
+                                    <img className={classes.item_img} src={`${item.img}`} alt='content5' />
+                                    <h2 className={classes.item_name}>{item.title}</h2>
                                     <h2 className={classes.item_cost}>{item.price}</h2>
                                     <h1 className={classes.item_place}>{item.region}</h1>
                                     <div className={classes.item_chating}>
@@ -57,8 +57,8 @@ function Content5() {
                         {data2.map((item) => {
                             return (
                                 <div key={item.index} className={classes.item}>
-                                    <img className={classes.item_img} src={`${item.image}`} alt='content5' />
-                                    <h2 className={classes.item_name}>{item.item}</h2>
+                                    <img className={classes.item_img} src={`${item.img}`} alt='content5' />
+                                    <h2 className={classes.item_name}>{item.title}</h2>
                                     <h2 className={classes.item_cost}>{item.price}</h2>
                                     <h1 className={classes.item_place}>{item.region}</h1>
                                     <div className={classes.item_chating}>

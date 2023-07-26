@@ -34,13 +34,13 @@ function Content2({ selectedItemId }) {
 
                 return (
                     <article key={item.index} className={classes.card_top}>
-                        <Link to={`/bestpage/${region}`} className={classes.card_link}>
+                        <Link to={`/bestpage/${item.index}`} className={classes.card_link}>
                             <div className={classes.card_photo}>
-                                <img className={classes.card_img} src={item.image} alt='사진' />
+                                <img className={classes.card_img} src={item.img} alt='사진' />
                             </div>
                             <div className={classes.card_desc}>
                                 <h2 className={classes.card_title} >
-                                    {item.item}
+                                    {item.title}
                                 </h2>
                                 <div className={classes.card_price}>
                                     {item.price}

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const regionCheck = require('../region/regionCheck');
+const regionPage = require('../region/regionPage');
 
 const { swaggerUi, specs } = require('../swagger/swagger');
 
@@ -76,6 +77,19 @@ router.get('/:region', function (req, res, next) {
       return error;
     });
 });
+
+router.get('/:region/:index', function (req, res, next) {
+  const { region, index } = req.params;
+  console.log(region);
+  console.log(index);
+  regionPage(index)
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((error) => {
+      return error;
+    })
+})
 
 router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(specs));

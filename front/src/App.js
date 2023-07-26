@@ -10,6 +10,7 @@ import PartTimePage from './pages/PartTime';
 import EstatePage from './pages/Estate';
 import Mypage from './pages/Mypage';
 import BestPage from './pages/BestPage';
+import BestDetail from './component/BestBody/BestDetail/BestDetail';
 import PartTimeDetail from './component/PartTimeBody/PartTimeDetail/PartTimeDetail';
 import EstateDetail from './component/EstateBody/EstateDetail/EstateDetail';
 import Search from './pages/Search';
@@ -30,6 +31,7 @@ function App() {
             <Route path = "/parttime/:title" element = {<PartTimeDetail />} />
             <Route path = "/mypage" element ={<Mypage />} />
             <Route path = "/bestpage" element ={<BestPage />} />
+            <Route path = "/bestpage/:index" element ={<BestDetail />} />
             <Route path = "/search" element ={<Search />} />
           </Routes>
         </BrowserRouter>

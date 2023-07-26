@@ -18,17 +18,20 @@ function Search() {
             setSearchText(location.state.searchText);
             fetchData();
         }
-    }, [location.state])
 
-    const fetchData = async () => {
-        try {
-            const response = await axios.get(`http://localhost:8080/search/${searchText}`);
-            setData(response.data);
+        async function fetchData() {
+            try {
+                const response = await axios.get(`http://localhost:8080/search/${searchText}`);
+                setData(response.data);
 
-        } catch (error) {
-            console.error('Error fetching data:', error);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         }
-    }
+    }, [location.state, searchText])
+
+
+
 
     return (
         <section className={classes.cards_wrap}>

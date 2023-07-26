@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 import Content1 from "../component/BestBody/Content1";
 import Content2 from "../component/BestBody/Content2"
 
@@ -15,6 +16,14 @@ function BestPage() {
             setSelectedItemId(selectedValue);
         }
     };
+    let region;
+    if (selectedItemId === "") {
+        region = "best";
+    } else if (selectedItemId.length === 4) {
+        region = selectedItemId[0] + selectedItemId[2];
+    } else {
+        region = selectedItemId.slice(0, 2);
+    }
 
     return (
         <>

@@ -1,5 +1,22 @@
+
 .container {
-    margin-top: 150px;
-    background-color: black;
-    color: white;
+    background-color: aquamarine;
+    margin:30px;
+    font:1em "맑은 고딕",Cambria,Georgia,sans-serif;
+    position: relative;
+        left: 860px;
+        top: 30px;
+}
+small {
+    font:20px "맑은 고딕",Cambria,Georgia,sans-serif;
+    color: black;
+}
+h1,h2 {
+    font:45px "맑은 고딕",Cambria,Georgia,sans-serif;
+    color: green;
+}
+span {
+    color: violet;
+    font: 30px "맑은 고딕",Cambria,Georgia,sans-serif;
+    background-color: gold;
 }

@@ -1,4 +1,14 @@
 .container {
-    background-color: rgb(252, 252, 252);
-    color: rgb(254, 254, 254);
+    background-color: rgb(255, 255, 255);
+
+}
+
+.topmenu{
+    display:flex;
+    justify-content: center;
+}
+
+.btngroup{
+    margin-right: 10px;
+
 }

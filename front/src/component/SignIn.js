@@ -122,7 +122,7 @@ const SignIn = ({ isOpen, close }) => {
               ×
             </span>
             <div className={classes.modalContents} onClick={(e) => e.stopPropagation()}>
-              <img className={classes.signinIcon} src="/images/logo.png" alt="애플마켓 로그인" />
+              <img className={classes.signinIcon} src="/images/cloudlogo.jpg" alt="구름서점 로그인" />
               {isSignUp ?
                 <input
                   name="nickname"

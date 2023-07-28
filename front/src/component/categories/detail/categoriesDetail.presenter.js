@@ -13,6 +13,7 @@ export default function CategoriesUIDetail(props) {
             <span>바보빅터 Title</span>
             <span>저자 : 호아킴 데 포사다 authors</span>
             <span>카테고리 categories</span>
+            <button className={classes.like}>찜하기</button>
           </div>
         </div>
         <div className={classes.containerBottom}>

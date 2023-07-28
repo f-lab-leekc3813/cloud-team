@@ -33,6 +33,11 @@
     height: 650px;
 }
 
+.like {
+    width: 100px;
+    height: 30px;
+}
+
 .containerBottom {
     display: flex;
     flex-direction: column;

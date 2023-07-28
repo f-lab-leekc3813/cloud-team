@@ -5,21 +5,16 @@
 .topmenu {
     justify-content: center;
     display:flex;
-    /* Add topmenu styles here */
   }
-  /* Styles for the btngroup */
+
   .btngroup {
     background-color: #ffffff;
     justify-content: center;
     display:flex;
-
-    /* Add btngroup styles here */
   }
   
-  /* Styles for the buttons */
+
   .btngroup button {
-    /* Add button styles here */
-    /* For example, you can change the background color, text color, padding, and more */
     background-color: rgb(255, 255, 255);
     color: rgb(27, 160, 243);
     padding: 10px 20px;
@@ -30,30 +25,24 @@
     border-color:rgb(27, 160, 243);
   }
   
-  /* Styles for the dropdown menu */
+
   .dropdown-menu {
-    /* Add dropdown menu styles here */
-    /* For example, you can change the background color, text color, etc. */
     background-color: #f9f9f9;
     color: black;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
   }
   
   .dropdown-item {
-    /* Add dropdown item styles here */
-    /* For example, you can change the color, padding, etc. */
     color: #333;
     padding: 5px 10px;
     display: block;
     text-decoration: none;
-    
   }
   
-  /* Optional: Hover styles for dropdown items */
+
   .dropdown-item:hover {
     background-color: #f1f1f1;
   }
@@ -64,27 +53,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height:100%;
+    height: 100vh;
   }
-
+  
   .container {
-    height:100%;
-    
+    height: 100%;
   }
-
+  
   .carousel {
-    width: 600px;
-    height: 400px;
+    width:100%;
+    height:100%;
   }
 
   .carousel-inner {
     width: 100%;
-    height:100%;
-    position:relative;
+    height: 100%;
+  }
+  
+  .slideImage {
+    object-fit:contain; 
+    width: 100%;
+    height: 100%;
   }
 
-  .slideImage {
-    max-width: 100%;
-    max-height: 100%;
-    margin: 0 auto; /* Center the image horizontally within the Carousel item */
+  .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }

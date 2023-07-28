@@ -45,12 +45,10 @@ function Header() {
                             }}
                         />
                     </form>
-
                     {isLoggedIn ? 
                         <Button onClick={loginHandler} variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>내정보</Button>
                       : ''   }
-                    <LoginButton  />
-
+                    <LoginButton/>
                 </div>
             </div>
         </div>

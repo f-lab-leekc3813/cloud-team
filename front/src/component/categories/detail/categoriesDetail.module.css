@@ -1,22 +1,44 @@
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .container {
-    background-color: aquamarine;
-    margin:30px;
-    font:1em "맑은 고딕",Cambria,Georgia,sans-serif;
-    position: relative;
-        left: 860px;
-        top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 1024px;
+
 }
-small {
-    font:20px "맑은 고딕",Cambria,Georgia,sans-serif;
-    color: black;
+
+.containerTop {
+    display: flex;
+    height: 650px;
 }
-h1,h2 {
-    font:45px "맑은 고딕",Cambria,Georgia,sans-serif;
-    color: green;
+
+.containerTopLeft {
+    width: 512px;
+    height: 650px;
 }
-span {
-    color: violet;
-    font: 30px "맑은 고딕",Cambria,Georgia,sans-serif;
-    background-color: gold;
+
+.bookImg {
+    width: 512px;
+    height: 650px;
+}
+
+.containerTopRight {
+    display: flex;
+    flex-direction: column;
+    width: 512px;
+    height: 650px;
+}
+
+.containerBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.id{
+    margin-right: 10px;
 }

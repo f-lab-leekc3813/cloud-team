@@ -6,8 +6,10 @@ import Button from 'react-bootstrap/Button';
 import classes from './Header.module.css';
 import LoginButton from './LoginButton';
 import { LoginState } from '../store/LoginState';
+import LikePage  from './like/like.container.js';
 
 function Header() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const [searchText, setSearchText] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
@@ -20,10 +22,13 @@ function Header() {
         navigate('/search', { state: { searchText: searchText } });
     }
 
-    const loginHandler = () => {
-        setIsLoggedIn(true);
-        navigate('/mypage');
-    }
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+      };
 
     return (
         <div className={classes.header}>
@@ -54,10 +59,10 @@ function Header() {
                     </form>
 
                     {isLoggedIn ? 
-                        <Button onClick={loginHandler} variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>내정보</Button>
+                        <Button onClick={openModal} variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>찜목록</Button>
                       : ''   }
                     <LoginButton  />
-
+                    <LikePage isOpen = {isModalOpen} close = {closeModal}/>
                 </div>
             </div>
         </div>

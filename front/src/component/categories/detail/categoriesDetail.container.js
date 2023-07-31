@@ -1,17 +1,40 @@
+
 import {useRecoilState} from "recoil";
 import { LikeState} from '../../../store/LikeState';
 
 import CategoriesDetailUI from "./categoriesDetail.presenter"
+import { useState } from "react";
 
 export default function CategoriesDetail() { 
+    
     const [like, setLike] = useRecoilState(LikeState);
+    const [score, setScore] = useState('');
+
+    const onChangeScore = (e) => {
+        // 숫자 형식이면 입력이 되고 아니면 안된다
+        const inputScore = e.target.value;
+        console.log('ww')
+        
+        if (!isNaN(inputScore)) {
+            setScore(inputScore);
+        } else {
+            setScore('');
+        }
+        console.log(score);
+    };
 
     const onClickSubmit = (e) => {
         // 중복 제거
+        if(!score){
+            alert('리뷰 점수를 입력하세요.')
+            return
+        }
+
         e.preventDefault();
         const exists = like.some((item) => item.title === data.title);
         if (!exists) {
-        setLike((prevLike) => [...prevLike, data]);
+        const newData = {...data, score};
+        setLike((prevLike) => [...prevLike, newData]);
         }
         console.log(like)
     }
@@ -33,6 +56,7 @@ export default function CategoriesDetail() {
     <CategoriesDetailUI 
         data={data}
         onClickSubmit = {onClickSubmit} 
+        onChangeScore = {onChangeScore}
     />
     </>)
 }

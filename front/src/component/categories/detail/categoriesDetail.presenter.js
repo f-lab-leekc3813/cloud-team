@@ -22,14 +22,9 @@ export default function CategoriesUIDetail(props) {
 								<button className={classes.upDownButton}>-</button>
 							</span>
 						</div>
-							<button value={props.data.title} onClick={props.onClickSubmit} className = {classes.btnCart}>찜목록 담기</button>
+							<button value={props.data.title} onClick={props.onClickSubmit} className = {classes.btnCart}>리뷰점수 등록</button>
 					</div>
-          </div>
-        </div>
-        <div className={classes.containerBottom}>
-          <div className={classes.containerBottomContent}>
-            <span className={classes.id}>{props.data.profileName}</span>
-            <span>{props.data.review}</span>
+          <input type='text' onChange={props.onChangeScore} placeholder='리뷰점수를 적어주세요' />
           </div>
         </div>
       </div>

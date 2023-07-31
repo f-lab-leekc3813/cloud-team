@@ -83,6 +83,8 @@ const SignIn = ({ isOpen, close }) => {
           .then((res) => {
             if (res.status === 200) {
               const token = res.data.token;
+              const nickname = res.data.nickname;
+              console.log('Nickname:', nickname);
 
               // Store the token securely
               localStorage.setItem('token', token);

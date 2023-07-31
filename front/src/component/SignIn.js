@@ -89,6 +89,7 @@ const SignIn = ({ isOpen, close }) => {
 
               alert("로그인이 완료되었습니다(로그인).");
               loginHandler();
+              console.log(login)
               close();
               setEmail("");
               setPassword("");

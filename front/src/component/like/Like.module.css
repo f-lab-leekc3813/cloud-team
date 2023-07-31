@@ -10,6 +10,7 @@
 
 .likeModal {
     width: 900px;
+    height: 800px;
     background-color: white;
     position: relative;
     box-sizing: border-box;
@@ -18,4 +19,5 @@
     background: #fff;
     border-radius: 10px;
     z-index: 50;
+    overflow: auto;
 }

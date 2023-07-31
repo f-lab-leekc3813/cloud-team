@@ -1,4 +1,4 @@
-.body{
+.body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +44,59 @@
     gap: 10px;
 }
 
-.id{
+.id {
     margin-right: 10px;
+}
+
+.button {
+    padding: 2% 0 2% 3%;
+}
+
+.buttonQuantity {
+    margin-bottom: 2%;
+
+}
+
+.buttonQuantityInput {
+    height: 26px;
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.upDownButton {
+    border: 1px solid #aaa;
+    color: #3a60df;
+    width: 35px;
+    height: 25px;
+    padding: 3px;
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.btnCart {
+    display: inline-block;
+    width: 140px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background-color: #5e6b9f;
+    border: 1px solid #5e6b9f;
+    color: #fff;
+    margin-right: 2px;
+}
+
+.btnBuy {
+    display: inline-block;
+    width: 140px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background-color: #7b8ed1;
+    border: 1px solid #7b8ed1;
+    color: #fff;
 }

@@ -16,6 +16,24 @@ async function connection(email, password, nickname) {
     }
 }
 
+async function like(userId,bookId,rating){
+    let go;
+
+    try {
+        go = await database.getConnection();
+        const query = `INSERT INTO project.like (userId, bookId, rating) VALUES (?, ?, ?)`;
+        const values = [userId, bookId, rating];
+
+        const [result] = await go.execute(query, values);
+        go.release();
+        return result;
+    } catch(error) {
+        return error;
+    }
+}
 
 
-module.exports = connection;
+module.exports = {
+    connection,
+    like
+};

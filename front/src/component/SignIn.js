@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { LoginState } from "../store/LoginState";
+import { NickState } from "../store/LoginState";
 
 import classes from "./SignIn.module.css";
 
@@ -10,6 +11,7 @@ const SignIn = ({ isOpen, close }) => {
   const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
 
+  const [nick,setNick] = useRecoilState(NickState);
   const [login, setLogin] = useRecoilState(LoginState);
   const [isSignUp, setIsSignUp] = useState(false);
 
@@ -84,6 +86,7 @@ const SignIn = ({ isOpen, close }) => {
             if (res.status === 200) {
               const token = res.data.token;
               const nickname = res.data.nickname;
+              setNick(nickname)
               console.log('Nickname:', nickname);
 
               // Store the token securely

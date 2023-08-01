@@ -9,6 +9,7 @@ const { swaggerUi, specs } = require('./swagger/swagger')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const searchRouter = require('./routes/search');
+const likeRouter = require('./routes/like');
 const regionRouter = require('./region/region');
 const crollRouter = require('./croll/croll');
 
@@ -38,6 +39,7 @@ app.use('/user', usersRouter);
 app.use('/region', regionRouter);
 app.use('/croll', crollRouter);
 app.use('/search', searchRouter);
+app.use('/like', likeRouter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs))
 

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const isCheck = require('../config/isCheck');
-const connect = require('../config/connection');
+const {connection} = require('../config/connection');
 
 const login = require('../config/login');
 const nickname = require('../config/nickname');
@@ -26,7 +26,7 @@ router.post('/signup', function (req, res, next) {
             message: "이미 있는 닉네임"
           })
         } else {
-          connect(email, password, nickname)
+          connection(email, password, nickname)
           return res.status(200).json({
             message: "완료",
             nickname : nickname

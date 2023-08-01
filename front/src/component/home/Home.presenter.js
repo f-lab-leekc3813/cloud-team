@@ -151,7 +151,6 @@ export default function HomeUI() {
                         <Link to='/categories'>
                         <img className={classes.slideImage} src="/images/bestseller/bestseller1.jpg" alt="wallpaper" />
                         <Carousel.Caption>
-                        <h3>운영진이 추천하는 책</h3>
                         </Carousel.Caption>
                         </Link>
                     </Carousel.Item>
@@ -159,7 +158,6 @@ export default function HomeUI() {
                         <Link to='/categories'>
                         <img className={classes.slideImage} src="images/bestseller/bestseller2.jpg" alt="wallpaper" />
                         <Carousel.Caption>
-                        <h3>가장 인기 많은 책</h3>
                         </Carousel.Caption>
                         </Link>
                     </Carousel.Item>
@@ -167,7 +165,6 @@ export default function HomeUI() {
                         <Link to='/categories'>
                         <img className={classes.slideImage} src="images/bestseller/bestseller3.jpg" alt="wallpaper" />
                         <Carousel.Caption>
-                        <h3>가장 찜이 많은 책</h3>
                         </Carousel.Caption>
                         </Link>
                     </Carousel.Item>
@@ -177,7 +174,7 @@ export default function HomeUI() {
         <section className={classes.content1_recommend1}>
           <div className={classes.content1_recommend2}>
             <span className={classes.content1_toplist1}>
-              8월 베스트 셀러 TOP 10 {'>'}
+              이번달 베스트 셀러 TOP 10 {'>'}
             </span>
           </div>
           <br/>
@@ -200,7 +197,7 @@ export default function HomeUI() {
                       <span className={classes.content1_toptext2}>세이노의 가르침</span>
                       </Link>
                     </div>
-                    <div ClassName={classes.content1_list3}>
+                    <div className={classes.content1_list3}>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <img className={classes.content1_rankimage1} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
                     </div>
@@ -383,6 +380,76 @@ export default function HomeUI() {
             </div>
             </div>
         </section>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <section className={classes.content1_recommend1}>
+          <div className={classes.content1_recommend2}>
+            <span className={classes.content1_toplist1}>
+              믿고 보는 구름 에디터 추천작  {'>'}
+            </span>
+          </div>
+          <div className={classes.content1_beWhyrequest}>
+            <div className={classes.content1_bewhy1}>
+              <Link to='/categories'>
+                <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage1.jpg" alt="wallpaper" />
+              </Link>
+            </div>
+            <div className={classes.content1_bewhyblank}></div>
+            <div className={classes.content1_bewhy1}>
+              <Link to='/categories'>
+                <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage2.jpg" alt="wallpaper" />
+              </Link>
+            </div>
+            <div className={classes.content1_bewhyblank}></div>
+            <div className={classes.content1_bewhy1}>
+              <Link to='/categories'>
+                <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage3.png" alt="wallpaper" />
+              </Link>
+            </div>
+          </div>
+          <br/>
+          <div className={classes.content1_recommend2}>
+            <span className={classes.content1_toplist1}>
+              실시간 인기 콘텐츠  {'>'}
+            </span>
+          </div>
+          <div className={classes.content1_beWhyrequest}>
+            <div className={classes.content1_bewhy1}>
+              <Link to='/categories'>
+                <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage4.png" alt="wallpaper" />
+              </Link>
+            </div>
+            <div className={classes.content1_bewhyblank}></div>
+            <div className={classes.content1_bewhy1}>
+              <Link to='/categories'>
+                <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage5.jpg" alt="wallpaper" />
+              </Link>
+            </div>
+            <div className={classes.content1_bewhyblank}></div>
+            <div className={classes.content1_bewhy1}>
+              <Link to='/categories'>
+                <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage6.png" alt="wallpaper" />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <br/>

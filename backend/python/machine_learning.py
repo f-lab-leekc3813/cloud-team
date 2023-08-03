@@ -1,8 +1,7 @@
 import pandas as pd
 
 merge_df = pd.read_csv('./backend/python/merge_df.csv')
-
-unique_df = merge_df.drop_duplicates('Title').sort_values('Title').reset_index(drop=True)
+merge_df['categories'] = merge_df['categories'].apply(lambda x:x.replace("'",'').replace('"',''))
 
 # 도움되는 리뷰
 def review_help(x):
@@ -15,6 +14,8 @@ merge_df1 = merge_df.copy()
 merge_df1['review/helpfulness'] = merge_df1.apply(review_help,axis=1)
 sort_df = merge_df1.sort_values(['Title','review/helpfulness'],ascending=[True,False]).head()
 
+unique_df = merge_df1.drop_duplicates('Title').sort_values('Title').reset_index(drop=True)
+
 # merge_df를 Title 열로 그룹화하고 review/score 열의 평균을 계산하며 나머지 열들의 모든 행을 출력
 grouped_df = merge_df1.groupby('Title').agg({'review/score': 'mean','review/text': 'first',
                                             'authors': 'first', 'categories': 'first', 'Title':'size'})
@@ -23,7 +24,7 @@ grouped_df.columns = ['review/score', 'review/text', 'authors', 'categories', 'c
 
 grouped_df.reset_index(inplace=True)
 
-grouped_df['authors'].fillna('["Unknown"]', inplace=True)
+grouped_df['authors'].fillna("['Unknown']", inplace=True)
 
 # 통계적 추천
 C = grouped_df['review/score'].mean()
@@ -86,5 +87,4 @@ df.to_sql(name='contents', con=engine, if_exists='replace', index=False)
 
 # q_books.to_sql(name='score_books', con=engine, if_exists='replace', index=False)
 # many_books.to_sql(name='many_books', con=engine, if_exists='replace', index=False)
-# merge_df.to_sql(name='books', con=engine, if_exists='replace', index=False)
-# grouped_df.to_sql(name='grouped_books', con=engine, if_exists='replace', index=False)
+# unique_df.to_sql(name='books', con=engine, if_exists='replace', index=False)

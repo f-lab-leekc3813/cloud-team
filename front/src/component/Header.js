@@ -119,6 +119,7 @@ function Header() {
 
     const onClick = ({ key }) => {
       message.info(`Click on item ${key}`);
+      console.log(key)
     };
     
 
@@ -130,18 +131,18 @@ function Header() {
                 </div>
                 <div className={classes.header_content}>
                 <Dropdown
-    menu={{
-      items,
-      onClick,
-    }}
-  >
-    <a onClick={(e) => e.preventDefault()}>
-      <Space>
-        Hover me, Click menu item
-        <DownOutlined />
-      </Space>
-    </a>
-  </Dropdown>
+                   menu={{
+                     items,
+                     onClick,
+                   }}
+                 >
+                   <a onClick={(e) => e.preventDefault()}>
+                     <Space>
+                       Categories
+                       <DownOutlined />
+                     </Space>
+                   </a>
+                 </Dropdown>
                 </div>
                 <div className={classes.header_content}>
                     <form className={classes.header_form} onSubmit={SearchHandler}>

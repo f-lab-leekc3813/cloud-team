@@ -35,7 +35,11 @@ export default function CategoriesDetail() {
             alert('Please enter a review score.');
             return;
         }
-    
+        
+        if (Number(score)>5 | Number(score) <0) {
+            alert("1점부터 5점까지의 점수를 입력해 주세요")
+            return;
+        }
         e.preventDefault();
     
         // Check if the review with the same title already exists in the 'like' array

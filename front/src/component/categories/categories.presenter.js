@@ -1,7 +1,7 @@
 import classes from './categories.module.css';
 import { Carousel } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import { useNavigate,useLocation} from 'react-router-dom';
 import axios from 'axios';
 
 export default function CategoriesUI(props) {
@@ -9,6 +9,12 @@ export default function CategoriesUI(props) {
     const [loading, setLoding] = useState(true)
 
     const location = useLocation();
+
+    const navigate = useNavigate();
+
+    const onClickDetail = (e) => {
+        navigate('./detail')
+    }
         
     useEffect(() => {
         
@@ -62,7 +68,7 @@ export default function CategoriesUI(props) {
                     data ? 
                 (data.map((data) => {
                     return(
-                        <div key={data.Title}  className={classes.listContainer}>
+                        <div onClick={onClickDetail} value = {data.Title} key={data.Title}  className={classes.listContainer}>
                             <div className={classes.listUl}>
                                 <div className={classes.listLi}>
                                     <div className={classes.listA}>

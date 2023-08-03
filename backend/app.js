@@ -13,6 +13,8 @@ const likeRouter = require('./routes/like');
 const regionRouter = require('./region/region');
 const crollRouter = require('./croll/croll');
 const categoryRouter = require('./routes/category');
+const bestRouter = require('./routes/best');
+
 
 
 const app = express();
@@ -42,6 +44,7 @@ app.use('/croll', crollRouter);
 app.use('/search', searchRouter);
 app.use('/like', likeRouter);
 app.use('/category', categoryRouter);
+app.use('/best', bestRouter);
 
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs))

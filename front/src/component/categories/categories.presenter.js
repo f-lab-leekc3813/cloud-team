@@ -1,40 +1,8 @@
 import classes from './categories.module.css';
 import { Carousel } from 'react-bootstrap';
-import React, { useState, useEffect } from 'react';
-import { useNavigate,useLocation} from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
 
 export default function CategoriesUI(props) {
-    const [data, setData] = useState(null)
-    const [loading, setLoding] = useState(true)
-
-    const location = useLocation();
-
-    const navigate = useNavigate();
-
-    const onClickDetail = (e) => {
-        navigate('./detail')
-    }
-        
-    useEffect(() => {
-        
-        const currentPath = window.location.pathname;
-        const extractedValue = currentPath.replace(/^\/categories\//, '').replace(/%20/g, ' ');
-        console.log(extractedValue)
-        
-        const fetchData = async () => {
-            try{
-                const response = await axios.get(`http://localhost:8080/category/${extractedValue}`);
-                console.log(response.data);
-                setData(response.data)
-                setLoding(false)
-            } catch (error) {
-                console.log('데이터를 받아오지 못했습니다', error)
-                setLoding(true)
-            }
-        }
-        fetchData();
-    }, [window.location.pathname]);
     
     return(
     <>
@@ -62,13 +30,13 @@ export default function CategoriesUI(props) {
                 </Carousel>
             </div>
             <div className={classes.listContainers}>
-                { loading ?
+                { props.loading ?
                     <div> 로딩중</div> 
                     :  
-                    data ? 
-                (data.map((data) => {
+                    props.data ? 
+                (props.data.map((data) => {
                     return(
-                        <div onClick={onClickDetail} value = {data.Title} key={data.Title}  className={classes.listContainer}>
+                        <div onClick={props.onClickDetail} value = {data.Title} key={data.Title}  className={classes.listContainer}>
                             <div className={classes.listUl}>
                                 <div className={classes.listLi}>
                                     <div className={classes.listA}>

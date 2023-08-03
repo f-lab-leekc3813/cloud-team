@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {useRecoilState} from "recoil";
-import {LoginState} from "../store/LoginState";
+import {LoginState, NickState} from "../store/LoginState";
+
 
 import SignIn from "./SignIn";
 import Button from 'react-bootstrap/Button';
@@ -8,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 const LoginButton = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [login, setLogin] = useRecoilState(LoginState);
+  const [nick, setNick] = useRecoilState(NickState);
 
   const openModal = () => {
     setModalOpen(true);
@@ -19,6 +21,7 @@ const LoginButton = () => {
 
   const logoutHandler = () => {
     setLogin(false);
+    setNick("")
   }
 
   return (

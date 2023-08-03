@@ -11,8 +11,9 @@
     height : 100%;
     width: 1024px;
     margin: auto;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 100px 750px 200px;
+    gap: 10px;
 }
 
 .header_content {
@@ -21,6 +22,11 @@
     align-items: center;
     margin-right: 10px;
     text-decoration: none;
+}
+
+.header_categories {
+    display: flex;
+    align-items: center;
 }
 
 .header_image{
@@ -60,6 +66,7 @@
     margin-left: 250px;
 }
 
+
 .search_input {
     width: 600px;
     padding: 10px;
@@ -86,7 +93,6 @@
     cursor: pointer;
     margin-left: 50px;
 }
-
 
 .my_page{
     --bs-btn-color: #fff;

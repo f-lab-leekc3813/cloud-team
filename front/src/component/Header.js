@@ -34,20 +34,13 @@ function Header() {
         <div className={classes.header}>
             <div className={classes.header_wrap}>
                 <div className={classes.header_content}>
-                    <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
+                    <Link to='/'>
+                      <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
+                    </Link>
                 </div>
-                <Link to='/'>
-                    홈버튼(경빈)
-                </Link>
-                <Link to='/categories'>
-                    카테고리(예림)
-                </Link>
-                <Link to='categories/1'>
-                    카테고리상세(지송)
-                </Link>
                 <div className={classes.header_content}>
                     <form className={classes.header_form} onSubmit={SearchHandler}>
-                        <input className={classes.search_input} type="text" placeholder="물품이나 동네를 검색해보세요"
+                        <input className={classes.search_input} type="text" placeholder="통합검색"
                             value={searchText}
                             onChange={(event) => setSearchText(event.target.value)}
                             onKeyUp={(event) => {
@@ -57,12 +50,13 @@ function Header() {
                             }}
                         />
                     </form>
-
                     {isLoggedIn ? 
                         <Button onClick={openModal} variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>찜목록</Button>
                       : ''   }
+
                     <LoginButton  />
                     <LikePage isOpen = {isModalOpen} close = {closeModal}/>
+
                 </div>
             </div>
         </div>

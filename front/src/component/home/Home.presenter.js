@@ -1,7 +1,7 @@
+
 import classes from './Home.module.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
-import Button from 'react-bootstrap/Button';
+
 
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,162 +11,24 @@ import { Carousel } from 'react-bootstrap';
 
 export default function HomeUI() {
   return (
-    <html lang="ko">
-      <head>
-        <meta charSet="utf-8" />
-        <title>여기에는 문서의 제목을 입력해주세요</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-      </head>
-      <body>
-        <div className="container1">
-          <div className={classes.topmenu}>
-            <div className={classes.btngroup}>
-              <Dropdown>
-                <Dropdown.Toggle variant="danger" id="dropdown-basic">
-                  분야보기
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item href="#">이경찬</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown>
-                <Dropdown.Toggle variant="danger" id="dropdown-basic">
-                  베스트셀러
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item href="#">김지송</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown>
-                <Dropdown.Toggle variant="danger" id="dropdown-basic">
-                  새로나온 책
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item href="#">박예림</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown>
-                <Dropdown.Toggle variant="danger" id="dropdown-basic">
-                  이벤트
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item href="#">도희건</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-              <Dropdown>
-                <Dropdown.Toggle variant="danger" id="dropdown-basic">
-                  추천도서
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#">
-                    <Link to='/categories'>
-                      카테고리(예림)
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item href="#">장경빈</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-          </div>
-        </div>
+    <>
         <div className={classes.containers}>
             <div className={classes.container}>
                 <Carousel style={{ animation: 'slide 3s infinite' }}>
-                    <Carousel.Item>
-                        <Link to='/categories'>
+                    <Carousel.Item>  
                         <img className={classes.slideImage} src="/images/bestseller/bestseller1.jpg" alt="wallpaper" />
                         <Carousel.Caption>
                         </Carousel.Caption>
-                        </Link>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <Link to='/categories'>
                         <img className={classes.slideImage} src="images/bestseller/bestseller2.jpg" alt="wallpaper" />
                         <Carousel.Caption>
                         </Carousel.Caption>
-                        </Link>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <Link to='/categories'>
                         <img className={classes.slideImage} src="images/bestseller/bestseller3.jpg" alt="wallpaper" />
                         <Carousel.Caption>
                         </Carousel.Caption>
-                        </Link>
                     </Carousel.Item>
                 </Carousel>
             </div>
@@ -183,9 +45,9 @@ export default function HomeUI() {
                 <div className={classes.content1_recommend3}>
                   <div className={classes.content1_recommend4}>
                     <div className={classes.content1_list1}>
-                      <Link to='/categories'>
+             
                       <img className={classes.content1_listimage1} src="/images/bestseller/bestseller3.jpg" alt="wallpaper" />
-                      </Link>
+         
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <div className={classes.content1_list2}>
@@ -193,9 +55,9 @@ export default function HomeUI() {
                     </div>
                     <div className={classes.content1_list3}>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <Link to='/categories'>
+                
                       <span className={classes.content1_toptext2}>세이노의 가르침</span>
-                      </Link>
+              
                     </div>
                     <div className={classes.content1_list3}>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -211,9 +73,9 @@ export default function HomeUI() {
                 <div className={classes.content1_recommend5}>
                   <div className={classes.content1_recommend6}>
                     <div className={classes.content1_list4}>
-                      <Link to='/categories'>
+        
                       <img className={classes.content1_listimage2} src="/images/bestseller/bestseller1.jpg" alt="wallpaper" />
-                      </Link>
+           
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <div className={classes.content1_list5}>
@@ -221,9 +83,9 @@ export default function HomeUI() {
                     </div>
                     <div className={classes.content1_list6}>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <Link to='/categories'>
+       
                       <span className={classes.content1_toptext4}>문과 남자의 과학 공부</span>
-                      </Link>
+              
                     </div>
                     <div className={classes.content1_list7}>
                       <img className={classes.content1_rankimage2} src="/images/bestseller/rankdown.jpg" alt="wallpaper" />
@@ -240,9 +102,9 @@ export default function HomeUI() {
                 </div>
                 <div className={classes.content1_list10}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to='/categories'>
+
                   <span className={classes.content1_toptext6}>최애의 아이 11</span>
-                </Link>
+       
                 </div>
                 <div className={classes.content1_list11}>
                   <img className={classes.content1_rankimage3} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
@@ -258,9 +120,9 @@ export default function HomeUI() {
                 </div>
                 <div className={classes.content1_list10}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to='/categories'>
+       
                   <span className={classes.content1_toptext6}>아주 희미한 빛으로도</span>
-                </Link>
+         
                 </div>
                 <div className={classes.content1_list11}>
                   <img className={classes.content1_rankimage4} src="/images/bestseller/rankdown.jpg" alt="wallpaper" />
@@ -276,9 +138,9 @@ export default function HomeUI() {
                 </div>
                 <div className={classes.content1_list10}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to='/categories'>
+           
                   <span className={classes.content1_toptext8}>도둑맞은 집중력</span>
-                </Link>
+           
                 </div>
                 <div className={classes.content1_list11}>
                   <img className={classes.content1_rankimage5} src="/images/bestseller/rankdown.jpg" alt="wallpaper" />
@@ -294,9 +156,9 @@ export default function HomeUI() {
                 </div>
                 <div className={classes.content1_list10}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to='/categories'>
+            
                   <span className={classes.content1_toptext10}>스튜디오 지브리 입체건축...</span>
-                </Link>
+       
                 </div>
                 <div className={classes.content1_list11}>
                   <img className={classes.content1_rankimage6} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
@@ -311,9 +173,9 @@ export default function HomeUI() {
                 </div>
                 <div className={classes.content1_list10}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to='/categories'>
+           
                   <span className={classes.content1_toptext12}>스파이 패밀리 11</span>
-                </Link>
+     
                 </div>
                 <div className={classes.content1_list11}>
                   <img className={classes.content1_rankimage7} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
@@ -329,9 +191,9 @@ export default function HomeUI() {
                 </div>
                 <div className={classes.content1_list10}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to='/categories'>
+   
                   <span className={classes.content1_toptext14}>최적의 공부 뇌</span>
-                </Link>
+        
                 </div>
                 <div className={classes.content1_list11}>
                   <img className={classes.content1_rankimage8} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
@@ -347,9 +209,9 @@ export default function HomeUI() {
                 </div>
                 <div className={classes.content1_list10}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to='/categories'>
+           
                   <span className={classes.content1_toptext16}>브랜드 설계자</span>
-                </Link>
+     
                 </div>
                 <div className={classes.content1_list11}>
                   <img className={classes.content1_rankimage9} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
@@ -365,9 +227,9 @@ export default function HomeUI() {
                 </div>
                 <div className={classes.content1_list10}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Link to='/categories'>
+             
                   <span className={classes.content1_toptext18}>역행자 확장판</span>
-                </Link>
+       
                 </div>
                 <div className={classes.content1_list11}>
                   <img className={classes.content1_rankimage10} src="/images/bestseller/rankdown.jpg" alt="wallpaper" />
@@ -394,21 +256,21 @@ export default function HomeUI() {
           </div>
           <div className={classes.content1_beWhyrequest}>
             <div className={classes.content1_bewhy1}>
-              <Link to='/categories'>
+        
                 <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage1.jpg" alt="wallpaper" />
-              </Link>
+             
             </div>
             <div className={classes.content1_bewhyblank}></div>
             <div className={classes.content1_bewhy1}>
-              <Link to='/categories'>
+  
                 <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage2.jpg" alt="wallpaper" />
-              </Link>
+   
             </div>
             <div className={classes.content1_bewhyblank}></div>
             <div className={classes.content1_bewhy1}>
-              <Link to='/categories'>
+   
                 <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage3.png" alt="wallpaper" />
-              </Link>
+              
             </div>
           </div>
           <br/>
@@ -419,21 +281,21 @@ export default function HomeUI() {
           </div>
           <div className={classes.content1_beWhyrequest}>
             <div className={classes.content1_bewhy1}>
-              <Link to='/categories'>
+              
                 <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage4.png" alt="wallpaper" />
-              </Link>
+    
             </div>
             <div className={classes.content1_bewhyblank}></div>
             <div className={classes.content1_bewhy1}>
-              <Link to='/categories'>
+              
                 <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage5.jpg" alt="wallpaper" />
-              </Link>
+    
             </div>
             <div className={classes.content1_bewhyblank}></div>
             <div className={classes.content1_bewhy1}>
-              <Link to='/categories'>
+
                 <img className={classes.content1_bewhyimage1} src="/images/bestseller/bewhyimage6.png" alt="wallpaper" />
-              </Link>
+
             </div>
           </div>
         </section>
@@ -674,14 +536,7 @@ export default function HomeUI() {
                 </div>
                 </div>
                 <div className={classes.content1_blank2}>
-                    <span className={classes.content1_container16} button id="realty_app_download" type="button">
-                        <img className={classes.content1_image1} src='images/bestseller/maindirectionimg.png' alt='사진' />
-                    </span>
                     <br/>
-                    <br/>
-                    <span className={classes.content1_container16} button id="realty_app_download" type="button">
-                        <img className={classes.content1_image2} src='images/bestseller/maindirectionimg.png' alt='사진' />
-                    </span>
                 </div>
                 <div className={classes.content1_blank}></div>
                 <div className={classes.content1_flexItem}>
@@ -689,7 +544,6 @@ export default function HomeUI() {
                     <span className={classes.content_text11}>웹 & 모바일</span>
                     <br/>
                     <span className={classes.content_text12}>Open API <br/> 모바일/앱</span>
-
                 </div>
                 <div className={classes.content_container11}>
                     <span className={classes.content_text13}>출판사, 판매자 안내</span>
@@ -698,14 +552,7 @@ export default function HomeUI() {
                 </div>
                 </div>
                 <div className={classes.content1_blank2}>
-                    <span className={classes.content1_container16} button id="realty_app_download" type="button">
-                        <img className={classes.content1_image1} src='images/bestseller/maindirectionimg.png' alt='사진' />
-                    </span>
                     <br/>
-                    <br/>
-                    <span className={classes.content1_container16} button id="realty_app_download" type="button">
-                        <img className={classes.content1_image2} src='images/bestseller/maindirectionimg.png' alt='사진' />
-                    </span>
                 </div>
             </div>
             </section>   
@@ -735,7 +582,6 @@ export default function HomeUI() {
                   </div>
                 </div>
               </section>  
-      </body>
-    </html>
+          </>
   );
 }

@@ -119,16 +119,16 @@ function Header() {
 
     const onClick = ({ key }) => {
       message.info(`Click on item ${key}`);
-      console.log(key)
+      navigate(`./categories/${key}`)
     };
     
 
     return (
         <div className={classes.header}>
             <div className={classes.header_wrap}>
-                <div className={classes.header_content}>
-                    <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
-                </div>
+                <Link to ='./' className={classes.header_content}>
+                      <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
+                </Link>
                 <div className={classes.header_content}>
                 <Dropdown
                    menu={{

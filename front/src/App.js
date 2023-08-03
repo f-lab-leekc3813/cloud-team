@@ -17,8 +17,8 @@ function App() {
           <Header />
           <Routes>
             <Route path = "/" element ={<HomePage />} />
-            <Route path = "/categories" element ={<CategoriesPage />} />
-            <Route path = "/categories/:id" element ={<CategoriesDetailPage />} />
+            <Route path = "/categories/:key" element ={<CategoriesPage />} />
+            <Route path = "/categories/:detail" element ={<CategoriesDetailPage />} />
           </Routes>
         </BrowserRouter>
       </React.Fragment>

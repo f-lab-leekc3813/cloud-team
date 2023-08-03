@@ -40,207 +40,34 @@ export default function HomeUI() {
             </span>
           </div>
           <br/>
+
           <div className={classes.content_box}>
-              <div className={classes.content1_firstbox}>
+            {data.map((item, index) => (
+              <div key={index} className={classes.content1_firstbox}>
                 <div className={classes.content1_recommend3}>
                   <div className={classes.content1_recommend4}>
                     <div className={classes.content1_list1}>
-             
-                      <img className={classes.content1_listimage1} src="/images/bestseller/bestseller3.jpg" alt="wallpaper" />
-         
+                      <img className={classes.content1_listimage1} src={item.image1} alt="wallpaper" />
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <div className={classes.content1_list2}>
-                      <span className={classes.content1_toptext1}>1</span>
+                      <span className={classes.content1_toptext1}>{item.rank}</span>
                     </div>
                     <div className={classes.content1_list3}>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                
-                      <span className={classes.content1_toptext2}>세이노의 가르침</span>
-              
+                      <span className={classes.content1_toptext2}>{item.title}</span>
                     </div>
                     <div className={classes.content1_list3}>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <img className={classes.content1_rankimage1} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
+                      <img className={classes.content1_rankimage1} src={item.rankImage} alt="wallpaper" />
                     </div>
                     <div className={classes.content1_list4}>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span className={classes.content1_ranknumber1}>1</span>
+                      <span className={classes.content1_ranknumber1}>{item.rankNumber}</span>
                     </div>
                   </div>
                 </div>
               </div>
-                <div className={classes.content1_recommend5}>
-                  <div className={classes.content1_recommend6}>
-                    <div className={classes.content1_list4}>
-        
-                      <img className={classes.content1_listimage2} src="/images/bestseller/bestseller1.jpg" alt="wallpaper" />
-           
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div className={classes.content1_list5}>
-                      <span className={classes.content1_toptext3}>2</span>
-                    </div>
-                    <div className={classes.content1_list6}>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       
-                      <span className={classes.content1_toptext4}>문과 남자의 과학 공부</span>
-              
-                    </div>
-                    <div className={classes.content1_list7}>
-                      <img className={classes.content1_rankimage2} src="/images/bestseller/rankdown.jpg" alt="wallpaper" />
-                    </div>
-                    <div className={classes.content1_list8}>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <span className={classes.content1_ranknumber2}>1</span>
-                    </div>
-                  </div>
-              </div>
-              <div className={classes.content1_recommend7}>
-                <div className={classes.content1_list9}>
-                  <span className={classes.content1_toptext5}>3</span>
-                </div>
-                <div className={classes.content1_list10}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ))}
+          </div>
 
-                  <span className={classes.content1_toptext6}>최애의 아이 11</span>
-       
-                </div>
-                <div className={classes.content1_list11}>
-                  <img className={classes.content1_rankimage3} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
-                </div>
-                <div className={classes.content1_list12}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className={classes.content1_ranknumber3}>1</span>
-                </div>
-              </div>
-              <div className={classes.content1_recommend8}>
-                <div className={classes.content1_list9}>
-                  <span className={classes.content1_toptext5}>4</span>
-                </div>
-                <div className={classes.content1_list10}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       
-                  <span className={classes.content1_toptext6}>아주 희미한 빛으로도</span>
-         
-                </div>
-                <div className={classes.content1_list11}>
-                  <img className={classes.content1_rankimage4} src="/images/bestseller/rankdown.jpg" alt="wallpaper" />
-                </div>
-                <div className={classes.content1_list12}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className={classes.content1_ranknumber4}>1</span>
-                </div>
-              </div>
-              <div className={classes.content1_recommend9}>
-                <div className={classes.content1_list9}>
-                  <span className={classes.content1_toptext7}>5</span>
-                </div>
-                <div className={classes.content1_list10}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           
-                  <span className={classes.content1_toptext8}>도둑맞은 집중력</span>
-           
-                </div>
-                <div className={classes.content1_list11}>
-                  <img className={classes.content1_rankimage5} src="/images/bestseller/rankdown.jpg" alt="wallpaper" />
-                </div>
-                <div className={classes.content1_list12}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className={classes.content1_ranknumber5}>1</span>
-                </div>
-              </div>
-              <div className={classes.content1_recommend10}>
-                <div className={classes.content1_list9}>
-                  <span className={classes.content1_toptext9}>6</span>
-                </div>
-                <div className={classes.content1_list10}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            
-                  <span className={classes.content1_toptext10}>스튜디오 지브리 입체건축...</span>
-       
-                </div>
-                <div className={classes.content1_list11}>
-                  <img className={classes.content1_rankimage6} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
-                </div>
-                <div className={classes.content1_list12}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className={classes.content1_ranknumber6}>4</span>
-                </div>
-                <div className={classes.content1_recommend11}>
-                <div className={classes.content1_list9}>
-                  <span className={classes.content1_toptext11}>7</span>
-                </div>
-                <div className={classes.content1_list10}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           
-                  <span className={classes.content1_toptext12}>스파이 패밀리 11</span>
-     
-                </div>
-                <div className={classes.content1_list11}>
-                  <img className={classes.content1_rankimage7} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
-                </div>
-                <div className={classes.content1_list12}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className={classes.content1_ranknumber7}>1</span>
-                </div>
-                </div>
-              <div className={classes.content1_recommend12}>
-                <div className={classes.content1_list9}>
-                  <span className={classes.content1_toptext13}>8</span>
-                </div>
-                <div className={classes.content1_list10}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   
-                  <span className={classes.content1_toptext14}>최적의 공부 뇌</span>
-        
-                </div>
-                <div className={classes.content1_list11}>
-                  <img className={classes.content1_rankimage8} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
-                </div>
-                <div className={classes.content1_list12}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className={classes.content1_ranknumber8}>1</span>
-                </div>
-                </div>
-              <div className={classes.content1_recommend13}>
-                <div className={classes.content1_list9}>
-                  <span className={classes.content1_toptext15}>9</span>
-                </div>
-                <div className={classes.content1_list10}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           
-                  <span className={classes.content1_toptext16}>브랜드 설계자</span>
-     
-                </div>
-                <div className={classes.content1_list11}>
-                  <img className={classes.content1_rankimage9} src="/images/bestseller/rankup.jpg" alt="wallpaper" />
-                </div>
-                 <div className={classes.content1_list12}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className={classes.content1_ranknumber9}>17</span>
-                </div>
-                </div>
-              <div className={classes.content1_recommend14}>
-                <div className={classes.content1_list9}>
-                  <span className={classes.content1_toptext17}>10</span>
-                </div>
-                <div className={classes.content1_list10}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             
-                  <span className={classes.content1_toptext18}>역행자 확장판</span>
-       
-                </div>
-                <div className={classes.content1_list11}>
-                  <img className={classes.content1_rankimage10} src="/images/bestseller/rankdown.jpg" alt="wallpaper" />
-                </div>
-                <div className={classes.content1_list12}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className={classes.content1_ranknumber10}>3</span>
-                </div> 
-              </div> 
-            </div>
-            </div>
+
         </section>
         <br/>
         <br/>

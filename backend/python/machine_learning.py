@@ -2,6 +2,10 @@ import pandas as pd
 
 merge_df = pd.read_csv('./backend/python/merge_df.csv')
 merge_df['categories'] = merge_df['categories'].apply(lambda x:x.replace("'",'').replace('"',''))
+merge_df['authors'].fillna("['Unknown']", inplace=True)
+merge_df['Price'].fillna(0,inplace=True)
+merge_df.fillna('',inplace=True)
+
 
 # 도움되는 리뷰
 def review_help(x):
@@ -24,7 +28,7 @@ grouped_df.columns = ['review/score', 'review/text', 'authors', 'categories', 'c
 
 grouped_df.reset_index(inplace=True)
 
-grouped_df['authors'].fillna("['Unknown']", inplace=True)
+
 
 # 통계적 추천
 C = grouped_df['review/score'].mean()
@@ -85,6 +89,6 @@ engine = create_engine(connection_string)
 
 df.to_sql(name='contents', con=engine, if_exists='replace', index=False)
 
-# q_books.to_sql(name='score_books', con=engine, if_exists='replace', index=False)
-# many_books.to_sql(name='many_books', con=engine, if_exists='replace', index=False)
-# unique_df.to_sql(name='books', con=engine, if_exists='replace', index=False)
+q_books.to_sql(name='score_books', con=engine, if_exists='replace', index=False)
+many_books.to_sql(name='many_books', con=engine, if_exists='replace', index=False)
+unique_df.to_sql(name='books', con=engine, if_exists='replace', index=False)

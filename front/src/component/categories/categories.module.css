@@ -99,6 +99,8 @@
 }
 
 .listImg {
+    width: 229px;
+    height: 243px;
     border: 0;
     overflow-clip-margin: content-box;
     overflow: clip;

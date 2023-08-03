@@ -1,75 +1,35 @@
 import classes from './categories.module.css';
 import { Carousel } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import axios from 'axios';
 
-
-const dummyData =[ {
-    title : 'Behind the Moon',
-    authors : '',
-    categories : '[Adventure stories]',
-    image : 'http://books.google.com/books/content?id=_AEhAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-    review : 'so good!!!!!!!',
-    profileName : 'K. Viker'
-}, {
-    title : 'Behind the Moon',
-    authors : '',
-    categories : '[Adventure stories]',
-    image : 'http://books.google.com/books/content?id=_AEhAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-    review : 'so good!!!!!!!',
-    profileName : 'K. Viker'
-}, {
-    title : 'Behind the Moon',
-    authors : '',
-    categories : '[Adventure stories]',
-    image : 'http://books.google.com/books/content?id=_AEhAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-    review : 'so good!!!!!!!',
-    profileName : 'K. Viker'
-}, {
-    title : 'Behind the Moon',
-    authors : '',
-    categories : '[Adventure stories]',
-    image : 'http://books.google.com/books/content?id=_AEhAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-    review : 'so good!!!!!!!',
-    profileName : 'K. Viker'
-}, {
-    title : 'Behind the Moon',
-    authors : '',
-    categories : '[Adventure stories]',
-    image : 'http://books.google.com/books/content?id=_AEhAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-    review : 'so good!!!!!!!',
-    profileName : 'K. Viker'
-}, {
-    title : 'Behind the Moon',
-    authors : '',
-    categories : '[Adventure stories]',
-    image : 'http://books.google.com/books/content?id=_AEhAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-    review : 'so good!!!!!!!',
-    profileName : 'K. Viker'
-}]
-
 export default function CategoriesUI(props) {
-    const [fetchedData, setFetchedData] = useState(dummyData);
+    const [data, setData] = useState(null)
+    const [loading, setLoding] = useState(true)
+
+    const location = useLocation();
+        
+    useEffect(() => {
+        
+        const currentPath = window.location.pathname;
+        const extractedValue = currentPath.replace(/^\/categories\//, '').replace(/%20/g, ' ');
+        console.log(extractedValue)
+        
+        const fetchData = async () => {
+            try{
+                const response = await axios.get(`http://localhost:8080/category/${extractedValue}`);
+                console.log(response.data);
+                setData(response.data)
+                setLoding(false)
+            } catch (error) {
+                console.log('데이터를 받아오지 못했습니다', error)
+                setLoding(true)
+            }
+        }
+        fetchData();
+    }, [window.location.pathname]);
     
-    // useEffect(() => {
-    //     fetchData();
-    //   }, []);
-
-    // const fetchData = async () => {
-    //     try {
-    //         const response = await axios.get(data);
-
-    //         setFetchedData(response.data);
-
-    //         console.log(response.data);
-    //     } catch (error) {
-    //         console.error('Error fetching data:', error);
-    //         }
-    //     };
-
-
-
     return(
     <>
         <div className={classes.containers}>
@@ -96,22 +56,26 @@ export default function CategoriesUI(props) {
                 </Carousel>
             </div>
             <div className={classes.listContainers}>
-                {fetchedData.map((data) => {
+                { loading ?
+                    <div> 로딩중</div> 
+                    :  
+                    data ? 
+                (data.map((data) => {
                     return(
-                        <div className={classes.listContainer}>
+                        <div key={data.Title}  className={classes.listContainer}>
                             <div className={classes.listUl}>
                                 <div className={classes.listLi}>
-                                    <a className={classes.listA}>
+                                    <div className={classes.listA}>
                                         <div className={classes.listDiv}>
                                             <img className={classes.listImg} src={data.image} alt="책이미지"/>
                                         </div>
                                         <div className={classes.listInfo}>
                                             <div className={classes.listTitle}>
-                                            {data.title}
+                                            {data.Title}
                                             </div>
                                             <div className={classes.listAupu}>
                                                 <span className={classes.listAuthor} >
-                                                {data.authors}
+                                           
                                                 </span>
                                                 ・
                                                 <span className={classes.listPublisher}>
@@ -121,21 +85,22 @@ export default function CategoriesUI(props) {
                                             {data.categories}
                                             </div>
                                             <div className={classes.listPay}>
-                                            8000원
+                                    
                                             </div>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                     <div className={classes.listJjim}>
                                         <button type="button" className={classes.Jjim} >
-                                            <img className={classes.btnimg} src="images/categori/jjim.png" alt="찜"/>
-                                            찜
                                         </button>  
                                     </div>
                                 </div>
                             </div>
                         </div>
-                )})}
+                )})) : (
+                    <div>데이터가 없습니다</div>
+                )
+                    }
             </div>
         </div>
     </>

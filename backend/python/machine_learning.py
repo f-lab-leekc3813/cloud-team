@@ -47,7 +47,7 @@ q_books['score'] = q_books.apply(weighted_rating, axis=1)
 q_books = q_books.sort_values('score',ascending=False)
 
 # 사람들이 많이 읽은 순 (리뷰수)
-many_books = q_books[['Title','count','review/score','score']].sort_values('count',ascending=False)
+many_books = q_books.sort_values('count',ascending=False)
 
 
 

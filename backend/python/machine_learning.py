@@ -2,6 +2,8 @@ import pandas as pd
 
 merge_df = pd.read_csv('./backend/python/merge_df.csv')
 merge_df['categories'] = merge_df['categories'].apply(lambda x:x.replace("'",'').replace('"',''))
+merge_df['authors'].fillna("['Unknown']", inplace=True)
+
 
 # 도움되는 리뷰
 def review_help(x):
@@ -24,7 +26,6 @@ grouped_df.columns = ['review/score', 'review/text', 'authors', 'categories', 'c
 
 grouped_df.reset_index(inplace=True)
 
-grouped_df['authors'].fillna("['Unknown']", inplace=True)
 
 # 통계적 추천
 C = grouped_df['review/score'].mean()

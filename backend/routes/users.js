@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
 const isCheck = require('../config/isCheck');
-const connect = require('../config/connection');
+const {connection} = require('../config/connection');
+
 const login = require('../config/login');
+const nickname = require('../config/nickname');
 
 
 
@@ -24,9 +26,10 @@ router.post('/signup', function (req, res, next) {
             message: "이미 있는 닉네임"
           })
         } else {
-          connect(email, password, nickname)
+          connection(email, password, nickname)
           return res.status(200).json({
-            message: "완료"
+            message: "완료",
+            nickname : nickname
           })
         }
       })
@@ -37,89 +40,42 @@ router.post('/signup', function (req, res, next) {
   }
 });
 
-
-/**
- * @swagger
- * /signup:
- *   post:
- *     summary: 사용자 회원 가입
- *     tags: [User]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               email:
- *                 type: string
- *               password:
- *                 type: string
- *               nickname:
- *                 type: string
- *     responses:
- *       200:
- *         description: 회원 가입 성공
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   description: 성공 메시지
- *       201:
- *         description: 중복되는 정보가 존재하는 경우
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   description: 에러 메시지
- *       202:
- *         description: 이미 존재하는 닉네임인 경우
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   description: 에러 메시지
- *       500:
- *         description: 서버 내부 오류
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   description: 에러 메시지
- */
-
-
 router.post('/login', function (req, res, next) {
   try {
     let { email, password } = req.body;
     login(email, password)
       .then((result) => {
         if (result) {
-          return res.status(200).json({
-            message: "완료"
-          });
+          // Call the nickname function to get the nickname based on the login result
+          return nickname(email, password)
+            .then((nicknameResult) => {
+              return res.status(200).json({
+                message: "Done",
+                nickname: nicknameResult.nickname
+              });
+            })
+            .catch((error) => {
+              console.error('Error retrieving nickname:', error);
+              return res.status(500).json({
+                message: 'Internal server error'
+              });
+            });
         } else {
           return res.status(205).json({
-            message: "잘못된 이메일 또는 비밀번호"
-          })
+            message: "Invalid email or password"
+          });
         }
       })
+      .catch((error) => {
+        console.error('Error during login:', error);
+        return res.status(500).json({
+          message: 'Internal server error'
+        });
+      });
   } catch (error) {
     return res.status(500).json({
-      message: 'internal server error'
-    })
+      message: 'Internal server error'
+    });
   }
 });
 

@@ -9,3 +9,8 @@ export const LoginState = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
+export const NickState = atom ({
+  key : 'NickState',
+  default: '',
+  effects_UNSTABLE : [persistAtom]
+})

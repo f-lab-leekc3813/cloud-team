@@ -5,15 +5,8 @@ import { RecoilRoot } from 'recoil';
 
 import Header from './component/Header';
 import HomePage from './pages/Home';
-import NeighborhoodPage from './pages/Neighborhood';
-import PartTimePage from './pages/PartTime';
-import EstatePage from './pages/Estate';
-import Mypage from './pages/Mypage';
-import BestPage from './pages/BestPage';
-import BestDetail from './component/BestBody/BestDetail/BestDetail';
-import PartTimeDetail from './component/PartTimeBody/PartTimeDetail/PartTimeDetail';
-import EstateDetail from './component/EstateBody/EstateDetail/EstateDetail';
-import Search from './pages/Search';
+import CategoriesPage from './pages/Categories';
+import CategoriesDetailPage from './pages/CategoriesDetail';
 
 function App() {
 
@@ -24,15 +17,8 @@ function App() {
           <Header />
           <Routes>
             <Route path = "/" element ={<HomePage />} />
-            <Route path = "/estate" element ={<EstatePage />} />
-            <Route path = "/estate/:title" element = {<EstateDetail />} />
-            <Route path = "/neighborhood" element ={<NeighborhoodPage />} />
-            <Route path = "/parttime" element ={<PartTimePage />} />
-            <Route path = "/parttime/:title" element = {<PartTimeDetail />} />
-            <Route path = "/mypage" element ={<Mypage />} />
-            <Route path = "/bestpage" element ={<BestPage />} />
-            <Route path = "/bestpage/:index" element ={<BestDetail />} />
-            <Route path = "/search" element ={<Search />} />
+            <Route path = "/categories" element ={<CategoriesPage />} />
+            <Route path = "/categories/:id" element ={<CategoriesDetailPage />} />
           </Routes>
         </BrowserRouter>
       </React.Fragment>

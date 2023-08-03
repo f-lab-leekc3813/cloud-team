@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { LoginState } from "../store/LoginState";
+import { NickState } from "../store/LoginState";
 
 import classes from "./SignIn.module.css";
 
 const SignIn = ({ isOpen, close }) => {
   const [email, setEmail] = useState("");
-  const [emailCheck, setEmailCheck] = useState(false);
   const [password, setPassword] = useState("");
-  const [passwordCheck, setPasswordCheck] = useState(false);
   const [nickname, setNickname] = useState("");
-  const [nicknameCheck, setNicknameCheck] = useState(false);
 
+  const [nick,setNick] = useRecoilState(NickState);
   const [login, setLogin] = useRecoilState(LoginState);
   const [isSignUp, setIsSignUp] = useState(false);
 
@@ -38,13 +37,12 @@ const SignIn = ({ isOpen, close }) => {
     const passwordRegex = /^[a-zA-Z0-9]{8,}$/;
     const nicknameRegex = /^[a-zA-Z0-9]{3,}$/;
 
-    setEmailCheck(emailRegex.test(email) && email.length <= 20);
-    setPasswordCheck(passwordRegex.test(password) && password.length <= 20);
-    setNicknameCheck(nicknameRegex.test(nickname) && nickname.length <= 20);
-
-
     if (isSignUp) {
-      if (emailCheck && passwordCheck && nicknameCheck) {
+      if (
+        emailRegex.test(email) && email.length <= 20 
+        && passwordRegex.test(password) && password.length <= 20
+         && nicknameRegex.test(nickname) && nickname.length <= 20
+         ) {
         axios
           .post("http://localhost:8080/user/signup", {
             email: email,
@@ -78,7 +76,7 @@ const SignIn = ({ isOpen, close }) => {
         alert("입력한 정보를 다시 확인해주세요(회원가입).");
       }
     } else {
-      if (emailCheck && passwordCheck) {
+      if (emailRegex.test(email) && email.length <= 20 && passwordRegex.test(password) && password.length <= 20) {
         axios
           .post("http://localhost:8080/user/login", {
             email: email,
@@ -87,12 +85,16 @@ const SignIn = ({ isOpen, close }) => {
           .then((res) => {
             if (res.status === 200) {
               const token = res.data.token;
+              const nickname = res.data.nickname;
+              setNick(nickname)
+              console.log('Nickname:', nickname);
 
               // Store the token securely
               localStorage.setItem('token', token);
 
               alert("로그인이 완료되었습니다(로그인).");
               loginHandler();
+              console.log(login)
               close();
               setEmail("");
               setPassword("");

@@ -6,8 +6,10 @@ import Button from 'react-bootstrap/Button';
 import classes from './Header.module.css';
 import LoginButton from './LoginButton';
 import { LoginState } from '../store/LoginState';
+import LikePage  from './like/like.container.js';
 
 function Header() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const [searchText, setSearchText] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
@@ -20,30 +22,28 @@ function Header() {
         navigate('/search', { state: { searchText: searchText } });
     }
 
-    const loginHandler = () => {
-        setIsLoggedIn(true);
-        navigate('/mypage');
-    }
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+      };
 
     return (
         <div className={classes.header}>
             <div className={classes.header_wrap}>
                 <div className={classes.header_content}>
                     <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
-
                 </div>
-                <Link to='/' className={classes.header_content}>
-                    <button className={classes.header_menu_selected} >중고거래</button>
+                <Link to='/'>
+                    홈버튼(경빈)
                 </Link>
-
-                <Link to='/neighborhood' className={classes.header_content}>
-                    <button className={classes.header_menu} >동네 가게</button>
+                <Link to='/categories'>
+                    카테고리(예림)
                 </Link>
-                <Link to='/parttime' className={classes.header_content}>
-                    <button className={classes.header_menu} >알바</button>
-                </Link>
-                <Link to='/estate' className={classes.header_content}>
-                    <button className={classes.header_menu} >부동산 직거래</button>
+                <Link to='categories/1'>
+                    카테고리상세(지송)
                 </Link>
                 <div className={classes.header_content}>
                     <form className={classes.header_form} onSubmit={SearchHandler}>
@@ -59,10 +59,10 @@ function Header() {
                     </form>
 
                     {isLoggedIn ? 
-                        <Button onClick={loginHandler} variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>내정보</Button>
+                        <Button onClick={openModal} variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>찜목록</Button>
                       : ''   }
                     <LoginButton  />
-
+                    <LikePage isOpen = {isModalOpen} close = {closeModal}/>
                 </div>
             </div>
         </div>

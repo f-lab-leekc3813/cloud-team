@@ -1,0 +1,23 @@
+.containers {
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    width: 1250px;
+}
+
+.carousel {
+    max-height: 250px; 
+}
+  
+.carousel.caption {
+    padding: 20px;
+}
+
+.slideImage {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    /* width: 100%;
+    height: auto; */
+}

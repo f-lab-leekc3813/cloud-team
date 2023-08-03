@@ -16,16 +16,22 @@ export default function HomeUI() {
             <div className={classes.container}>
                 <Carousel style={{ animation: 'slide 3s infinite' }}>
                     <Carousel.Item>  
-                        <img className={classes.slideImage} src="/images/bestseller/bestseller1.jpg" alt="wallpaper" />
+                        <img className={classes.slideImage} src="/images/bestseller/bewhyimage4.png" alt="wallpaper" />
+                        <img className={classes.slideImage} src="/images/bestseller/bewhyimage4.png" alt="wallpaper" />
+                        <img className={classes.slideImage} src="/images/bestseller/bewhyimage4.png" alt="wallpaper" />
                         <Carousel.Caption>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img className={classes.slideImage} src="images/bestseller/bestseller2.jpg" alt="wallpaper" />
+                        <img className={classes.slideImage} src="images/bestseller/bestseller2.jpg" alt="wallpaper" />
+                        <img className={classes.slideImage} src="images/bestseller/bestseller2.jpg" alt="wallpaper" />
                         <Carousel.Caption>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
+                        <img className={classes.slideImage} src="images/bestseller/bestseller3.jpg" alt="wallpaper" />
+                        <img className={classes.slideImage} src="images/bestseller/bestseller3.jpg" alt="wallpaper" />
                         <img className={classes.slideImage} src="images/bestseller/bestseller3.jpg" alt="wallpaper" />
                         <Carousel.Caption>
                         </Carousel.Caption>
@@ -189,9 +195,7 @@ export default function HomeUI() {
                 </div>
                 <div className={classes.content1_list10}>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   
                   <span className={classes.content1_toptext14}>최적의 공부 뇌</span>
-        
                 </div>
                 <div className={classes.content1_list11}>
                   <img className={classes.content1_rankimage8} src="/images/bestseller/rankup.jpg" alt="wallpaper" />

@@ -1,7 +1,4 @@
-const HomePresenter = () => 
-
-{
-    const data = [
+[
         {
             "image1" : "images/bestseller/bestseller3.jpg",
             "rank" : "1",
@@ -63,4 +60,4 @@ const HomePresenter = () =>
             "rankImage" : "images/bestseller/rankdown.jpg",
             "rankNumber" : "3"
         }
-    ]}
+    ]

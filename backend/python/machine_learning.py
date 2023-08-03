@@ -77,9 +77,14 @@ df = get_recommendations('1001 Pearls of Wisdom')
 from sqlalchemy import create_engine
 
 # MySQL 연결 문자열 생성
-connection_string = 'mysql+mysqlconnector://root:mysql@localhost/machine'
+connection_string = 'mysql+mysqlconnector://root:1023ldde@localhost/machine'
 
 # MySQL 엔진 생성
 engine = create_engine(connection_string)
 
 df.to_sql(name='contents', con=engine, if_exists='replace', index=False)
+
+# q_books.to_sql(name='score_books', con=engine, if_exists='replace', index=False)
+# many_books.to_sql(name='many_books', con=engine, if_exists='replace', index=False)
+# merge_df.to_sql(name='books', con=engine, if_exists='replace', index=False)
+# grouped_df.to_sql(name='grouped_books', con=engine, if_exists='replace', index=False)

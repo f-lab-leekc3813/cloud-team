@@ -49,3 +49,4 @@ connection_string = 'mysql+mysqlconnector://root:mysql@localhost/machine'
 engine = create_engine(connection_string)
 
 df.to_sql(name='review', con=engine, if_exists='replace', index=False)
+

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import Button from 'react-bootstrap/Button';
 import { DownOutlined } from '@ant-design/icons';
@@ -97,16 +97,11 @@ const items = [
 
 function Header() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [searchText,setSearchText] = useState("");
 
     const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
 
-<<<<<<< Updated upstream
     const navigate = useNavigate();
-
-    const onClick = ({ key }) => {
-        message.info(`Click on item ${key}`);
-        console.log(key)
-      };
 
     const SearchHandler = (event) => {
         event.preventDefault();
@@ -114,8 +109,6 @@ function Header() {
         navigate('/search', { state: { searchText: searchText } });
     }
 
-=======
->>>>>>> Stashed changes
     const openModal = () => {
         setIsModalOpen(true);
     };
@@ -132,30 +125,27 @@ function Header() {
     return (
         <div className={classes.header}>
             <div className={classes.header_wrap}>
-<<<<<<< Updated upstream
                 <div className={classes.header_content}>
-                    <Link to='/'>
-                      <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
-                    </Link>
+                    <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
                 </div>
                 <div className={classes.header_content}>
                 <Dropdown
-                    menu={{
-                      items,
-                      onClick,
-                    }}
-                 >
-                    <a onClick={(e) => e.preventDefault()}>
-                      <Space>
-                        Categories
-                        <DownOutlined />
-                      </Space>
-                    </a>
-                 </Dropdown>
+    menu={{
+      items,
+      onClick,
+    }}
+  >
+    <a onClick={(e) => e.preventDefault()}>
+      <Space>
+        Hover me, Click menu item
+        <DownOutlined />
+      </Space>
+    </a>
+  </Dropdown>
                 </div>
                 <div className={classes.header_content}>
                     <form className={classes.header_form} onSubmit={SearchHandler}>
-                        <input className={classes.search_input} type="text" placeholder="통합검색"
+                        <input className={classes.search_input} type="text" placeholder="물품이나 동네를 검색해보세요"
                             value={searchText}
                             onChange={(event) => setSearchText(event.target.value)}
                             onKeyUp={(event) => {
@@ -165,25 +155,7 @@ function Header() {
                             }}
                         />
                     </form>
-=======
-                <Link to = '/'>
-                    <div className={classes.header_content}>
-                        <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
-                    </div>
-                </Link>
-                <div className={classes.header_categories}>
-                    < Dropdown  menu={{ items, onClick,}}>
-                        <a onClick={(e) => e.preventDefault()}>
-                          <Space>
-                            Categories
-                            <DownOutlined />
-                          </Space>
-                        </a>
-                    </Dropdown>
-                    ss
-                </div>
-                <div className={classes.header_content}>
->>>>>>> Stashed changes
+
                     {isLoggedIn ? 
                         <Button onClick={openModal} variant="warning" style={{marginRight : '5px', fontSize : '12px'}}>찜목록</Button>
                       : ''   }

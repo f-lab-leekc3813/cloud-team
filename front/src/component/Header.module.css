@@ -5,15 +5,14 @@
     top: 0;
     overflow: hidden;
     background-color: white;
+    z-index: 2;
 }
 
 .header_wrap {
     height : 100%;
     width: 1024px;
     margin: auto;
-    display: grid;
-    grid-template-columns: 100px 750px 200px;
-    gap: 10px;
+    display: flex;
 }
 
 .header_content {

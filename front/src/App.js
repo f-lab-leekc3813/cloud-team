@@ -9,7 +9,6 @@ import CategoriesPage from './pages/Categories';
 import CategoriesDetailPage from './pages/CategoriesDetail';
 
 function App() {
-
   return (
     <RecoilRoot>
       <React.Fragment >
@@ -18,7 +17,7 @@ function App() {
           <Routes>
             <Route path = "/" element ={<HomePage />} />
             <Route path = "/categories/:key" element ={<CategoriesPage />} />
-            <Route path = "/categories/:key/detail" element ={<CategoriesDetailPage />} />
+            <Route path = "/categories/:key/detail/:title" element ={<CategoriesDetailPage />} />
           </Routes>
         </BrowserRouter>
       </React.Fragment>

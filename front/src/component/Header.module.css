@@ -5,8 +5,10 @@
     top: 0;
     overflow: hidden;
     background-color: white;
-    z-index: 2;
+    z-index: 10;
+    transition: opacity 0.3s ease;
 }
+
 
 .header_wrap {
     height : 100%;

@@ -1,6 +1,6 @@
 
 import {useRecoilState} from "recoil";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 import { LikeState} from '../../../store/LikeState';
@@ -27,8 +27,22 @@ export default function CategoriesDetail() {
         console.log(score);
     };
 
+    // 랜더링되면 데이터를 받아온다.
+    useEffect (() => {
+        const currentPath = window.location.pathname;
+        console.log(currentPath)
+        const extractedValue = currentPath.split('/detail/')[1].split('/')[0];
+        const formattedValue = extractedValue.replace(/%20/g, ' ');
+        console.log(formattedValue)
+    },[])
+
     const onClickSubmit = (e) => {
         console.log(nick);
+
+        if(!nick) {
+            alert('로그인해라 멍청아!')
+            return;
+        }
     
         // Check if score is provided
         if (!score) {

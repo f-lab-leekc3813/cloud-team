@@ -22,10 +22,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
+    cursor: pointer;
 }
 
 .listContainer {
     padding-bottom: 29px;
+    
 }
 
 @media (max-width: 1364px) {
@@ -85,7 +87,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 10;
+
     border: 1px solid rgba(0,0,0,.1);
     content: "";
 }

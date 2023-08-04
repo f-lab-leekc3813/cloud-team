@@ -121,12 +121,16 @@ function Header() {
       message.info(`Click on item ${key}`);
       navigate(`./categories/${key}`)
     };
-    
+
+    const handleClick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }    
+
 
     return (
         <div className={classes.header}>
             <div className={classes.header_wrap}>
-                <Link to ='./' className={classes.header_content}>
+                <Link to ='./' className={classes.header_content} onClick={handleClick}>
                       <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
                 </Link>
                 <div className={classes.header_content}>

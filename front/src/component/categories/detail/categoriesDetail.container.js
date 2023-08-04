@@ -5,6 +5,7 @@ import axios from "axios";
 
 import { LikeState} from '../../../store/LikeState';
 import { NickState } from "../../../store/LoginState";
+import { CategoriDetail } from "../../../store/Categories";
 import CategoriesDetailUI from "./categoriesDetail.presenter"
 
 
@@ -13,27 +14,24 @@ export default function CategoriesDetail() {
     const [like, setLike] = useRecoilState(LikeState);
     const [nick, setNick] = useRecoilState(NickState);
     const [score, setScore] = useState('');
+    const [detail, setDetail] = useRecoilState(CategoriDetail);
 
     const onChangeScore = (e) => {
         // 숫자 형식이면 입력이 되고 아니면 안된다
         const inputScore = e.target.value;
-        console.log('ww')
         
         if (!isNaN(inputScore)) {
             setScore(inputScore);
         } else {
             setScore('');
         }
-        console.log(score);
     };
 
     // 랜더링되면 데이터를 받아온다.
     useEffect (() => {
         const currentPath = window.location.pathname;
-        console.log(currentPath)
         const extractedValue = currentPath.split('/detail/')[1].split('/')[0];
         const formattedValue = extractedValue.replace(/%20/g, ' ');
-        console.log(formattedValue)
     },[])
 
     const onClickSubmit = (e) => {
@@ -57,9 +55,9 @@ export default function CategoriesDetail() {
         e.preventDefault();
     
         // Check if the review with the same title already exists in the 'like' array
-        const exists = like.some((item) => item.title === data.title);
+        const exists = like.some((item) => item.title === detail.title);
         if (!exists) {
-            const newData = { ...data, score };
+            const newData = { ...detail, score };
             setLike((prevLike) => [...prevLike, newData]);
         }
     
@@ -68,7 +66,7 @@ export default function CategoriesDetail() {
         // Make a POST request to send the review
         axios.post("http://localhost:8080/like/likeReview", {
             userId: nick,
-            bookId: data.title,
+            bookId: detail.title,
             rating: score
         })
         .then((res) => {
@@ -89,22 +87,11 @@ export default function CategoriesDetail() {
         });
     };
 
-    // 임시 data 카테고리 페이지에서 클릭하면 세부에서 데이터 받아와서 recoil 전송
-
-    const data = {
-        title : 'Behind the Moon',
-        authors : '',
-        categories : '[Adventure stories]',
-        image : 'http://books.google.com/books/content?id=_AEhAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
-        review : 'so good!!!!!!!',
-        profileName : 'K. Viker'
-    }
-
 
 
     return(<>
     <CategoriesDetailUI 
-        data={data}
+        detail = {detail}
         onClickSubmit = {onClickSubmit} 
         onChangeScore = {onChangeScore}
     />

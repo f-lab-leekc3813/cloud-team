@@ -20,10 +20,19 @@ export default function Categories() {
     const navigate = useNavigate();
 
     const onClickDetail = (event) => {
-        const title = event.currentTarget.getAttribute("value")
+        const title = event.currentTarget.getAttribute("title")
+        const image = event.currentTarget.getAttribute("image")
+        const categories = event.currentTarget.getAttribute("categories")
+        console.log('여기를 클릭')
 
+        const detailData = {
+            title: title,
+            image : image,
+            categories : categories
+        }
 
-        setDetail()
+        setDetail(detailData)
+        console.log(detail)
         navigate(`./detail/${title}`)
     }
         

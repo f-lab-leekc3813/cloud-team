@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './categoriesDetail.module.css';
+import classes from './SearchDetail.module.css';
 
-export default function CategoriesUIDetail(props) {
+export default function SearchUIDetail(props) {
   return (
     <div id="contentArea" className={classes.body}>
       <div className={classes.container}>

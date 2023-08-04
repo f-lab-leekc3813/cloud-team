@@ -1,12 +1,12 @@
 const database = require('../config/database.config');
 
 
-async function categoryCheck(data) {
+async function bestCheck(data) {
     let co;
 
     try {
         co = await database.getConnection();
-        const query = `SELECT * FROM machine.books WHERE categories like '%${data}%' limit 40`;
+        const query = `SELECT * FROM machine.${data} limit 30`;
 
         const [result] = await co.execute(query);
         co.release();
@@ -17,4 +17,4 @@ async function categoryCheck(data) {
     }
 }
 
-module.exports = categoryCheck;
+module.exports = bestCheck;

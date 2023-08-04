@@ -1,47 +1,24 @@
-import classes from './categories.module.css';
-import { Carousel } from 'react-bootstrap';
+import classes from './search.module.css';
 import React from 'react';
 
-export default function CategoriesUI(props) {
+export default function SearchUI(props) {
     
     return(
     <>
         <div className={classes.containers}>
-            <div className={classes.container}>
-                <Carousel>
-                    <Carousel.Item>
-                        <img className={classes.slideImage} src="/images/categori/slide01.jpg" alt="wallpaper" />
-                        <Carousel.Caption>
-                        <h3>운영진이 추천하는 책</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className={classes.slideImage} src="/images/categori/slide02.jpg" alt="wallpaper" />
-                        <Carousel.Caption>
-                        <h3>뚜룹뚜룹</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className={classes.slideImage} src="/images/categori/slide03.jpg" alt="wallpaper" />
-                        <Carousel.Caption>
-                        <h3>가장 찜이 많은 책</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
-            </div>
             <div className={classes.listContainers}>
                 { props.loading ?
-                    <div> 로딩중</div> 
+                    <div> 검색어를 입력하세요</div> 
                     :  
                     props.data ? 
                 (props.data.map((data) => {
                     return(
-                        <div onClick={props.onClickDetail} categories = {data.categories} title = {data.Title} image = {data.image} key={data.Title}  className={classes.listContainer}>
+                        <div  categories = {data.categories} title = {data.Title} image = {data.image} key={data.Title}  className={classes.listContainer}>
                             <div className={classes.listUl}>
-                                <div className={classes.listLi}>
+                                <div className={classes.listLi}onClick={props.onClickDetail}>
                                     <div className={classes.listA}>
                                         <div className={classes.listDiv}>
-                                            <img className={classes.listImg} src={data.image || "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/299600042_380678670861506_5752050165543910974_n.png?stp=dst-png_p206x206&_nc_cat=108&ccb=1-7&_nc_sid=da31f3&_nc_ohc=MAGEvMFi2eIAX_Smrx3&_nc_ht=scontent-ssn1-1.xx&oh=00_AfBBnjAU2tLU2plnBP5Quz32klNJSZKMB9ngfRmGdzWMvg&oe=64D1F1F3"}/>
+                                            <img className={classes.listImg} src={data.image || "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/299600042_380678670861506_5752050165543910974_n.png?stp=dst-png_p206x206&_nc_cat=108&ccb=1-7&_nc_sid=da31f3&_nc_ohc=MAGEvMFi2eIAX_Smrx3&_nc_ht=scontent-ssn1-1.xx&oh=00_AfBBnjAU2tLU2plnBP5Quz32klNJSZKMB9ngfRmGdzWMvg&oe=64D1F1F3"} alt='이미지없음'/>
                                         </div>
                                         <div className={classes.listInfo}>
                                             <div className={classes.listTitle}>

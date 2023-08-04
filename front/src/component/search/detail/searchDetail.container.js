@@ -5,16 +5,16 @@ import axios from "axios";
 
 import { LikeState} from '../../../store/LikeState';
 import { NickState } from "../../../store/LoginState";
-import { CategoriDetail } from "../../../store/Categories";
-import CategoriesDetailUI from "./categoriesDetail.presenter"
+import { SearchDetail } from "../../../store/Search";
+import SearchDetailUI from "./searchDetail.presenter"
 
 
-export default function CategoriesDetail() { 
+export default function SearchDetail() { 
     
     const [like, setLike] = useRecoilState(LikeState);
     const [nick, setNick] = useRecoilState(NickState);
     const [score, setScore] = useState('');
-    const [detail, setDetail] = useRecoilState(CategoriDetail);
+    const [detail, setDetail] = useRecoilState(SearchDetail);
 
     const onChangeScore = (e) => {
         // 숫자 형식이면 입력이 되고 아니면 안된다
@@ -30,7 +30,7 @@ export default function CategoriesDetail() {
     // 랜더링되면 데이터를 받아온다.
     useEffect (() => {
         const currentPath = window.location.pathname;
-        const extractedValue = currentPath.split('/detail/')[1].split('/')[0];
+        const extractedValue = currentPath.split('/search/')[1].split('/')[0];
         const formattedValue = extractedValue.replace(/%20/g, ' ');
     },[])
 
@@ -90,7 +90,7 @@ export default function CategoriesDetail() {
 
 
     return(<>
-    <CategoriesDetailUI 
+    <SearchDetailUI 
         detail = {detail}
         onClickSubmit = {onClickSubmit} 
         onChangeScore = {onChangeScore}

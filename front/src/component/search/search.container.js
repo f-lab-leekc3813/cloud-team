@@ -1,21 +1,24 @@
 import SearchUI from "./search.presenter";
 import React, { useState, useEffect } from 'react';
-import { useNavigate,useLocation} from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import {useRecoilState} from "recoil";
+import { useRecoilState } from "recoil";
 
-import { SearchDetail } from "../../store/Search";
+import { SearchDetail, SearchText } from "../../store/Search";
 
 
-export default function Categories() {
+
+export default function Search() {
     // 자바스크립트 공간
 
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
     const [loading, setLoding] = useState(true)
 
     const location = useLocation();
 
     const [detail, setDetail] = useRecoilState(SearchDetail);
+
+    const [searchTextValue, setsearchTextValue] = useRecoilState(SearchText);
 
     const navigate = useNavigate();
 
@@ -27,41 +30,45 @@ export default function Categories() {
 
         const detailData = {
             title: title,
-            image : image,
-            categories : categories
+            image: image,
+            categories: categories
         }
 
         setDetail(detailData)
         console.log(detail)
         navigate(`./detail/${title}`)
     }
-        
-    useEffect(() => {
-        
-        const currentPath = window.location.pathname;
-        const extractedValue = currentPath.replace(/^\/categories\//, '').replace(/%20/g, ' ');
-        console.log(extractedValue)
-        
-        const fetchData = async () => {
-            try{
-                const response = await axios.get(`http://localhost:5000/search/s`);
-                window.scrollTo({ top: 0, behavior: 'smooth' })
-                console.log(response.data);
-                setData(response.data)
-                setLoding(false)
-            } catch (error) {
-                console.log('데이터를 받아오지 못했습니다', error)
-                setLoding(true)
-            }
+
+    async function fetchData() {
+        try {
+            const response = await axios.get(`http://localhost:5000/search/${searchTextValue}`);
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            setData(response.data)
+            setLoding(false)
+        } catch (error) {
+            console.log('데이터를 받아오지 못했습니다', error)
+            setLoding(true)
         }
-        fetchData();
-    }, [window.location.pathname]);
+    }
+
+    useEffect(() => {
+
+        if (location.state && location.state.SearchText) {
+            setsearchTextValue(location.state.SearchText);
+            fetchData();
+        } else {
+            setsearchTextValue('');
+        }
+
+    }, [location.state]);
+
+
 
     return (
         <SearchUI
-            data = {data}
-            loading = {loading}
-            onClickDetail = {onClickDetail}
-         />
+            data={data}
+            loading={loading}
+            onClickDetail={onClickDetail}
+        />
     )
- }
+}

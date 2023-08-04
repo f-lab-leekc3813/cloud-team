@@ -36,6 +36,7 @@ export default function Categories() {
         const fetchData = async () => {
             try{
                 const response = await axios.get(`http://localhost:8080/category/${extractedValue}`);
+                window.scrollTo({ top: 0, behavior: 'smooth' })
                 console.log(response.data);
                 setData(response.data)
                 setLoding(false)

@@ -30,7 +30,7 @@ export default function SearchDetail() {
     // 랜더링되면 데이터를 받아온다.
     useEffect (() => {
         const currentPath = window.location.pathname;
-        const extractedValue = currentPath.split('/detail/')[1].split('/')[0];
+        const extractedValue = currentPath.split('/search/')[1].split('/')[0];
         const formattedValue = extractedValue.replace(/%20/g, ' ');
     },[])
 

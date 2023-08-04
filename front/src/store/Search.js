@@ -8,3 +8,7 @@ export const SearchDetail = atom({
     key : 'SearchDetail',
     default : {},
 })
+export const SearchText = atom({
+    key : 'SearchText',
+    default : '',
+})

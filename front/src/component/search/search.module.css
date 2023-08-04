@@ -109,7 +109,7 @@
 }
 
 .listInfo {
-    height: 169px;
+    height: 100px;
     padding: 13px 14px 0;
 }
 
@@ -120,7 +120,7 @@
     text-overflow: ellipsis;
     line-height: 23px;
     display: -webkit-box;
-    max-height: 42px;
+    max-height: 50px;
     white-space: normal;
     word-wrap: break-word;
     word-break: keep-all;

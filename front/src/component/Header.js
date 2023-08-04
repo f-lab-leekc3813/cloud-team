@@ -103,7 +103,6 @@ function Header() {
 
   const [searchTextValue, setsearchTextValue] = useRecoilState(SearchText);
 
-
   const navigate = useNavigate();
 
   const SearchHandler = (event) => {
@@ -133,7 +132,6 @@ function Header() {
   const handleClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-
 
   return (
     <div className={classes.header}>
@@ -171,6 +169,7 @@ function Header() {
 
           <LoginButton />
           <LikePage isOpen={isModalOpen} close={closeModal} />
+
 
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function CategoriesUI(props) {
                     props.data ? 
                 (props.data.map((data) => {
                     return(
-                        <div onClick={props.onClickDetail} value = {data.Title} key={data.Title}  className={classes.listContainer}>
+                        <div onClick={props.onClickDetail} categories = {data.categories} title = {data.Title} image = {data.image} key={data.Title}  className={classes.listContainer}>
                             <div className={classes.listUl}>
                                 <div className={classes.listLi}>
                                     <div className={classes.listA}>

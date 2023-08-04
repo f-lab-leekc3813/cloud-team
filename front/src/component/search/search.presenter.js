@@ -8,7 +8,7 @@ export default function SearchUI(props) {
             <div className={classes.containers}>
                 <div className={classes.listContainers}>
                     {props.loading ?
-                        <div> 로딩중</div>
+                        <div> 정확한 도서명을 입력해 주세요</div>
                         :
                         props.data ?
                             (props.data.map((data) => {

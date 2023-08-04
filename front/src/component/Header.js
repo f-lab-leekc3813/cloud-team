@@ -106,7 +106,7 @@ function Header() {
     const SearchHandler = (event) => {
         event.preventDefault();
         setSearchText(searchText);
-        navigate('/search', { state: { searchText: searchText } });
+        navigate('/search/s', { state: { searchText: searchText } });
     }
 
     const openModal = () => {

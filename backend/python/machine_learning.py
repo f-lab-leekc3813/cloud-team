@@ -70,7 +70,7 @@ def get_recommendations(title, cosine_sim=cosine_sim):
     sim_scores = list(enumerate(cosine_sim[idx]))
     
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-    sim_scores = sim_scores[:11]
+    sim_scores = sim_scores[:40]
     
     books_indices = [i[0] for i in sim_scores]
     

@@ -92,7 +92,7 @@ const bestsellerData = [
   }
 ]
 
-export default function HomeUI() {
+export default function HomeUI(props) {
   return (
     <>
         <div className={classes.content1_recommend2}>
@@ -117,10 +117,8 @@ export default function HomeUI() {
                         </div>
                         <div className={classes.textContainer}>
                           <p className={classes.title}>{data.title}</p>
-                          <p className={classes.reviewscore}>
-                            Review Score: {data.reviewscore}
-                          </p>
-                          <p className={classes.reviewtext}>{data.reviewtext}</p>
+                          <p className={classes.author}>{data.author}</p>
+                          <p className={classes.categories}>{data.categories}</p>
                         </div>
                       </div>
                     ))}

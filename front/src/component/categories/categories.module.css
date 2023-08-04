@@ -177,7 +177,6 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    -webkit-appearance: none;
 }
 
 .Jjim {
@@ -196,3 +195,5 @@
     cursor: pointer;
     border: none;
 }
+
+

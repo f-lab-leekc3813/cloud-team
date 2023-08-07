@@ -32,6 +32,7 @@ export default function CategoriesDetail() {
         const currentPath = window.location.pathname;
         const extractedValue = currentPath.split('/detail/')[1].split('/')[0];
         const formattedValue = extractedValue.replace(/%20/g, ' ');
+        console.log(detail)
     },[])
 
     const onClickSubmit = (e) => {

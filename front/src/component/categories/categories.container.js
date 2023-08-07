@@ -22,13 +22,25 @@ export default function Categories() {
     const onClickDetail = (event) => {
         const title = event.currentTarget.getAttribute("title")
         const image = event.currentTarget.getAttribute("image")
+        const profileName = event.currentTarget.getAttribute("profileName")
+        const publisheDate = event.currentTarget.getAttribute("publisheDate")
+        const reviewScore = event.currentTarget.getAttribute("reviewScore")
+        const reviewSummary = event.currentTarget.getAttribute("reviewSummary")
+        const reviewText = event.currentTarget.getAttribute("reviewText")
         const categories = event.currentTarget.getAttribute("categories")
+
         console.log('여기를 클릭')
 
         const detailData = {
-            title: title,
-            image : image,
-            categories : categories
+            title,
+            image,
+            categories,
+            profileName,
+            publisheDate,
+            reviewScore,
+            reviewSummary,
+            reviewText
+
         }
 
         setDetail(detailData)

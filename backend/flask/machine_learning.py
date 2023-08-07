@@ -82,7 +82,7 @@ df = get_recommendations('1001 Pearls of Wisdom')
 
 
 # MySQL 연결 문자열 생성
-connection_string = 'mysql+mysqlconnector://root:mysql@localhost/machine'
+connection_string = 'mysql+mysqlconnector://root:1023ldde@localhost/machine'
 
 # MySQL 엔진 생성
 engine = create_engine(connection_string)

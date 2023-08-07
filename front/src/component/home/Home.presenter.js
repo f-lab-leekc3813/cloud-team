@@ -3,7 +3,6 @@ import classes from './Home.module.css';
 import { Link, useNavigate } from 'react-router-dom';
 import homeData from '../../data/HomeData.json';
 
-
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'react-bootstrap';
@@ -14,8 +13,9 @@ const imagesData = homeData.imagesData;
 
 
 
+export default function HomeUI(props) {
 
-export default function HomeUI() {
+
   return (
     <>
         <div className={classes.content1_recommend2}>
@@ -23,42 +23,36 @@ export default function HomeUI() {
             믿고 보는 구름 에디터 추천작  {'>'}
           </span>
         </div>
-        <div className={classes.containers}>
-          <div className={classes.container}>
-          <Carousel style={{ animation: 'slide 3s infinite' }}>
-              {imagesData.map((data, index) => (
-                <Carousel.Item key={index}>
-                  <div className={classes.slideContainer}>
-                    {Array.from({ length: 3 }).map((_, i) => (
-                      <div key={i} className={classes.slideContent}>
-                        <div className={classes.imageContainer}>
-                          <img
-                            className={classes.slideImage}
-                            src={data.image}
-                            alt={data.alt}
-                          />
-                        </div>
-                        <div className={classes.textContainer}>
-                          <p className={classes.title}>{data.title}</p>
-
-                          <p className={classes.reviewscore}>
-                            Review Score: {data.reviewscore}
-                          </p>
-                          <p className={classes.reviewtext}>{data.reviewtext}</p>
+        {props.data ? 
+          <div className={classes.topcontainers}>
+            <div className={classes.carouselContainer}>
+              <Carousel>
+                {props.data.map((data, index) => (
+                  <Carousel.Item key={index}>
+                    <div className={classes.carouselSlide}>
+                      <div className={classes.carouselContent}>
+                        <div className={classes.dataBundle}>
+                          {props.data.slice(index, index + 3).map((item, itemIndex) => (
+                            <div key={itemIndex} className={classes.dataBundleItem}>
+                              <img
+                                className={classes.carouselImage}
+                                src={item.image}
+                                alt={`Image ${itemIndex + 1}`}
+                              />
+                              <h6>{item.Title}</h6>
+                              <h6>{item.authors}</h6>
+                              <h6>{item.reviewScore.toFixed(1)}</h6>
+                            </div>
+                          ))}
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </Carousel.Item>
-              ))}
-            </Carousel>
+                    </div>
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+            </div>
           </div>
-        </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+          : ""  }
         <div className={classes.content1_recommend2}>
             <span className={classes.content1_toplist1}>
               실시간 인기 콘텐츠  {'>'}

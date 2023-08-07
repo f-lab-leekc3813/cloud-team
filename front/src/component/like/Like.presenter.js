@@ -1,4 +1,4 @@
-import classes from "./Like.module.css";
+import classes from "./like.module.css";
 
 export default function LikeUI(props) {
 

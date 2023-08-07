@@ -19,7 +19,7 @@ user_df = merge_df[merge_df['profileName'].isin(top_user.index)]
 
 unique_user = user_df.drop_duplicates()
 
-rating_df = unique_user[['profileName', 'Title', 'review/score']].sort_values('profileName').reset_index(drop=True)
+rating_df = unique_user[['profileName', 'Title', 'reviewScore']].sort_values('profileName').reset_index(drop=True)
 
 rating_df['profileName'] = rating_df['profileName'].apply(lambda x:idx[x])
 rating_df['Title'] = rating_df['Title'].apply(lambda x:indices[x])

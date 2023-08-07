@@ -24,34 +24,48 @@ export default function HomeUI(props) {
           </span>
         </div>
         {props.data ? 
-          <div className={classes.topcontainers}>
-            <div className={classes.carouselContainer}>
-              <Carousel>
-                {props.data.map((data, index) => (
-                  <Carousel.Item key={index}>
-                    <div className={classes.carouselSlide}>
-                      <div className={classes.carouselContent}>
-                        <div className={classes.dataBundle}>
-                          {props.data.slice(index, index + 3).map((item, itemIndex) => (
-                            <div key={itemIndex} className={classes.dataBundleItem}>
+        <div className={classes.topcontainers}>
+        <div className={classes.carouselContainer}>
+          <Carousel indicatorsClassName={classes.customIndicator}>
+            {props.data.map((data, index) => (
+              <Carousel.Item key={index}>
+                <div className={classes.carouselSlide}>
+                  <div className={classes.carouselContent}>
+                    <div className={classes.dataBundle}>
+                      {props.data.slice(index, index + 3).map((item, itemIndex) => (
+                        <div key={itemIndex} className={classes.dataBundleItem}>
+                            {item.image ? (
                               <img
                                 className={classes.carouselImage}
                                 src={item.image}
                                 alt={`Image ${itemIndex + 1}`}
                               />
+                            ) : (
+                              <div className={classes.listDiv}>
+                                <img
+                                  className={classes.listImg}
+                                  src={
+                                    "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/299600042_380678670861506_5752050165543910974_n.png?stp=dst-png_p206x206&_nc_cat=108&ccb=1-7&_nc_sid=da31f3&_nc_ohc=MAGEvMFi2eIAX_Smrx3&_nc_ht=scontent-ssn1-1.xx&oh=00_AfBBnjAU2tLU2plnBP5Quz32klNJSZKMB9ngfRmGdzWMvg&oe=64D1F1F3"
+                                  }
+                                  alt="책사진"
+                                />
+                              </div>
+                            )}
+                            <div className={classes.dataBundleText}>
                               <h6>{item.Title}</h6>
                               <h6>{item.authors}</h6>
                               <h6>{item.reviewScore.toFixed(1)}</h6>
                             </div>
-                          ))}
-                        </div>
-                      </div>
+                          </div>
+                      ))}
                     </div>
-                  </Carousel.Item>
-                ))}
-              </Carousel>
-            </div>
-          </div>
+                  </div>
+                </div>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
+      </div>
           : ""  }
         <div className={classes.content1_recommend2}>
             <span className={classes.content1_toplist1}>

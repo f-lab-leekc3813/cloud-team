@@ -1,7 +1,3 @@
-
-
-
-
 .container1 {
   background-color: rgb(255, 255, 255);
 }
@@ -4025,18 +4021,49 @@ width:350px;
 
 .dataBundleItem {
   display: flex;
-  flex-direction: column;
+  display:block;
+  height:350px;
+  width:300px;
   align-items: center;
   text-align: center;
   max-width: calc(33.33% - 20px); /* Adjust the width of each data bundle item */
-  padding: 20px;
+  padding: 10px;
+  border: 2px solid #ccc; /* Customize the border style */
+  padding: 40px; /* Add padding for spacing */
+  text-align: center; /* Center-align the content */
+  border: 2px solid #ccc; /* Customize the border style */
+  position: relative; /* Position for adding text at the bottom */
 }
 
 .carouselImage {
   width: 100px; /* Adjust the image width as needed */
-  height: auto;
+  height: 150px;
+  margin-bottom: 10px; /* Add margin below the image */
 }
 
 h6 {
   margin: 5px 0;
+}
+
+.dataBundleText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Customize the background color */
+  color: white; /* Customize the text color */
+  padding: 5px 0;
+  height:100px;
+}
+
+
+
+/* Change the color of the carousel indicators */
+.customIndicator li {
+  background-color: red; /* Change this color */
+}
+
+/* Change the active indicator color */
+.customIndicator li.active {
+  background-color: darkred; /* Change this color */
 }

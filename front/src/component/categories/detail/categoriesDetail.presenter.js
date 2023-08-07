@@ -26,7 +26,7 @@ export default function CategoriesUIDetail(props) {
               <div className={classes.reviewInfo}>이 책에 대한 리뷰</div>
               <div className={classes.review}>
                 <div className={classes.reviewTop}>
-                  <span>작성자 : {props.detail.profileName}</span>
+                  {props.detail.profileName ? <span>작성자 : {props.detail.profileName}</span> : ""}
                   <Rate disabled defaultValue={props.detail.reviewScore} />
                 </div>
                 <div className={classes.reviewBottom}>

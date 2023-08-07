@@ -2,7 +2,6 @@
     background-color: #ECF9FF;
     display: flex;
     justify-content: center;
-    height: 1300px;
 }
 
 .container {
@@ -141,11 +140,4 @@
     gap: 20px;
     margin-top: 20px;
     margin-bottom: 30px;
-}
-
-.associContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    padding-left: 50px;
 }

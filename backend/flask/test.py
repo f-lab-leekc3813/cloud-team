@@ -22,7 +22,7 @@ def show_user(username):
 @app1.route('/category/<category>', methods=['GET'])
 def show_category(category):
     # MySQL 연결 문자열 생성
-    connection_string = 'mysql+mysqlconnector://root:mysql@localhost/project'
+    connection_string = 'mysql+mysqlconnector://root:1023ldde@localhost/project'
 
     # MySQL 엔진 생성
     engine = create_engine(connection_string)

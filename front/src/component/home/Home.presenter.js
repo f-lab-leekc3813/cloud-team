@@ -13,8 +13,90 @@ const brandImages = homeData.brandImages;
 const imagesData = homeData.imagesData;
 
 
+const imagesData = [
+  {
+      image: '/images/bestseller/bewhyimage4.png',
+      alt: 'Image 1',
+      title: 'The House of Sixty Fathers',
+      reviewscore: '4.9',
+      reviewtext: 'I read this book as a...'
+  },
+  {
+      image: '/images/bestseller/bewhyimage4.png',
+      alt: 'Image 1',
+      title: 'The House of Sixty Fathers',
+      reviewscore: '4.9',
+      reviewtext: 'I read this book as a...'
+  },
+  {
+      image: '/images/bestseller/bewhyimage4.png',
+      alt: 'Image 1',
+      title: 'The House of Sixty Fathers',
+      reviewscore: '4.9',
+      reviewtext: 'I read this book as a...'
+  },
+];
 
-export default function HomeUI(props) {
+
+const bestsellerData = [
+  {
+      "image1" : "images/bestseller/bestseller1.jpg",
+      "rank" : "1",
+      "title" : "세이노의 가르침",
+      "rankImage" : "images/bestseller/rankup.jpg",
+      "rankNumber" : "1"
+  },{
+      "image1" : "images/bestseller/bestseller2.jpg",
+      "rank" : "2",
+      "title" : "문과 남자의 과학 공부",
+      "rankImage" : "images/bestseller/rankdown.jpg",
+      "rankNumber" : "1"
+  },{
+      "image1" : "images/bestseller/bestseller3.jpg",
+      "rank" : "3",
+      "title" : "최애의 아이 11",
+      "rankImage" : "images/bestseller/rankup.jpg",
+      "rankNumber" : "1"
+  },{
+      "image1" : "images/bestseller/bestseller4.jpg",
+      "rank" : "4",
+      "title" : "아주 희미한",
+      "rankImage" : "images/bestseller/rankdown.jpg",
+      "rankNumber" : "1"
+  },{
+      "image1" : "images/bestseller/bestseller5.jpg",
+      "rank" : "5",
+      "title" : "도둑맞은 집중력",
+      "rankImage" : "images/bestseller/rankdown.jpg",
+      "rankNumber" : "1"
+  },{
+      "image1" : "images/bestseller/bestseller6.jpg",
+      "rank" : "6",
+      "title" : "스튜디오 지브리 입체건축...",
+      "rankImage" : "images/bestseller/rankup.jpg",
+      "rankNumber" : "4"
+  },{
+      "image1" : "images/bestseller/bestseller7.jpg",
+      "rank" : "7",
+      "title" : "스파이 패밀리 11",
+      "rankImage" : "images/bestseller/rankup.jpg",
+      "rankNumber" : "1"
+  },{
+      "image1" : "images/bestseller/bestseller8.jpg",
+      "rank" : "8",
+      "title" : "최적의 공부 뇌",
+      "rankImage" : "images/bestseller/rankup.jpg",
+      "rankNumber" : "1"
+  },{
+      "image1" : "images/bestseller/bestseller9.jpg",
+      "rank" : "9",
+      "title" : "브랜드 설계자",
+      "rankImage" : "images/bestseller/rankup.jpg",
+      "rankNumber" : "17"
+  }
+]
+
+export default function HomeUI() {
   return (
     <>
         <div className={classes.content1_recommend2}>
@@ -39,8 +121,11 @@ export default function HomeUI(props) {
                         </div>
                         <div className={classes.textContainer}>
                           <p className={classes.title}>{data.title}</p>
-                          <p className={classes.author}>{data.author}</p>
-                          <p className={classes.categories}>{data.categories}</p>
+
+                          <p className={classes.reviewscore}>
+                            Review Score: {data.reviewscore}
+                          </p>
+                          <p className={classes.reviewtext}>{data.reviewtext}</p>
                         </div>
                       </div>
                     ))}

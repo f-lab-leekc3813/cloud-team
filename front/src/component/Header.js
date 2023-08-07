@@ -155,22 +155,8 @@ function Header() {
           </Dropdown>
         </div>
         <div className={classes.header_content}>
-          <form className={classes.header_form} onSubmit={SearchHandler}>
-            <input className={classes.search_input} type="text" placeholder="물품이나 동네를 검색해보세요"
-              value={searchTextValue}
-              onChange={(event) => setsearchTextValue(event.target.value)}
-              onKeyUp={handleSearchKeyUp}
-            />
-          </form>
-
-          {isLoggedIn ?
-            <Button onClick={openModal} variant="warning" style={{ marginRight: '5px', fontSize: '12px' }}>찜목록</Button>
-            : ''}
-
           <LoginButton />
           <LikePage isOpen={isModalOpen} close={closeModal} />
-
-
         </div>
       </div>
     </div>

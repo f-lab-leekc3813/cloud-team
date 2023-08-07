@@ -35,6 +35,12 @@ export default function CategoriesUIDetail(props) {
                 </div>
               </div>
         </div>
+        <div className= {classes.associContainer}>
+          <div>s</div>
+          <div>s</div>
+          <div>s</div>
+          <div>s</div>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-
 import {useRecoilState} from "recoil";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -15,6 +14,7 @@ export default function CategoriesDetail() {
     const [nick, setNick] = useRecoilState(NickState);
     const [score, setScore] = useState('');
     const [detail, setDetail] = useRecoilState(CategoriDetail);
+    const [associationData, setAssociationData] = useState(null);
 
     const onChangeScore = (e) => {
         // 숫자 형식이면 입력이 되고 아니면 안된다
@@ -32,7 +32,18 @@ export default function CategoriesDetail() {
         const currentPath = window.location.pathname;
         const extractedValue = currentPath.split('/detail/')[1].split('/')[0];
         const formattedValue = extractedValue.replace(/%20/g, ' ');
-        console.log(detail)
+        console.log(formattedValue)
+
+        const fetchData = async () => {
+            try{
+                const response = await axios.get(`http://localhost:5000/search/${formattedValue}`);
+                console.log(response.data);
+                setAssociationData(response.data)
+            } catch (error) {
+                console.log('데이터를 받아오지 못했습니다', error)
+            }
+        }
+        fetchData();
     },[])
 
     const onClickSubmit = (e) => {
@@ -95,6 +106,7 @@ export default function CategoriesDetail() {
         detail = {detail}
         onClickSubmit = {onClickSubmit} 
         onChangeScore = {onChangeScore}
+        associationData = {associationData}
     />
     </>)
 }

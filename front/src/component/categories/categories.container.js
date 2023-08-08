@@ -40,7 +40,6 @@ export default function Categories() {
             reviewScore,
             reviewSummary,
             reviewText
-
         }
 
         setDetail(detailData)

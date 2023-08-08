@@ -1,96 +1,19 @@
 
 import classes from './Home.module.css';
 import { Link, useNavigate } from 'react-router-dom';
+import homeData from '../../data/HomeData.json';
 
 
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Dropdown } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
 
-
-const imagesData = [
-  {
-      image: '/images/bestseller/bewhyimage4.png',
-      alt: 'Image 1',
-      title: 'The House of Sixty Fathers',
-      reviewscore: '4.9',
-      reviewtext: 'I read this book as a...'
-  },
-  {
-      image: '/images/bestseller/bewhyimage4.png',
-      alt: 'Image 1',
-      title: 'The House of Sixty Fathers',
-      reviewscore: '4.9',
-      reviewtext: 'I read this book as a...'
-  },
-  {
-      image: '/images/bestseller/bewhyimage4.png',
-      alt: 'Image 1',
-      title: 'The House of Sixty Fathers',
-      reviewscore: '4.9',
-      reviewtext: 'I read this book as a...'
-  },
-];
+const bestsellerData = homeData.bestsellerData;
+const brandImages = homeData.brandImages;
+const imagesData = homeData.imagesData;
 
 
-const bestsellerData = [
-  {
-      "image1" : "images/bestseller/bestseller1.jpg",
-      "rank" : "1",
-      "title" : "세이노의 가르침",
-      "rankImage" : "images/bestseller/rankup.jpg",
-      "rankNumber" : "1"
-  },{
-      "image1" : "images/bestseller/bestseller2.jpg",
-      "rank" : "2",
-      "title" : "문과 남자의 과학 공부",
-      "rankImage" : "images/bestseller/rankdown.jpg",
-      "rankNumber" : "1"
-  },{
-      "image1" : "images/bestseller/bestseller3.jpg",
-      "rank" : "3",
-      "title" : "최애의 아이 11",
-      "rankImage" : "images/bestseller/rankup.jpg",
-      "rankNumber" : "1"
-  },{
-      "image1" : "images/bestseller/bestseller4.jpg",
-      "rank" : "4",
-      "title" : "아주 희미한",
-      "rankImage" : "images/bestseller/rankdown.jpg",
-      "rankNumber" : "1"
-  },{
-      "image1" : "images/bestseller/bestseller5.jpg",
-      "rank" : "5",
-      "title" : "도둑맞은 집중력",
-      "rankImage" : "images/bestseller/rankdown.jpg",
-      "rankNumber" : "1"
-  },{
-      "image1" : "images/bestseller/bestseller6.jpg",
-      "rank" : "6",
-      "title" : "스튜디오 지브리 입체건축...",
-      "rankImage" : "images/bestseller/rankup.jpg",
-      "rankNumber" : "4"
-  },{
-      "image1" : "images/bestseller/bestseller7.jpg",
-      "rank" : "7",
-      "title" : "스파이 패밀리 11",
-      "rankImage" : "images/bestseller/rankup.jpg",
-      "rankNumber" : "1"
-  },{
-      "image1" : "images/bestseller/bestseller8.jpg",
-      "rank" : "8",
-      "title" : "최적의 공부 뇌",
-      "rankImage" : "images/bestseller/rankup.jpg",
-      "rankNumber" : "1"
-  },{
-      "image1" : "images/bestseller/bestseller9.jpg",
-      "rank" : "9",
-      "title" : "브랜드 설계자",
-      "rankImage" : "images/bestseller/rankup.jpg",
-      "rankNumber" : "17"
-  }
-]
+
 
 export default function HomeUI() {
   return (
@@ -117,6 +40,7 @@ export default function HomeUI() {
                         </div>
                         <div className={classes.textContainer}>
                           <p className={classes.title}>{data.title}</p>
+
                           <p className={classes.reviewscore}>
                             Review Score: {data.reviewscore}
                           </p>
@@ -230,177 +154,22 @@ export default function HomeUI() {
         <br/>
         <br/>
         <section className={classes.content1_container120}>
-            <div className={classes.content1_container220}>
-                <div className={classes.content1_container320}>
-                    <div className={classes.content1_container420}>
-                        <h3 className={classes.content1_container520}>
-                            <div className={classes.content1_text120}>제휴 브랜드</div>
-                        </h3>
-                        <div className={classes.content1_container620}>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image120} src = 'images/bestseller/brand1.png' alt = '사진' />
-                                &nbsp;&nbsp;&nbsp;&nbsp;                
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image220} src = 'images/bestseller/brand2.png' alt = '사진' />
-                                &nbsp;&nbsp;&nbsp;&nbsp;                
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image320} src = 'images/bestseller/brand3.png' alt = '사진' />
-                                &nbsp;&nbsp;&nbsp;&nbsp;                
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image420} src = 'images/bestseller/brand4.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image520} src = 'images/bestseller/brand5.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image620} src = 'images/bestseller/brand6.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image720} src = 'images/bestseller/brand7.png' alt = '사진' />
-                                &nbsp;&nbsp;&nbsp;&nbsp;                
-                            </span>
-                            <br/>
-                            <br/>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image820} src = 'images/bestseller/brand8.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image920} src = 'images/bestseller/brand9.png' alt = '사진' />   
-                                &nbsp;&nbsp;&nbsp;&nbsp;             
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1020} src = 'images/bestseller/brand10.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1120} src = 'images/bestseller/brand11.png' alt = '사진' />
-                                &nbsp;&nbsp;&nbsp;&nbsp;                
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1220} src = 'images/bestseller/brand12.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1320} src = 'images/bestseller/brand13.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1420} src = 'images/bestseller/brand14.png' alt = '사진' />   
-                                &nbsp;&nbsp;&nbsp;&nbsp;             
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1520} src = 'images/bestseller/brand15.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <br/>
-                            <br/>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1620} src = 'images/bestseller/brand16.png' alt = '사진' />   
-                                &nbsp;&nbsp;&nbsp;&nbsp;             
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1720} src = 'images/bestseller/brand17.png' alt = '사진' />     
-                                &nbsp;&nbsp;&nbsp;&nbsp;           
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1820} src = 'images/bestseller/brand18.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image1920} src = 'images/bestseller/brand19.png' alt = '사진' />    
-                                &nbsp;&nbsp;&nbsp;&nbsp;            
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2020} src = 'images/bestseller/brand20.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2120} src = 'images/bestseller/brand21.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2220} src = 'images/bestseller/brand22.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <br/>
-                            <br/>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2320} src = 'images/bestseller/brand23.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2420} src = 'images/bestseller/brand24.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2520} src = 'images/bestseller/brand25.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2620} src = 'images/bestseller/brand26.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2720} src = 'images/bestseller/brand27.png' alt = '사진' />    
-                                &nbsp;&nbsp;&nbsp;&nbsp;            
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2820} src = 'images/bestseller/brand28.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image2920} src = 'images/bestseller/brand29.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image3020} src = 'images/bestseller/brand30.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <br/>
-                            <br/>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image3120} src = 'images/bestseller/brand31.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image3220} src = 'images/bestseller/brand32.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image3320} src = 'images/bestseller/brand33.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image3420} src = 'images/bestseller/brand34.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image3520} src = 'images/bestseller/brand35.png' alt = '사진' />  
-                                &nbsp;&nbsp;&nbsp;&nbsp;              
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image3620} src = 'images/bestseller/brand36.png' alt = '사진' /> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;               
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image3720} src = 'images/bestseller/brand37.png' alt = '사진' />   
-                                &nbsp;&nbsp;&nbsp;&nbsp;             
-                            </span>
-                            <span className={classes.content1_brand1}>
-                                <img className={classes.content1_image3820} src = 'images/bestseller/brand38.png' alt = '사진' />      
-                                &nbsp;&nbsp;&nbsp;&nbsp;          
-                            </span>        
-                        </div>
-                    </div>
-                </div>
+          <div className={classes.content1_container220}>
+            <h3 className={classes.content1_container520}>
+              <div className={classes.content1_text120}>제휴 브랜드</div>
+            </h3>
+            <div className={classes.content1_container620}>
+              {brandImages.map((image, index) => (
+                <span className={classes.content1_brand1} key={index}>
+                  <img
+                    className={classes[`content1_image${index + 1}20`]}
+                    src={image.path} // Use image.path here
+                    alt={`Brand ${index + 1}`}
+                  />
+                </span>
+              ))}
             </div>
+          </div>
         </section>
         <br/>
         <br/>

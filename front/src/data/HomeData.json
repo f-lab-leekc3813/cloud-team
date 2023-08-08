@@ -1,0 +1,147 @@
+
+
+
+
+
+
+
+
+
+
+{
+        "bestsellerData": [
+        {
+            "image1" : "images/bestseller/bestseller1.jpg",
+            "rank" : "1",
+            "title" : "세이노의 가르침",
+            "rankImage" : "images/bestseller/rankup.jpg",
+            "rankNumber" : "1"
+        },
+        {
+            "image1" : "images/bestseller/bestseller2.jpg",
+            "rank" : "2",
+            "title" : "문과 남자의 과학 공부",
+            "rankImage" : "images/bestseller/rankdown.jpg",
+            "rankNumber" : "1"
+        },
+        {
+            "image1" : "images/bestseller/bestseller3.jpg",
+            "rank" : "3",
+            "title" : "최애의 아이 11",
+            "rankImage" : "images/bestseller/rankup.jpg",
+            "rankNumber" : "1"
+        },
+        {
+            "image1" : "images/bestseller/bestseller4.jpg",
+            "rank" : "4",
+            "title" : "아주 희미한",
+            "rankImage" : "images/bestseller/rankdown.jpg",
+            "rankNumber" : "1"
+        },
+        {
+            "image1" : "images/bestseller/bestseller5.jpg",
+            "rank" : "5",
+            "title" : "도둑맞은 집중력",
+            "rankImage" : "images/bestseller/rankdown.jpg",
+            "rankNumber" : "1"
+        },
+        {
+            "image1" : "images/bestseller/bestseller6.jpg",
+            "rank" : "6",
+            "title" : "스튜디오 지브리 입체건축...",
+            "rankImage" : "images/bestseller/rankup.jpg",
+            "rankNumber" : "4"
+        },
+        {
+            "image1" : "images/bestseller/bestseller7.jpg",
+            "rank" : "7",
+            "title" : "스파이 패밀리 11",
+            "rankImage" : "images/bestseller/rankup.jpg",
+            "rankNumber" : "1"
+        },
+        {
+            "image1" : "images/bestseller/bestseller8.jpg",
+            "rank" : "8",
+            "title" : "최적의 공부 뇌",
+            "rankImage" : "images/bestseller/rankup.jpg",
+            "rankNumber" : "1"
+        },
+        {
+            "image1" : "images/bestseller/bestseller9.jpg",
+            "rank" : "9",
+            "title" : "브랜드 설계자",
+            "rankImage" : "images/bestseller/rankup.jpg",
+            "rankNumber" : "17"
+        }
+    ],
+
+    "imagesData" : [
+        {
+            "image": "/images/bestseller/bewhyimage4.png",
+            "alt": "Image 1",
+            "title": "The House of Sixty Fathers",
+            "reviewscore": "4.9",
+            "reviewtext": "I read this book as a..."
+        },
+        {
+            "image": "/images/bestseller/bewhyimage4.png",
+            "alt": "Image 1",
+            "title": "The House of Sixty Fathers",
+            "reviewscore": "4.9",
+            "reviewtext": "I read this book as a..."
+        },
+        {
+            "image": "/images/bestseller/bewhyimage4.png",
+            "alt": "Image 1",
+            "title": "The House of Sixty Fathers",
+            "reviewscore": "4.9",
+            "reviewtext": "I read this book as a..."
+        }
+      ],
+  
+
+
+
+  
+    "brandImages": [
+      {"path": "images/bestseller/brand1.png"},
+      {"path": "images/bestseller/brand2.png"},
+      {"path": "images/bestseller/brand3.png"},
+      {"path": "images/bestseller/brand4.png"},
+      {"path": "images/bestseller/brand5.png"},
+      {"path": "images/bestseller/brand6.png"},
+      {"path": "images/bestseller/brand7.png"},
+      {"path": "images/bestseller/brand8.png"},
+      {"path": "images/bestseller/brand9.png"},
+      {"path": "images/bestseller/brand10.png"},
+      {"path": "images/bestseller/brand11.png"},
+      {"path": "images/bestseller/brand12.png"},
+      {"path": "images/bestseller/brand13.png"},
+      {"path": "images/bestseller/brand14.png"},
+      {"path": "images/bestseller/brand15.png"},
+      {"path": "images/bestseller/brand16.png"},
+      {"path": "images/bestseller/brand17.png"},
+      {"path": "images/bestseller/brand18.png"},
+      {"path": "images/bestseller/brand19.png"},
+      {"path": "images/bestseller/brand20.png"},
+      {"path": "images/bestseller/brand21.png"},
+      {"path": "images/bestseller/brand22.png"},
+      {"path": "images/bestseller/brand23.png"},
+      {"path": "images/bestseller/brand24.png"},
+      {"path": "images/bestseller/brand25.png"},
+      {"path": "images/bestseller/brand26.png"},
+      {"path": "images/bestseller/brand27.png"},
+      {"path": "images/bestseller/brand28.png"},
+      {"path": "images/bestseller/brand29.png"},
+      {"path": "images/bestseller/brand30.png"},
+      {"path": "images/bestseller/brand31.png"},
+      {"path": "images/bestseller/brand32.png"},
+      {"path": "images/bestseller/brand33.png"},
+      {"path": "images/bestseller/brand34.png"},
+      {"path": "images/bestseller/brand35.png"},
+      {"path": "images/bestseller/brand36.png"},
+      {"path": "images/bestseller/brand37.png"},
+      {"path": "images/bestseller/brand38.png"}
+    ]
+  }
+

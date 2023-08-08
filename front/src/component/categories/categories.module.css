@@ -3,21 +3,6 @@
     place-items: center;
 }
 
-.container {
-    width: 1250px;
-}
-  
-.carousel.caption {
-    padding: 20px;
-}
-
-.slideImage {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-    /* width: 100%;
-    height: auto; */
-}
-
 .listContainers {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -109,7 +94,7 @@
 }
 
 .listInfo {
-    height: 169px;
+    height: 100px;
     padding: 13px 14px 0;
 }
 
@@ -120,7 +105,7 @@
     text-overflow: ellipsis;
     line-height: 23px;
     display: -webkit-box;
-    max-height: 42px;
+    max-height: 50px;
     white-space: normal;
     word-wrap: break-word;
     word-break: keep-all;
@@ -131,69 +116,10 @@
     letter-spacing: -0.2px;
 }
 
-.listAupu {
-    margin-top: 8px;
-}
-
-.listAuthor {
-    line-height: 1.5;
-    font-size: 18px;
-}
-
-.listPublisher {
-    line-height: 1.5;
-    font-size: 18px;
-}
-
 .listCategori {
     color: #4d5055;
     line-height: 1.5;
     font-size: 15px;
-}
-
-.listPay {
-    font-weight: 700;
-    line-height: 1.4;
-    font-size: 21px;
-}
-
-.listJjim {
-    position: relative;
-    height: 50px;
-    padding: 12px 52px 13px 12px;
-    border-top: solid #f2f2f2;
-    background-color: #f7f7f7;
-    align-items: center; /* 수직 가운데 정렬 */
-    color: #666;
-    display: flex; /* Flexbox 레이아웃 사용 */
-}
-
-.button {
     position: absolute;
-    top: 12px;
-    right: 16px;
-    height: 30px;
-    color: #666;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+    bottom: 10px;
 }
-
-.Jjim {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    height: 30px;
-    color: #666;
-    border: none;
-    background-color: transparent;
-}
-
-.btnimg {
-    height : 30px;
-    width: 30px;
-    cursor: pointer;
-    border: none;
-}
-
-

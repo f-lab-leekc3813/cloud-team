@@ -1,7 +1,7 @@
 # main.py
 from flask import Flask
-from test import app1
-from search import app2
+from search import app1
+from machine import app2
 from flask_cors import CORS
 
 app = Flask(__name__)

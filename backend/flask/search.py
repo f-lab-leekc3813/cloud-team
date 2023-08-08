@@ -2,15 +2,18 @@ from flask import Blueprint, jsonify
 from flask_cors import CORS
 from machine_learning import get_recommendations
 
-app2 = Blueprint('app2', __name__)
-CORS(app2)
+app1 = Blueprint('app1', __name__)
+CORS(app1)
 
-
-@app2.route('/search')
+@app1.route('/')
 def hello():
     return 'Hello, World!'
 
-@app2.route('/search/<search>', methods=['GET'])
+@app1.route('/search')
+def search():
+    return 'Search!'
+
+@app1.route('/search/<search>', methods=['GET'])
 def show_category(search):
     df = get_recommendations(search)
     df_json = df.to_dict(orient='records')
@@ -20,4 +23,4 @@ def show_category(search):
 
 
 if __name__ == '__main__':
-    app2.run(debug=True)
+    app1.run(debug=True)

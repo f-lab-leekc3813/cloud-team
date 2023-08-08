@@ -8,10 +8,7 @@ const { swaggerUi, specs } = require('./swagger/swagger')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const searchRouter = require('./routes/search');
 const likeRouter = require('./routes/like');
-const regionRouter = require('./region/region');
-const crollRouter = require('./croll/croll');
 const categoryRouter = require('./routes/category');
 const bestRouter = require('./routes/best');
 
@@ -39,9 +36,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
-app.use('/region', regionRouter);
-app.use('/croll', crollRouter);
-app.use('/search', searchRouter);
 app.use('/like', likeRouter);
 app.use('/category', categoryRouter);
 app.use('/best', bestRouter);

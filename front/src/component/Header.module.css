@@ -4,7 +4,7 @@
     position: sticky;
     top: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: black;
     z-index: 10;
     transition: opacity 0.3s ease;
 }
@@ -17,12 +17,32 @@
     display: flex;
 }
 
-.header_content {
+.header_content1 {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 10px;
-    text-decoration: none;
+    display:block;
+    margin-top:20px;
+
+}
+.header_content2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:block;
+    left:1350px;
+    position:absolute;
+    margin-top:55px;
+}
+.header_content3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:block;
+    left:1500px;
+    position:absolute;
+    margin-top:50px;
 }
 
 .header_categories {
@@ -31,8 +51,8 @@
 }
 
 .header_image{
-    width:160px;
-    height:200px;
+    width:180px;
+    height:80px;
     padding:0;
     margin:0;
 }

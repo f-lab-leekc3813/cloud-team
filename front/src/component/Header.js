@@ -136,10 +136,10 @@ function Header() {
   return (
     <div className={classes.header}>
       <div className={classes.header_wrap}>
-        <Link to='./' className={classes.header_content} onClick={handleClick}>
+        <Link to='./' className={classes.header_content1} onClick={handleClick}>
           <img className={classes.header_image} src='/images/cloudlogo.jpg' alt='로고' />
         </Link>
-        <div className={classes.header_content}>
+        <div className={classes.header_content2}>
           <Dropdown
             menu={{
               items,
@@ -147,14 +147,14 @@ function Header() {
             }}
           >
             <a onClick={(e) => e.preventDefault()}>
-              <Space>
+              <Space style={{color : "white"}}>
                 Categories
                 <DownOutlined />
               </Space>
             </a>
           </Dropdown>
         </div>
-        <div className={classes.header_content}>
+        <div className={classes.header_content3}>
           <LoginButton />
           <LikePage isOpen={isModalOpen} close={closeModal} />
         </div>

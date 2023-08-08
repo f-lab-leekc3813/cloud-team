@@ -46,7 +46,6 @@ def data_update():
     trainset = data.build_full_trainset()
     svd.fit(trainset)
 
-data_update()
 
 def func(userId):
     best = {i:svd.predict(userId,i).est for i in indices.values}
@@ -54,5 +53,3 @@ def func(userId):
     
     return unique_df.loc[best_number]
 
-
-print(func(1))

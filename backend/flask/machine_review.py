@@ -2,6 +2,7 @@ import pandas as pd
 from surprise import Reader, Dataset
 from surprise import SVD
 from sqlalchemy import create_engine
+from password import password
 
 merge_df = pd.read_csv('./backend/flask/merge_df.csv')
 
@@ -29,7 +30,7 @@ svd = SVD(random_state=0)
 
 def data_update():
     # MySQL 연결 문자열 생성
-    connection_string = 'mysql+mysqlconnector://root:mysql@localhost/machine'
+    connection_string = f'mysql+mysqlconnector://root:{password}@localhost/machine'
 
     # MySQL 엔진 생성
     engine = create_engine(connection_string)

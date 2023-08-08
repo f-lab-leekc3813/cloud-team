@@ -2,6 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
+from password import password
 
 
 merge_df = pd.read_csv('./backend/flask/merge_df.csv')
@@ -83,7 +84,7 @@ df = get_recommendations('1001 Pearls of Wisdom')
 
 
 # MySQL 연결 문자열 생성
-connection_string = 'mysql+mysqlconnector://root:mysql@localhost/machine'
+connection_string = f'mysql+mysqlconnector://root:{password}@localhost/machine'
 
 # MySQL 엔진 생성
 engine = create_engine(connection_string)

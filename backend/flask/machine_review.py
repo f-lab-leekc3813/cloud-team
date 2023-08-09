@@ -7,6 +7,7 @@ from password import password
 merge_df = pd.read_csv('./backend/flask/merge_df.csv')
 
 merge_df['Price'].fillna(0,inplace=True)
+merge_df['Title'] = merge_df['Title'].apply(lambda x:x.replace('/',' '))
 
 unique_df = merge_df.drop_duplicates('Title').sort_values('Title').reset_index(drop=True)
 
@@ -28,7 +29,12 @@ reader = Reader(rating_scale=(1,5))
 
 svd = SVD(random_state=0)
 
+data = Dataset.load_from_df(rating_df, reader=reader)
+
+trainset = data.build_full_trainset()
+
 def data_update():
+    global trainset
     # MySQL 연결 문자열 생성
     connection_string = f'mysql+mysqlconnector://root:{password}@localhost/machine'
 
@@ -45,12 +51,11 @@ def data_update():
     data = Dataset.load_from_df(concat_df, reader=reader)
 
     trainset = data.build_full_trainset()
-    svd.fit(trainset)
-
 
 def func(userId):
+    svd.fit(trainset)
+
     best = {i:svd.predict(userId,i).est for i in indices.values}
     best_number = sorted(best,key=lambda x:best[x],reverse=True)[:10]
     
     return unique_df.loc[best_number]
-

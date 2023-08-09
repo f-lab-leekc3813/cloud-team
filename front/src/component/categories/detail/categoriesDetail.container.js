@@ -65,7 +65,7 @@ export default function CategoriesDetail() {
             alert("1점부터 5점까지의 점수를 입력해 주세요")
             return;
         }
-        e.preventDefault();
+        // e.preventDefault();
     
         // Check if the review with the same title already exists in the 'like' array
         const exists = like.some((item) => item.title === detail.title);

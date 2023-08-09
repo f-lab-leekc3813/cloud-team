@@ -37,6 +37,7 @@ export default function CategoriesDetail() {
         const fetchData = async () => {
             try{
                 const response = await axios.get(`http://localhost:5000/search/${formattedValue}`);
+                window.scrollTo({ top: 0, behavior: 'auto' })
                 console.log(response.data);
                 setAssociationData(response.data)
             } catch (error) {
@@ -85,6 +86,7 @@ export default function CategoriesDetail() {
             switch (res.status) {
                 case 200:
                     alert("Review has been sent successfully");
+                    axios.get('http://localhost:5000/machine');
                     break;
                 case 500:
                     alert("Failed to send review");

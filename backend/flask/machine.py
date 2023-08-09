@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from flask_cors import CORS
-from machine_review import func, data_update
+from machine_review import func, data_update, testModel
 
 app2 = Blueprint('app2', __name__)
 CORS(app2)
@@ -17,6 +17,10 @@ def machine(userId):
     df_json = df.to_dict(orient='records')
     return jsonify(df_json)
 
+@app2.route('/machine/test/<userId>', methods=['GET'])
+def test(userId):
+    sc, mae, rmse = testModel(userId)
+    return f'userId: {userId}<br>score: {sc}<br>mae: {mae}<br>rmse: {rmse}'
 
 if __name__ == '__main__':
     app2.run(debug=True)

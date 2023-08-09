@@ -32,6 +32,7 @@ svd = SVD(random_state=0)
 data = Dataset.load_from_df(rating_df, reader=reader)
 
 trainset = data.build_full_trainset()
+svd.fit(trainset)
 
 def data_update():
     global trainset
@@ -52,8 +53,12 @@ def data_update():
 
     trainset = data.build_full_trainset()
 
-def func(userId):
     svd.fit(trainset)
+
+
+def func(userId):
+    if userId.isdigit():
+        userId = int(userId)
 
     best = {i:svd.predict(userId,i).est for i in indices.values}
     best_number = sorted(best,key=lambda x:best[x],reverse=True)[:10]

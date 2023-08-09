@@ -14,11 +14,8 @@ def data():
 @app2.route('/machine/<userId>', methods=['GET'])
 def machine(userId):
     df = func(userId)
-    print(df)
     df_json = df.to_dict(orient='records')
     return jsonify(df_json)
-
-
 
 
 if __name__ == '__main__':

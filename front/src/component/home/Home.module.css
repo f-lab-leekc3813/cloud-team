@@ -1783,3 +1783,10 @@ body{
   bottom: 100px; /* Adjust the distance from the bottom as needed */
   /* You can also use 'top', 'left', 'right', and other positioning properties */
 }
+
+.slide_images{
+  display:block;
+  height:300px;
+  width:300px;
+}
+

@@ -2,14 +2,17 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
+from password import password
 
 
-merge_df = pd.read_csv('./backend/python/merge_df.csv')
+merge_df = pd.read_csv('./backend/flask/merge_df.csv')
 merge_df['categories'] = merge_df['categories'].apply(lambda x:x.replace("'",'').replace('"',''))
+merge_df['Title'] = merge_df['Title'].apply(lambda x:x.replace('/',' '))
 merge_df['authors'].fillna("['Unknown']", inplace=True)
 
 merge_df['Price'].fillna(0,inplace=True)
 merge_df.fillna('',inplace=True)
+
 
 
 # 도움되는 리뷰
@@ -82,7 +85,7 @@ df = get_recommendations('1001 Pearls of Wisdom')
 
 
 # MySQL 연결 문자열 생성
-connection_string = 'mysql+mysqlconnector://root:1023ldde@localhost/machine'
+connection_string = f'mysql+mysqlconnector://root:{password}@localhost/machine'
 
 # MySQL 엔진 생성
 engine = create_engine(connection_string)

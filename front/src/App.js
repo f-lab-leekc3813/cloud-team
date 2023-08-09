@@ -7,7 +7,6 @@ import Header from './component/Header';
 import HomePage from './pages/Home';
 import CategoriesPage from './pages/Categories';
 import CategoriesDetailPage from './pages/CategoriesDetail';
-import SearchPage from './pages/Search';
 
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
             <Route path = "/" element ={<HomePage />} />
             <Route path = "/categories/:key" element ={<CategoriesPage />} />
             <Route path = "/categories/:key/detail/:title" element ={<CategoriesDetailPage />} />
-            <Route path = "/search/:key" element ={<SearchPage />} />
           </Routes>
         </BrowserRouter>
       </React.Fragment>

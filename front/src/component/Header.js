@@ -9,7 +9,6 @@ import classes from './Header.module.css';
 import LoginButton from './LoginButton';
 import { LoginState } from '../store/LoginState';
 import LikePage from './like/like.container.js';
-import { SearchText } from '../store/Search'
 
 const items = [
   {
@@ -101,20 +100,8 @@ function Header() {
 
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
 
-  const [searchTextValue, setsearchTextValue] = useRecoilState(SearchText);
-
   const navigate = useNavigate();
 
-  const SearchHandler = (event) => {
-    event.preventDefault();
-    navigate('/search/${searchTextValue}', { state: { SearchText: searchTextValue } });
-  }
-
-  const handleSearchKeyUp = (event) => {
-    if (event.key === 'Enter') {
-      SearchHandler(event);
-    }
-  }
 
   const openModal = () => {
     setIsModalOpen(true);

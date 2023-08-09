@@ -6,21 +6,26 @@ import homeData from '../../data/HomeData.json';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'react-bootstrap';
+import { NickState } from "../../store/LoginState";
+import {useRecoilState} from "recoil";
 
 const bestsellerData = homeData.bestsellerData;
 const brandImages = homeData.brandImages;
 
+
+
 export default function HomeUI(props) {
-  const name = '장경빈'
+  const [nick, setNick] = useRecoilState(NickState);
+
 
   return (
     <>
       <div className={classes.content1_recommend2}>
         <span className={classes.content1_toplist1}>
-          {name}님 맞춤 추천 도서 {'>'}
+          {nick}님 맞춤 추천 도서 {'>'}
         </span>
       </div>
-      <Carousel indicatorsClassName={`${classes.customIndicator} ${classes.adjustedIndicator}`}>
+      <Carousel>
         <Carousel.Item>
           <img className={classes.slide_image} src='/images/bestseller/bestseller1.jpg' alt='Wallpaper' />
           <Carousel.Caption>
@@ -37,7 +42,6 @@ export default function HomeUI(props) {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-
       {Array.from({ length: 4 }, (_, index) => (
         <br key={index} />
       ))}
@@ -49,7 +53,7 @@ export default function HomeUI(props) {
       {props.data ? (
         <div className={classes.topcontainers}>
           <div className={classes.carouselContainer}>
-            <Carousel indicatorsClassName={classes.customIndicator}>
+            <Carousel>
               {props.data.map((data, index) => (
                 <Carousel.Item key={index}>
                   <div className={classes.carouselSlide}>
@@ -101,7 +105,7 @@ export default function HomeUI(props) {
       {props.score ? (
         <div className={classes.topcontainers}>
           <div className={classes.carouselContainer}>
-            <Carousel indicatorsClassName={classes.customIndicator}>
+            <Carousel>
               {props.score.map((data, index) => (
                 <Carousel.Item key={index}>
                   <div className={classes.carouselSlide}>
@@ -244,7 +248,7 @@ export default function HomeUI(props) {
               <span className={classes.content_text9}>블로그 & SNS</span>
               <br />
               <span className={classes.content_text10}>
-                원투텐 북플 &nbsp;  &nbsp; &nbsp; &nbsp; 원투텐 서재<br /> 원투텐 트위터 &nbsp;  &nbsp; 원투텐 페이스북 <br />구름 인스타그램 <br />
+                원투텐 북플 &nbsp;&nbsp; &nbsp; &nbsp; 원투텐 서재<br /> 원투텐 트위터 &nbsp;  &nbsp; 원투텐 페이스북 <br />구름 인스타그램 <br />
               </span>
             </div>
           </div>

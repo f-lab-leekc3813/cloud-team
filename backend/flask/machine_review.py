@@ -61,6 +61,6 @@ def func(userId):
         userId = int(userId)
 
     best = {i:svd.predict(userId,i).est for i in indices.values}
-    best_number = sorted(best,key=lambda x:best[x],reverse=True)[:10]
+    best_number = sorted(best,key=lambda x:best[x],reverse=True)[:40]
     
     return unique_df.loc[best_number]

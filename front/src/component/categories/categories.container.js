@@ -45,6 +45,7 @@ export default function Categories() {
         setDetail(detailData)
         console.log(detail)
         navigate(`./detail/${title}`)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }
         
     useEffect(() => {

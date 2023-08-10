@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const bestCheck = require('./bestCheck');
+const bestCheck = require('../routeCheck/bestCheck');
 
 
 /* GET home page. */

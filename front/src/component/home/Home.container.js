@@ -10,6 +10,7 @@ export default function Home() {
     const [score, setScore] = useState(null);
     const [machinelearning, setMachineLearning] = useState(null);
     const [nick, setNick] = useRecoilState(NickState);
+    const [click, setClick] = useState(false);
 
     const fetchManyBooksData = async () => {
         try {
@@ -17,7 +18,7 @@ export default function Home() {
             setData(response.data);
             // console.log(response.data);
         } catch (error) {
-            // console.log('Failed to retrieve many_books data', error);
+            console.log('Failed to retrieve many_books data', error);
         }
     };
 
@@ -27,30 +28,35 @@ export default function Home() {
             setScore(response.data);
             // console.log(response.data);
         } catch (error) {
-            // console.log('Failed to retrieve score_books data', error);
+            console.log('Failed to retrieve score_books data', error);
         }
     };
-
-    const fetchMachineLearningData = async () => {
-        try {
-          const response = await axios.get(`http://localhost:5000/machine/${nick}`);
-          setMachineLearning(response.data);
-        } catch (error) {
-          console.log('Failed to retrieve machine learning data', error);
-        }
-      };
+    
+     const onClickRecommed = async () => {
+           setClick(true)
+           await axios.get(`http://localhost:5000/machine`);
+           const response = await axios.get(`http://localhost:5000/machine/${nick}`);
+           setMachineLearning(response.data);
+       };
 
     useEffect(() => {
         fetchManyBooksData();
         fetchScoreBooksData();
-        fetchMachineLearningData();
     }, []);
 
+    useEffect(() => {
+        setClick(false)
+        console.log("닉바꿈")
+        console.log(nick)
+    }, [nick])
     return (
         <HomeUI
             data={data}
             score={score}
             machinelearning={machinelearning}
+            nick = {nick}
+            onClickRecommed = {onClickRecommed}
+            click = {click}
         />
     );
 }

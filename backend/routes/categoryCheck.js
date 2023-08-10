@@ -6,7 +6,7 @@ async function categoryCheck(data) {
 
     try {
         co = await database.getConnection();
-        const query = `SELECT * FROM machine.books WHERE categories like '%${data}%' limit 40`;
+        const query = `SELECT * FROM project.books WHERE categories like '%${data}%' limit 40`;
 
         const [result] = await co.execute(query);
         co.release();

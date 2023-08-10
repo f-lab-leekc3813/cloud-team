@@ -6,14 +6,6 @@ from password import password
 
 merge_df = pd.read_csv('./backend/flask/merge_df.csv')
 
-merge_df['categories'] = merge_df['categories'].apply(lambda x:x.replace("'",'').replace('"',''))
-merge_df['Title'] = merge_df['Title'].apply(lambda x:x.replace('/',' '))
-merge_df['authors'].fillna("[Unknown]", inplace=True)
-merge_df['authors'] = merge_df['authors'].apply(lambda x:x.replace("'",''))
-
-merge_df['Price'].fillna(0,inplace=True)
-merge_df.fillna('',inplace=True)
-
 unique_df = merge_df.drop_duplicates('Title').sort_values('Title').reset_index(drop=True)
 
 indices = pd.Series(unique_df.index, index=unique_df['Title'])
@@ -42,7 +34,7 @@ svd.fit(trainset)
 def data_update():
     global trainset
     # MySQL 연결 문자열 생성
-    connection_string = f'mysql+mysqlconnector://root:{password}@localhost/machine'
+    connection_string = f'mysql+mysqlconnector://root:{password}@localhost/project'
 
     # MySQL 엔진 생성
     engine = create_engine(connection_string)
@@ -78,7 +70,7 @@ def testModel(userId):
         test_df = rating_df[rating_df['userId']==userId]
     else :
         # MySQL 연결 문자열 생성
-        connection_string = f'mysql+mysqlconnector://root:{password}@localhost/machine'
+        connection_string = f'mysql+mysqlconnector://root:{password}@localhost/project'
 
         # MySQL 엔진 생성
         engine = create_engine(connection_string)

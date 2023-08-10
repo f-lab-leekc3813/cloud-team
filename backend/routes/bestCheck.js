@@ -6,8 +6,13 @@ async function bestCheck(data) {
 
     try {
         co = await database.getConnection();
-        const query = `SELECT * FROM machine.${data} limit 30`;
-
+        let query;
+        if (data==='score_books'){
+            query = `SELECT * FROM project.books order by score desc limit 30`;
+        } else {
+            query = `SELECT * FROM project.books order by count desc limit 30`;
+        }
+        
         const [result] = await co.execute(query);
         co.release();
         return result;

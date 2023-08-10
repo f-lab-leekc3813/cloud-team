@@ -14,10 +14,16 @@ const brandImages = homeData.brandImages;
 export default function HomeUI(props) {
   return (
     <>
-      {props.nick && <button onClick={props.onClickRecommed}>도서추천받기</button>}
+      {props.nick && (
+        <button className={classes.recommendbutton} onClick={props.onClickRecommed}>
+          도서추천받기
+        </button>
+      )}
+      {Array.from({ length: 4 }, (_, index) => (
+        <br key={index} />
+      ))}
       {props.nick && props.click ?
         <div>
-
           <div className={classes.content1_recommend2}>
             <span className={classes.content1_toplist1}>
               {props.nick}님 맞춤 추천 도서 {'>'}
@@ -57,8 +63,6 @@ export default function HomeUI(props) {
           </div>
         </div>
         : ''}
-
-
       {Array.from({ length: 4 }, (_, index) => (
         <br key={index} />
       ))}

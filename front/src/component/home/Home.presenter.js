@@ -24,23 +24,23 @@ export default function HomeUI(props) {
   console.log(Array.isArray(props.machinelearning))
   return (
     <>
-{/* 
+
       <div className={classes.content1_recommend2}>
         <span className={classes.content1_toplist1}>
           {nick}님 맞춤 추천 도서 {'>'}
         </span>
       </div>
-      <div className={classes.carouselContainer}>
+      <div className={classes.MachinecarouselContainer}>
         <Carousel>
           {props.machinelearning && Array.isArray(props.machinelearning) ? (
             props.machinelearning.map((item, index) => (
               <Carousel.Item key={index}>
-                <div className={classes.carouselSlide}>
-                  <div className={classes.carouselContent}>
-                    <div className={classes.dataBundle}>
+                <div className={classes.MachinecarouselSlide}>
+                  <div className={classes.MachineContent}>
+                    <div className={classes.MachineBundle}>
                       {item.image ? (
                         <img
-                          className={classes.carouselImage}
+                          className={`${classes.carouselImage} ${classes.responsiveImage}`}
                           src={item.image}
                           alt={`Machine Learning Slide ${index + 1}`}
                         />
@@ -53,11 +53,13 @@ export default function HomeUI(props) {
                           />
                         </div>
                       )}
-                      <div className={classes.dataBundleText}>
+                      <div className={classes.MachineBundleText}>
                         <div className={classes.booktitle}>
                           <h6><a href={item.href}>{item.Title}</a></h6>
                         </div>
-                        <h6>{JSON.parse(item.authors)[0]}</h6>
+                        <h6>{item.authors}</h6>
+                        <h6>{item.categories}</h6>
+                        <h6>{item.reviewScore}</h6>
                       </div>
                     </div>
                   </div>
@@ -68,7 +70,7 @@ export default function HomeUI(props) {
             <p>No machine learning data available.</p>
           )}
         </Carousel>
-      </div> */}
+      </div>
 
       {Array.from({ length: 4 }, (_, index) => (
         <br key={index} />

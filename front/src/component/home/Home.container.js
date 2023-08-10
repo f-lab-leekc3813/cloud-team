@@ -33,13 +33,12 @@ export default function Home() {
 
     const fetchMachineLearningData = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/machine/${nick}`);
-            setMachineLearning(response.data);
-            // console.log(response.data);
+          const response = await axios.get(`http://localhost:5000/machine/${nick}`);
+          setMachineLearning(response.data);
         } catch (error) {
-            // console.log('Failed to retrieve score_books data', error);
+          console.log('Failed to retrieve machine learning data', error);
         }
-    };
+      };
 
     useEffect(() => {
         fetchManyBooksData();

@@ -46,8 +46,6 @@ export default function Home() {
 
     useEffect(() => {
         setClick(false)
-        console.log("닉바꿈")
-        console.log(nick)
     }, [nick])
     return (
         <HomeUI

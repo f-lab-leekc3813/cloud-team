@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const isCheck = require('../config/isCheck');
+const isCheck = require('../routeCheck/isCheck');
 const {connection} = require('../config/connection');
 
 const login = require('../config/login');

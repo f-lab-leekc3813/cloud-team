@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const categoryCheck = require('./categoryCheck');
+const categoryCheck = require('../routeCheck/categoryCheck');
 
 
 /* GET home page. */

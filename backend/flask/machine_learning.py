@@ -5,7 +5,8 @@ from sklearn.metrics.pairwise import linear_kernel
 from password import password
 
 
-merge_df = pd.read_csv('./backend/flask/merge_df.csv')
+merge_df = pd.read_csv('./backend/flask/csv/merge_df.csv')
+merge_df.fillna('',inplace=True)
 
 # 도움되는 리뷰
 def review_help(x):

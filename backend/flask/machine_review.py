@@ -4,7 +4,9 @@ from surprise import SVD
 from sqlalchemy import create_engine
 from password import password
 
-merge_df = pd.read_csv('./backend/flask/merge_df.csv')
+merge_df = pd.read_csv('./backend/flask/csv/merge_df.csv')
+merge_df.fillna('',inplace=True)
+
 
 unique_df = merge_df.drop_duplicates('Title').sort_values('Title').reset_index(drop=True)
 
@@ -19,7 +21,7 @@ user_df = merge_df[merge_df['profileName'].isin(top_user.index)]
 
 unique_user = user_df.drop_duplicates()
 
-rating_df = pd.read_csv('./backend/flask/ratings.csv')
+rating_df = pd.read_csv('./backend/flask/csv/ratings.csv')
 
 rating_df.columns = ['userId', 'bookId', 'rating']
 reader = Reader(rating_scale=(1,5))

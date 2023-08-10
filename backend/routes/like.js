@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const likeCheck = require('./likeCheck');
+const likeCheck = require('../routeCheck/likeCheck');
 
 
 const { like, duplicate_like } = require('../config/connection');

@@ -24,53 +24,57 @@ export default function HomeUI(props) {
   console.log(Array.isArray(props.machinelearning))
   return (
     <>
-
-      <div className={classes.content1_recommend2}>
-        <span className={classes.content1_toplist1}>
-          {nick}님 맞춤 추천 도서 {'>'}
-        </span>
-      </div>
-      <div className={classes.MachinecarouselContainer}>
-        <Carousel>
-          {props.machinelearning && Array.isArray(props.machinelearning) ? (
-            props.machinelearning.map((item, index) => (
-              <Carousel.Item key={index}>
-                <div className={classes.MachinecarouselSlide}>
-                  <div className={classes.MachineContent}>
-                    <div className={classes.MachineBundle}>
-                      {item.image ? (
-                        <img
-                          className={`${classes.carouselImage} ${classes.responsiveImage}`}
-                          src={item.image}
-                          alt={`Machine Learning Slide ${index + 1}`}
-                        />
-                      ) : (
-                        <div className={classes.listDiv}>
+      {nick ? <div>
+        <div className={classes.content1_recommend2}>
+          <span className={classes.content1_toplist1}>
+            {nick}님 맞춤 추천 도서 {'>'}
+          </span>
+        </div>
+        <div className={classes.MachinecarouselContainer}>
+          <Carousel>
+            {props.machinelearning && Array.isArray(props.machinelearning) ? (
+              props.machinelearning.map((item, index) => (
+                <Carousel.Item key={index}>
+                  <div className={classes.MachinecarouselSlide}>
+                    <div className={classes.MachineContent}>
+                      <div className={classes.MachineBundle}>
+                        {item.image ? (
                           <img
                             className={classes.MachinelistImg}
                             src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/299600042_380678670861506_5752050165543910974_n.png?stp=dst-png_p206x206&_nc_cat=108&ccb=1-7&_nc_sid=da31f3&_nc_ohc=MAGEvMFi2eIAX_Smrx3&_nc_ht=scontent-ssn1-1.xx&oh=00_AfBBnjAU2tLU2plnBP5Quz32klNJSZKMB9ngfRmGdzWMvg&oe=64D1F1F3"
                             alt="book photo"
                           />
+                        ) : (
+                          <div className={classes.listDiv}>
+                            <img
+                              className={classes.listImg}
+                              src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/299600042_380678670861506_5752050165543910974_n.png?stp=dst-png_p206x206&_nc_cat=108&ccb=1-7&_nc_sid=da31f3&_nc_ohc=MAGEvMFi2eIAX_Smrx3&_nc_ht=scontent-ssn1-1.xx&oh=00_AfBBnjAU2tLU2plnBP5Quz32klNJSZKMB9ngfRmGdzWMvg&oe=64D1F1F3"
+                              alt="book photo"
+                            />
+                          </div>
+                        )}
+                        <div className={classes.MachineBundleText}>
+                          <div className={classes.booktitle}>
+                            <h6><a href={item.href}>{item.Title}</a></h6>
+                          </div>
+                          <h6>{item.authors}</h6>
+                          <h6>{item.categories}</h6>
+                          <h6>{item.reviewScore}</h6>
                         </div>
-                      )}
-                      <div className={classes.MachineBundleText}>
-                        <div className={classes.booktitle}>
-                          <h6><a href={item.href}>{item.Title}</a></h6>
-                        </div>
-                        <h6>{item.authors}</h6>
-                        <h6>{item.categories}</h6>
-                        <h6>{item.reviewScore}</h6>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Carousel.Item>
-            ))
-          ) : (
-            <p>No machine learning data available.</p>
-          )}
-        </Carousel>
+                </Carousel.Item>
+              ))
+            ) : (
+              <p>No machine learning data available.</p>
+            )}
+          </Carousel>
+        </div>
       </div>
+
+        : ''}
+
 
       {Array.from({ length: 4 }, (_, index) => (
         <br key={index} />

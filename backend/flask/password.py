@@ -1,1 +1,1 @@
-password = 'mysql'
+password = '0000'

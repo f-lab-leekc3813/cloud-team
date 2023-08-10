@@ -68,7 +68,13 @@ export default function CategoriesDetail() {
         //     setLike((prevLike) => [...prevLike, newData]);
         // }
     
+<<<<<<< Updated upstream
     
+=======
+        console.log("==========")
+        console.log(nick, detail.title, score)
+        
+>>>>>>> Stashed changes
         // Make a POST request to send the review
         axios.post("http://localhost:8080/like/likeReview", {
             userId: nick,

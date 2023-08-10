@@ -34,9 +34,9 @@ export default function HomeUI(props) {
                       <div className={classes.MachineBundle}>
                         {item.image ? (
                           <img
-                            className={`${classes.carouselImage} ${classes.responsiveImage}`}
-                            src={item.image}
-                            alt={`Machine Learning Slide ${index + 1}`}
+                            className={classes.MachinelistImg}
+                            src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/299600042_380678670861506_5752050165543910974_n.png?stp=dst-png_p206x206&_nc_cat=108&ccb=1-7&_nc_sid=da31f3&_nc_ohc=MAGEvMFi2eIAX_Smrx3&_nc_ht=scontent-ssn1-1.xx&oh=00_AfBBnjAU2tLU2plnBP5Quz32klNJSZKMB9ngfRmGdzWMvg&oe=64D1F1F3"
+                            alt="book photo"
                           />
                         ) : (
                           <div className={classes.listDiv}>

@@ -6,9 +6,10 @@ from password import password
 
 
 merge_df = pd.read_csv('./backend/flask/merge_df.csv')
+
 merge_df['categories'] = merge_df['categories'].apply(lambda x:x.replace("'",'').replace('"',''))
 merge_df['Title'] = merge_df['Title'].apply(lambda x:x.replace('/',' '))
-merge_df['authors'].fillna("['Unknown']", inplace=True)
+merge_df['authors'].fillna("[Unknown]", inplace=True)
 
 merge_df['Price'].fillna(0,inplace=True)
 merge_df.fillna('',inplace=True)

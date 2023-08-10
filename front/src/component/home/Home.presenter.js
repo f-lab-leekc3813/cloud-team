@@ -21,9 +21,10 @@ export default function HomeUI(props) {
 
   console.log("====================================")
   console.log(props.machinelearning)
+  console.log(Array.isArray(props.machinelearning))
   return (
     <>
-
+{/* 
       <div className={classes.content1_recommend2}>
         <span className={classes.content1_toplist1}>
           {nick}님 맞춤 추천 도서 {'>'}
@@ -67,7 +68,7 @@ export default function HomeUI(props) {
             <p>No machine learning data available.</p>
           )}
         </Carousel>
-      </div>
+      </div> */}
 
       {Array.from({ length: 4 }, (_, index) => (
         <br key={index} />

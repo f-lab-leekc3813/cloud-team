@@ -1,13 +1,10 @@
 
 import classes from './Home.module.css';
-import { Link, useNavigate } from 'react-router-dom';
 import homeData from '../../data/HomeData.json';
 
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'react-bootstrap';
-import { NickState } from "../../store/LoginState";
-import { useRecoilState } from "recoil";
 
 const bestsellerData = homeData.bestsellerData;
 const brandImages = homeData.brandImages;
@@ -15,24 +12,21 @@ const brandImages = homeData.brandImages;
 
 
 export default function HomeUI(props) {
-  const [nick, setNick] = useRecoilState(NickState);
-
-
-
-  console.log("====================================")
-  console.log(props.machinelearning)
-  console.log(Array.isArray(props.machinelearning))
   return (
     <>
-      {nick ? <div>
+      {props.nick && <button onClick={props.onClickRecommed}>도서추천받기</button>}
+      {props.nick && props.click ? 
+        <div>
+          
         <div className={classes.content1_recommend2}>
           <span className={classes.content1_toplist1}>
-            {nick}님 맞춤 추천 도서 {'>'}
+            {props.nick}님 맞춤 추천 도서 {'>'}
           </span>
         </div>
         <div className={classes.MachinecarouselContainer}>
           <Carousel>
-            {props.machinelearning && Array.isArray(props.machinelearning) ? (
+            {props.machinelearning && Array.isArray(props.machinelearning) ?
+             (
               props.machinelearning.map((item, index) => (
                 <Carousel.Item key={index}>
                   <div className={classes.MachinecarouselSlide}>
@@ -72,7 +66,6 @@ export default function HomeUI(props) {
           </Carousel>
         </div>
       </div>
-
         : ''}
 
 

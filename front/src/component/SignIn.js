@@ -57,6 +57,7 @@ const SignIn = ({ isOpen, close }) => {
                 setEmail("");
                 setPassword("");
                 setNickname("");
+                axios.get('http://localhost:5000/machine');
                 break;
               case 201:
                 alert("이미 있는 이메일입니다.");
@@ -98,7 +99,6 @@ const SignIn = ({ isOpen, close }) => {
               close();
               setEmail("");
               setPassword("");
-              axios.get('http://localhost:5000/machine');
             } else {
               alert("잘못된 이메일 또는 비밀번호");
             }

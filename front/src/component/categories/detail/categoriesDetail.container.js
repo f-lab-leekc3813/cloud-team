@@ -86,7 +86,6 @@ export default function CategoriesDetail() {
             switch (res.status) {
                 case 200:
                     alert("Review has been sent successfully");
-                    axios.get('http://localhost:5000/machine');
                     break;
                 case 500:
                     alert("Failed to send review");

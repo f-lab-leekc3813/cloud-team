@@ -30,13 +30,11 @@ export default function CategoriesDetail() {
         const currentPath = window.location.pathname;
         const extractedValue = currentPath.split('/detail/')[1].split('/')[0];
         const formattedValue = extractedValue.replace(/%20/g, ' ');
-        console.log(formattedValue)
 
         const fetchData = async () => {
             try{
                 const response = await axios.get(`http://localhost:5000/search/${formattedValue}`);
                 window.scrollTo({ top: 0, behavior: 'auto' })
-                console.log(response.data);
                 setAssociationData(response.data)
             } catch (error) {
                 console.log('데이터를 받아오지 못했습니다', error)
@@ -46,8 +44,6 @@ export default function CategoriesDetail() {
     },[])
 
     const onClickSubmit = (e) => {
-        console.log(nick);
-
         if(!nick) {
             alert('로그인해라 멍청아!')
             return;

@@ -61,11 +61,12 @@ export default function HomeUI(props) {
                 )}
             </Carousel>
           </div>
+          {Array.from({ length: 4 }, (_, index) => (
+            <br key={index} />
+          ))}
         </div>
         : ''}
-      {Array.from({ length: 4 }, (_, index) => (
-        <br key={index} />
-      ))}
+
       <div className={classes.content1_recommend2}>
         <span className={classes.content1_toplist1}>
           최다 리뷰 도서  {'>'}
@@ -119,7 +120,7 @@ export default function HomeUI(props) {
       ) : ""}
       <div className={classes.content1_recommend2}>
         <span className={classes.content1_toplist1}>
-          별점 기반 추천 도서  {'>'}
+          점수 기반 추천 도서  {'>'}
         </span>
       </div>
       <br />

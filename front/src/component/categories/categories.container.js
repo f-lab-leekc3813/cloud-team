@@ -29,7 +29,6 @@ export default function Categories() {
         const reviewText = event.currentTarget.getAttribute("reviewText")
         const categories = event.currentTarget.getAttribute("categories")
 
-        console.log('여기를 클릭')
 
         const detailData = {
             title,
@@ -43,7 +42,6 @@ export default function Categories() {
         }
 
         setDetail(detailData)
-        console.log(detail)
         navigate(`./detail/${title}`)
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
@@ -52,13 +50,11 @@ export default function Categories() {
         
         const currentPath = window.location.pathname;
         const extractedValue = currentPath.replace(/^\/categories\//, '').replace(/%20/g, ' ');
-        console.log(extractedValue)
         
         const fetchData = async () => {
             try{
                 const response = await axios.get(`http://localhost:8080/category/${extractedValue}`);
                 window.scrollTo({ top: 0, behavior: 'smooth' })
-                console.log(response.data);
                 setData(response.data)
                 setLoding(false)
             } catch (error) {

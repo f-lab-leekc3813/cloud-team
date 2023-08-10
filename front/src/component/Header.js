@@ -8,7 +8,6 @@ import { Dropdown, message, Space } from 'antd';
 import classes from './Header.module.css';
 import LoginButton from './LoginButton';
 import { LoginState } from '../store/LoginState';
-import LikePage from './like/like.container.js';
 
 const items = [
   {
@@ -143,7 +142,6 @@ function Header() {
         </div>
         <div className={classes.header_content3}>
           <LoginButton />
-          <LikePage isOpen={isModalOpen} close={closeModal} />
         </div>
       </div>
     </div>

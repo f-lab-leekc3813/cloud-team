@@ -2,7 +2,6 @@ import {useRecoilState} from "recoil";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { LikeState} from '../../../store/LikeState';
 import { NickState } from "../../../store/LoginState";
 import { CategoriDetail } from "../../../store/Categories";
 import CategoriesDetailUI from "./categoriesDetail.presenter"
@@ -10,7 +9,6 @@ import CategoriesDetailUI from "./categoriesDetail.presenter"
 
 export default function CategoriesDetail() { 
     
-    const [like, setLike] = useRecoilState(LikeState);
     const [nick, setNick] = useRecoilState(NickState);
     const [score, setScore] = useState('');
     const [detail, setDetail] = useRecoilState(CategoriDetail);
@@ -68,13 +66,12 @@ export default function CategoriesDetail() {
         // e.preventDefault();
     
         // Check if the review with the same title already exists in the 'like' array
-        const exists = like.some((item) => item.title === detail.title);
-        if (!exists) {
-            const newData = { ...detail, score };
-            setLike((prevLike) => [...prevLike, newData]);
-        }
+        // const exists = like.some((item) => item.title === detail.title);
+        // if (!exists) {
+        //     const newData = { ...detail, score };
+        //     setLike((prevLike) => [...prevLike, newData]);
+        // }
     
-        console.log(like);
     
         // Make a POST request to send the review
         axios.post("http://localhost:8080/like/likeReview", {

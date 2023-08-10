@@ -68,7 +68,7 @@ export default function CategoriesDetail() {
         //     setLike((prevLike) => [...prevLike, newData]);
         // }
     
-    
+
         // Make a POST request to send the review
         axios.post("http://localhost:8080/like/likeReview", {
             userId: nick,

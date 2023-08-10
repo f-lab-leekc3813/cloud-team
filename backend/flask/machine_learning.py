@@ -7,15 +7,6 @@ from password import password
 
 merge_df = pd.read_csv('./backend/flask/merge_df.csv')
 
-merge_df['categories'] = merge_df['categories'].apply(lambda x:x.replace("'",'').replace('"',''))
-merge_df['Title'] = merge_df['Title'].apply(lambda x:x.replace('/',' '))
-merge_df['authors'].fillna("[Unknown]", inplace=True)
-
-merge_df['Price'].fillna(0,inplace=True)
-merge_df.fillna('',inplace=True)
-
-
-
 # 도움되는 리뷰
 def review_help(x):
     help_li = x['reviewHelpfulness'].split('/')
@@ -23,39 +14,27 @@ def review_help(x):
         return 0
     return int(help_li[0])**1.3/int(help_li[1])
 
-merge_df1 = merge_df.copy()
-merge_df1['reviewHelpfulness'] = merge_df1.apply(review_help,axis=1)
-sort_df = merge_df1.sort_values(['Title','reviewHelpfulness'],ascending=[True,False]).head()
-
-unique_df = merge_df1.drop_duplicates('Title').sort_values('Title').reset_index(drop=True)
+merge_df['reviewHelpfulness'] = merge_df.apply(review_help,axis=1)
+sort_df = merge_df.sort_values(['Title','reviewHelpfulness'],ascending=[True,False]).head()
 
 # merge_df를 Title 열로 그룹화하고 review/score 열의 평균을 계산하며 나머지 열들의 모든 행을 출력
-grouped_df = merge_df1.groupby('Title').agg({'reviewScore': 'mean','reviewText': 'first', 'image':'first',
-                                            'authors': 'first', 'categories': 'first', 'Title':'size'})
+grouped_df = merge_df.groupby('Title').agg({'reviewScore': 'mean','reviewSummary':'first','reviewText': 'first', 'image':'first',
+                                            'authors': 'first', 'profileName':'first', 'categories': 'first', 'Title':'size'})
 
-grouped_df.columns = ['reviewScore', 'reviewText', 'image', 'authors', 'categories', 'count']
+grouped_df.columns = ['reviewScore', 'reviewSummary', 'reviewText', 'image', 'authors', 'profileName', 'categories', 'count']
 
 grouped_df.reset_index(inplace=True)
 
 # 통계적 추천
 C = grouped_df['reviewScore'].mean()
 m = grouped_df['count'].quantile(0.9)
-# count 상위 10%
-q_books = grouped_df.copy().loc[grouped_df['count'] >= m]
 
 def weighted_rating(x, m=m, C=C):
     v = x['count']
     R = x['reviewScore']
     return (v / (v + m) * R) + (m / (m + v) * C)
 
-q_books['score'] = q_books.apply(weighted_rating, axis=1)
-
-# 점수(score) 순
-q_books = q_books.sort_values('score',ascending=False)
-
-# 사람들이 많이 읽은 순 (리뷰수)
-many_books = q_books.sort_values('count',ascending=False)
-
+grouped_df['score'] = grouped_df.apply(weighted_rating, axis=1)
 
 
 # 컨텐츠 기반 추천
@@ -79,20 +58,13 @@ def get_recommendations(title, cosine_sim=cosine_sim):
     
     books_indices = [i[0] for i in sim_scores]
     
-    return unique_df.iloc[books_indices]
-
-df = get_recommendations('1001 Pearls of Wisdom')
-
+    return grouped_df.iloc[books_indices]
 
 
 # MySQL 연결 문자열 생성
-connection_string = f'mysql+mysqlconnector://root:{password}@localhost/machine'
+connection_string = f'mysql+mysqlconnector://root:{password}@localhost/project'
 
 # MySQL 엔진 생성
 engine = create_engine(connection_string)
 
-df.to_sql(name='contents', con=engine, if_exists='replace', index=False)
-
-q_books.to_sql(name='score_books', con=engine, if_exists='replace', index=False)
-many_books.to_sql(name='many_books', con=engine, if_exists='replace', index=False)
-unique_df.to_sql(name='books', con=engine, if_exists='replace', index=False)
+grouped_df.to_sql(name='books', con=engine, if_exists='replace', index=False)

@@ -7,7 +7,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'react-bootstrap';
 import { NickState } from "../../store/LoginState";
-import {useRecoilState} from "recoil";
+import { useRecoilState } from "recoil";
 
 const bestsellerData = homeData.bestsellerData;
 const brandImages = homeData.brandImages;
@@ -18,30 +18,57 @@ export default function HomeUI(props) {
   const [nick, setNick] = useRecoilState(NickState);
 
 
+
+  console.log("====================================")
+  console.log(props.machinelearning)
   return (
     <>
+
       <div className={classes.content1_recommend2}>
         <span className={classes.content1_toplist1}>
           {nick}님 맞춤 추천 도서 {'>'}
         </span>
       </div>
-      <Carousel>
-        <Carousel.Item>
-          <img className={classes.slide_image} src='/images/bestseller/bestseller1.jpg' alt='Wallpaper' />
-          <Carousel.Caption>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className={classes.slide_image} src='/images/bestseller/bestseller2.jpg' alt='Wallpaper' />
-          <Carousel.Caption>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className={classes.slide_image} src='/images/bestseller/bestseller3.jpg' alt='Wallpaper' />
-          <Carousel.Caption>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+      <div className={classes.carouselContainer}>
+        <Carousel>
+          {props.machinelearning && Array.isArray(props.machinelearning) ? (
+            props.machinelearning.map((item, index) => (
+              <Carousel.Item key={index}>
+                <div className={classes.carouselSlide}>
+                  <div className={classes.carouselContent}>
+                    <div className={classes.dataBundle}>
+                      {item.image ? (
+                        <img
+                          className={classes.carouselImage}
+                          src={item.image}
+                          alt={`Machine Learning Slide ${index + 1}`}
+                        />
+                      ) : (
+                        <div className={classes.listDiv}>
+                          <img
+                            className={classes.listImg}
+                            src="https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/299600042_380678670861506_5752050165543910974_n.png?stp=dst-png_p206x206&_nc_cat=108&ccb=1-7&_nc_sid=da31f3&_nc_ohc=MAGEvMFi2eIAX_Smrx3&_nc_ht=scontent-ssn1-1.xx&oh=00_AfBBnjAU2tLU2plnBP5Quz32klNJSZKMB9ngfRmGdzWMvg&oe=64D1F1F3"
+                            alt="book photo"
+                          />
+                        </div>
+                      )}
+                      <div className={classes.dataBundleText}>
+                        <div className={classes.booktitle}>
+                          <h6><a href={item.href}>{item.Title}</a></h6>
+                        </div>
+                        <h6>{JSON.parse(item.authors)[0]}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Carousel.Item>
+            ))
+          ) : (
+            <p>No machine learning data available.</p>
+          )}
+        </Carousel>
+      </div>
+
       {Array.from({ length: 4 }, (_, index) => (
         <br key={index} />
       ))}

@@ -32,8 +32,24 @@ async function like(userId,bookId,rating){
     }
 }
 
+async function duplicate_like(userId,bookId,rating){
+    let go;
+
+    try {
+        go = await database.getConnection();
+        const query = `UPDATE project.like SET rating = '${rating}' WHERE userId = '${userId}' AND bookId = '${bookId}'`;
+
+        const [result] = await go.execute(query);
+        go.release();
+        return result;
+    } catch(error) {
+        return error;
+    }
+}
+
 
 module.exports = {
     connection,
-    like
+    like,
+    duplicate_like
 };

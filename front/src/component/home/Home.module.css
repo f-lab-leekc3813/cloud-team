@@ -1790,3 +1790,40 @@ body{
   width:300px;
 }
 
+.responsiveImage {
+  width: 500px; /* Set the maximum width to prevent image overflow */
+  height: 400px; /* Maintain the aspect ratio and adjust the height automatically */
+}
+
+.MachineBundle{
+  position: absolute;
+  left: 0;
+  width: 1000px;
+  background-color: rgba(0, 0, 0, 0.7); 
+  color: white; 
+  padding: 5px 0;
+  height:400px;
+  text-align: center;
+}
+
+.MachineContent{
+  width:1100px;
+  height:600px;
+  margin-top:50px;
+}
+
+.MachineBundleText{
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  color: white; 
+  padding: 5px 0;
+  height:0px;
+  text-align: center;
+}
+
+.MachineBundle{
+  left:450px;
+}

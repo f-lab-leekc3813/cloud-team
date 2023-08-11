@@ -19,8 +19,10 @@ def machine(userId):
 
 @app2.route('/machine/test/<userId>', methods=['GET'])
 def test(userId):
-    sc, mae, rmse = testModel(userId)
-    return f'userId: {userId}<br>score: {sc}<br>mae: {mae}<br>rmse: {rmse}'
+    test = testModel(userId)
+    if test == None:
+        return f'{userId} 에 대한 정보가 없습니다.'
+    return f'userId: {userId}<br>score: {test[0]}<br>mae: {test[1]}<br>rmse: {test[2]}'
 
 if __name__ == '__main__':
     app2.run(debug=True)

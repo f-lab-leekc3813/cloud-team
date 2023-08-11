@@ -270,7 +270,7 @@ export default function HomeUI(props) {
               <span className={classes.content_text9}>블로그 & SNS</span>
               <br />
               <span className={classes.content_text10}>
-                원투텐 북플 &nbsp;&nbsp; &nbsp; &nbsp; 원투텐 서재<br /> 원투텐 트위터 &nbsp;  &nbsp; 원투텐 페이스북 <br />구름 인스타그램 <br />
+                원투텐 북플 &nbsp;&nbsp; &nbsp; &nbsp; 원투텐 서재<br /> 원투텐 트위터 &nbsp;  &nbsp; 원투텐 페이스북 <br />원투텐 인스타그램 <br />
               </span>
             </div>
           </div>

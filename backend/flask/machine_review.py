@@ -82,6 +82,8 @@ def testModel(userId):
 
         df['bookId'] = df['bookId'].apply(lambda x: indices[x])
         test_df = df[df['userId']==userId]
+        if test_df['userId'].count()==0:
+            return None
 
     testdata = Dataset.load_from_df(test_df, reader=reader)
     testset = testdata.build_full_trainset().build_testset()
